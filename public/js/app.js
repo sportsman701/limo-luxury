@@ -6342,25 +6342,6 @@ exports.push([module.i, ".Row  {\n    text-align: center;\n    background: trans
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Home.css":
-/*!**************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/Home.css ***!
-  \**************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".jumbotron  {\ntext-align: center;\nbackground: transparent;\n\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Vehicles.css":
 /*!******************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/Vehicles.css ***!
@@ -75508,36 +75489,6 @@ if (document.getElementById('example')) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Home.css":
-/*!******************************************!*\
-  !*** ./resources/js/components/Home.css ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/postcss-loader/src??ref--6-2!./Home.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Home.css");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./resources/js/components/Home.js":
 /*!*****************************************!*\
   !*** ./resources/js/components/Home.js ***!
@@ -75553,8 +75504,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Home_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Home.css */ "./resources/js/components/Home.css");
-/* harmony import */ var _Home_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Home_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _About_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./About.css */ "./resources/js/components/About.css");
+/* harmony import */ var _About_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_About_css__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -75592,13 +75543,7 @@ function (_Component) {
   _createClass(Home, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], {
-        fluid: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Welcome to Luxury Limo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "This is the company page for Luxury Limo. Click about to read about this project"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Link, {
-        to: "/About"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
-        bsStyle: "primary"
-      }, "About")))));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Luxury Limo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar neque laoreet suspendisse interdum consectetur libero. In hendrerit gravida rutrum quisque. Aliquet enim tortor at auctor urna nunc. ")));
     }
   }]);
 
@@ -75607,8 +75552,8 @@ function (_Component) {
 
 
 
-if (document.getElementById('home')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Home, null), document.getElementById('home'));
+if (document.getElementById('open')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Home, null), document.getElementById('open'));
 }
 
 /***/ }),
