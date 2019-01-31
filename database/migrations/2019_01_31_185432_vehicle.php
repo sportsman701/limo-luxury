@@ -14,16 +14,18 @@ class Vehicle extends Migration
     public function up()
     {
         Schema::create('vehicle', function(Blueprint $table) {
-            $table->increments('id');
-            $table->string('type');
-            $table->text('description');
-            $table->interger('qty');
-            $table->integer('max_passenger');
-            $table->integer('max_luggage');
-            $table->string('image_link');
-            $table->string('base_rate');
-            $table->string('mileage_rate');
+            $table->increments('id')->nullable($value = false);
+            $table->string('type')->nullable($value = false);
+            $table->text('description')->nullable($value = false);
+            $table->integer('qty')->nullable($value = false);
+            $table->integer('max_passenger')->nullable($value = false);
+            $table->integer('max_luggage')->nullable($value = false);
+            $table->string('image_link')->nullable($value = false);
+            $table->string('base_rate')->nullable($value = false);
+            $table->string('mileage_rate')->nullable($value = false);
             $table->timestamps();
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

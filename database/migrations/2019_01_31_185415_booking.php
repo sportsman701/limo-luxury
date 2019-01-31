@@ -13,26 +13,28 @@ class Booking extends Migration
      */
     public function up()
     {
-        Schema::create('bookings', function(Bluepring $table) {
-            $table->increment('id');
-            $table->string('first_name');
-            $table->string('last_name');
+        Schema::create('bookings', function(Blueprint $table) {
+            $table->increments('id')->nullable($value = false);
+            $table->string('first_name')->nullable($value = false);
+            $table->string('last_name')->nullable($value = false);
             $table->string('phone_number');
-            $table->string('cell_phone');
-            $table->string('email');
-            $table->string('xfer_date');
-            $table->string('xfer_time');
-            $table->string('pu_local');
-            $table->string('do_local');
-            $table->integer('num_adults');
+            $table->string('cell_phone')->nullable($value = false);
+            $table->string('email')->nullable($value = false);
+            $table->date('xfer_date')->nullable($value = false);
+            $table->time('xfer_time')->nullable($value = false);
+            $table->string('pu_local')->nullable($value = false);
+            $table->string('do_local')->nullable($value = false);
+            $table->integer('num_adults')->nullable($value = false);
             $table->integer('num_children');
-            $table->string('vehicle_type');
-            $table->string('xfer-cost');
+            $table->string('vehicle_type')->nullable($value = false);
+            $table->decimal('xfer-cost', 9, 2)->nullable($value = false);
             $table->text('xfer_notes');
-            $table->string('xfer_status');
-            $table->increments('xfer_confirmation');
-            $table->increments('xfer_cancel');
+            $table->boolean('xfer_status')->nullable($value = false);
+            $table->integer('xfer_confirmation')->nullable($value = false);
+            $table->integer('xfer_cancel');
             $table->timestamps();
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
