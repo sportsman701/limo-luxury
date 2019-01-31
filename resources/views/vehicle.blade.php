@@ -15,7 +15,7 @@
                     @endif -->
 
                     <!-- <div class="panel-body"> -->
-                        <div id="example"></div>
+                        <div id="vehicle"></div>
                     <!-- </div> -->
                 <!-- </div>
             </div>
