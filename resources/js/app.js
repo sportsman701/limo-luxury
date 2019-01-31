@@ -14,3 +14,8 @@ require('./bootstrap');
  */
 
 require('./components/Example');
+require('./components/About');
+require('./components/Book');
+require('./components/Reports');
+require('./components/Vehicles');
+require('./components/Home');
