@@ -60030,8 +60030,8 @@ if (document.getElementById('example')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/jeffreymcintosh/Documents/Coding/GroupProjects/FinalProject/lux-limo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/jeffreymcintosh/Documents/Coding/GroupProjects/FinalProject/lux-limo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
