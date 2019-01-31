@@ -23,3 +23,4 @@ Route::get('/booking', 'BookingController@index')->name('booking');
 Route::get('/vehicle', 'VehicleController@index')->name('vehicle');
 Route::get('/search', 'SearchController@index')->name('search');
 Route::get('/reports', 'ReportsController@index')->name('reports');
+Route::get('/about', 'AboutController@index')->name('about');
