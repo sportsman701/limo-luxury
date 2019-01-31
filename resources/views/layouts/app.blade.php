@@ -59,6 +59,10 @@
                           <a id="navbar" class="nav-link" href="/reports" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                               Reports
                           </a>
+
+                          <a id="navbar" class="nav-link" href="/about" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                              About
+                          </a>
                             
                           <li class="nav-item dropdown">
                           
