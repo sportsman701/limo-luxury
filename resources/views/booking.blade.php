@@ -15,7 +15,7 @@
                     @endif -->
 
                     <!-- <div class="panel-body"> -->
-                        <div id="booking">
+                        <div id="book">
 
                         <h1>I'm the Booking Route</h1>
 
