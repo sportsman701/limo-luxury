@@ -14,8 +14,8 @@
                         </div>
                     @endif -->
 
-                    <div id="home"> </div>
-                </div>
+                    <div id="about"> </div>
+                <!-- </div> -->
             <!-- </div> -->
         <!-- </div> -->
     <!-- </div> -->

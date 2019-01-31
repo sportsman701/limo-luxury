@@ -1,0 +1,14 @@
+.jumbotron{
+
+    border-radius: 20px;
+    border: 2px lightgrey solid;
+}
+
+.Card.Img{
+height:100px;
+
+}
+
+.Card{
+    height:500px;
+}

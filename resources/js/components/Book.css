@@ -1,0 +1,16 @@
+.Row  {
+    text-align: center;
+    background: transparent;
+    
+    }
+
+ .jumbotron{
+
+        border-radius: 20px;
+        border: 2px lightgrey solid;
+}
+
+
+.Card{
+    height:1000px;
+}
