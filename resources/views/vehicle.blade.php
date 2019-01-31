@@ -15,7 +15,11 @@
                     @endif -->
 
                     <!-- <div class="panel-body"> -->
-                        <div id="vehicle"></div>
+                        <div id="vehicle">
+
+                        <h1>I'm the Vehicle Route</h1>
+                        
+                        </div>
                     <!-- </div> -->
                 <!-- </div>
             </div>
