@@ -12,7 +12,7 @@ import {
 import "./Vehicles.css";
 import ReactDOM from 'react-dom';
 
-export default class vehicles extends Component {
+export default class Vehicles extends Component {
   render() {
     return (
       <div>

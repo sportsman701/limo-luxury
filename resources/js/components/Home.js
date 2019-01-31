@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { Jumbotron, Container, Row, Col, Button  } from 'react-bootstrap';
-import './Home.css';
+import { Jumbotron, Container } from "react-bootstrap";
 import ReactDOM from 'react-dom';
 
+import './Home.css';
 
-export default class home extends Component {
+
+export default class Home extends Component {
   render() {
     return (
       <div>
@@ -28,5 +29,5 @@ export default class home extends Component {
 }
 
 if (document.getElementById('home')) {
-  ReactDOM.render(<Example />, document.getElementById('home'));
+  ReactDOM.render(<Home />, document.getElementById('home'));
 }
