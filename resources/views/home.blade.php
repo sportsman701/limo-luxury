@@ -14,7 +14,7 @@
                         </div>
                     @endif -->
 
-                    <div id="about"> </div>
+                    <div id="book"> </div>
                 <!-- </div> -->
             <!-- </div> -->
         <!-- </div> -->
