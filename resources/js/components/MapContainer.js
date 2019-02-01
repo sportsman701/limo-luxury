@@ -28,3 +28,7 @@ export default GoogleApiWrapper({
     apiKey: 'AIzaSyAXBh0Pf9RVhVuXh6YzaTHZJPDx_LSQgB0'
 }) (MapContainer);
 
+if (document.getElementById('map')) {
+    ReactDOM.render(<MapContainer />, document.getElementById('map'));
+  }
+
