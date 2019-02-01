@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Jumbotron, Container, Row, Col, Button, Form } from "react-bootstrap";
 import "./Book.css";
 import ReactDOM from 'react-dom';
-// import Map from "./Map.js"
+import Map from "./Map.js"
 
 
 export default class Book extends Component {
@@ -50,9 +50,11 @@ export default class Book extends Component {
           <div class="map">
            Google map goes here
            
-          </div>
-
           
+
+          </div>
+        
+          {/* <Map /> */}
 
           </Col>
         </Row>
