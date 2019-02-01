@@ -52,7 +52,7 @@ export default class Book extends Component {
            
           </div>
 
-          <Map/>
+          
 
           </Col>
         </Row>
