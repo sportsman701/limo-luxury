@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Jumbotron, Container, Row, Col, Button, Form } from "react-bootstrap";
 import "./Book.css";
 import ReactDOM from 'react-dom';
-import Map from './components/Map.js'
+// import Map from "./Map.js"
 
 
 export default class Book extends Component {
