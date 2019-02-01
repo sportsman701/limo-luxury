@@ -14,7 +14,7 @@
                         </div>
                     @endif -->
 
-                    <div id="book"> </div>
+                    <div id="open"> </div>
                     
                 <!-- </div> -->
             <!-- </div> -->

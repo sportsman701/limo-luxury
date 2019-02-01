@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Jumbotron, Container, Row, Col, Button, Form } from "react-bootstrap";
 import "./Book.css";
 import ReactDOM from 'react-dom';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import Map from './components/Map.js'
+
 
 export default class Book extends Component {
   render() {
@@ -48,7 +49,10 @@ export default class Book extends Component {
           <Col>
           <div class="map">
            Google map goes here
+           
           </div>
+
+          <Map/>
 
           </Col>
         </Row>
