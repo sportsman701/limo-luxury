@@ -47,14 +47,9 @@ export default class Book extends Component {
           </Col>
 
           <Col>
-          <div class="map">
-           Google map goes here
-           
-          
 
-          </div>
         
-          {/* <Map /> */}
+          <Map />
 
           </Col>
         </Row>

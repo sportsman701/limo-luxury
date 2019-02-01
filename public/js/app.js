@@ -93167,9 +93167,7 @@ function (_Component) {
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         variant: "primary",
         type: "submit"
-      }, "Continue"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        class: "map"
-      }, "Google map goes here")))));
+      }, "Continue"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Map_js__WEBPACK_IMPORTED_MODULE_4__["default"], null)))));
     }
   }]);
 
@@ -93380,16 +93378,16 @@ function (_Component) {
       var GoogleMapExample = Object(react_google_maps__WEBPACK_IMPORTED_MODULE_1__["withGoogleMap"])(function (props) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_1__["GoogleMap"], {
           defaultCenter: {
-            lat: 40.756795,
-            lng: -73.954298
+            lat: 28.53,
+            lng: -82.38
           },
-          defaultZoom: 13
+          defaultZoom: 10
         });
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GoogleMapExample, {
         containerElement: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           style: {
-            height: "500px",
+            height: "600px",
             width: '500px'
           }
         }),
