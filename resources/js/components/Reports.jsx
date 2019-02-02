@@ -40,16 +40,12 @@ handleSubmit (event){
                       <Form>
                         <Form.Group controlId="seacrch1">
                           <Form.Label>Search</Form.Label>
-                          <input type="text" value={this.state.inputvalue} onChange={this.handleChange}/>
-
-                          <Form.Control placeholder="Name" />
+                          <Form.Control type="text"  placeholder="Name" value={this.state.inputvalue} onChange={this.handleChange}/>
                         </Form.Group>
 
                         <Form.Group controlId="seacrch2">
                           <Form.Label></Form.Label>
-                          <input type="text" value={this.state.inputvalue} onChange={this.handleChange}/>
-
-                          <Form.Control placeholder="Confirmation number" />
+                          <Form.Control type="text" placeholder="Confirmation number" value={this.state.inputvalue} onChange={this.handleChange}/>
                         </Form.Group>
 
                         <Button variant="primary" type="submit">
