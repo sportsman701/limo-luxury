@@ -2,8 +2,36 @@ import React, { Component } from "react";
 import { Jumbotron, Container, Row, Col, Button, Form } from "react-bootstrap";
 import "./Book.css";
 import ReactDOM from 'react-dom';
+import Map from "./Map.js"
+
 
 export default class Book extends Component {
+
+  constructor (props) {
+    super(props);
+    this.state = {
+        start: '',
+        end: '',
+        date: '',
+        time: ''
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+}
+
+handleChange (event) {
+  const { name, value } = event.target;
+  this.setState({
+      [name]: value
+  })
+}
+
+handleSubmit (event){
+  console.log('Form Value: ' + this.state.inputvalue);
+  event.preventDefault();
+}
+
+
   render() {
     return (
       <Container>
@@ -13,31 +41,52 @@ export default class Book extends Component {
         <Row>
           <Col>
             <Form>
-              <Form.Group controlId="formGridAddress1">
+
+              <Form.Group controlId="start">
                 <Form.Label>Pick Up / Drop Off Information</Form.Label>
-                <Form.Control placeholder="Pick up" />
+                <Form.Control 
+                  type= "text" 
+                  name="start"
+                  placeholder="Pick up" 
+                  value={this.state.start} 
+                  onChange={this.handleChange.bind(this)}/>
               </Form.Group>
 
-              <Form.Group controlId="formGridAddress2">
-                <Form.Control placeholder="Drop off" />
+              <Form.Group controlId="end">
+                <Form.Control 
+                type="text" 
+                name="end"
+                placeholder="Drop off" 
+                value={this.state.end} 
+                onChange={this.handleChange.bind(this)}/>
               </Form.Group>
 
                 <br />
                 <br />
                 <Form.Row>
-                <Form.Group controlId="formGridDate">
-                  <Form.Control placeholder="Date" />
+                <Form.Group controlId="date">
+                <Form.Control 
+                type="text" 
+                name="date"
+                placeholder="Date" 
+                value={this.state.date} 
+                onChange={this.handleChange.bind(this)}/>
                 </Form.Group>
 
-                <Form.Group as={Col} controlId="formGridTime">
-                  <Form.Control placeholder="Time" />
+                <Form.Group as={Col} controlId="time">
+                <Form.Control 
+                type="text" 
+                name="time"
+                placeholder="Time" 
+                value={this.state.time} 
+                onChange={this.handleChange.bind(this)}/>
                 </Form.Group>
                 </Form.Row>
 
               <br></br>
               <br></br>
               
-              <Button variant="primary" type="submit">
+              <Button variant="primary" type="submit" value="Submit">
                 Continue
               </Button>
 
@@ -45,9 +94,12 @@ export default class Book extends Component {
           </Col>
 
           <Col>
-          <div>
-           Google map goes here
-          </div>
+
+        
+          <Map 
+            origin={this.state.start}
+            destination={this.state.end}
+          />
 
           </Col>
         </Row>

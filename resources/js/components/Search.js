@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Jumbotron, Container, Row, Col, Button, Form, Table} from "react-bootstrap";
 import ReactDOM from 'react-dom';
 
-export default class Reports extends Component {
+export default class Search extends Component {
+
+
 
   constructor (props) {
     super(props);
@@ -26,7 +28,6 @@ handleSubmit (event){
 
 
 
-
   render() {
     return (
       <div>
@@ -37,7 +38,7 @@ handleSubmit (event){
                 <Jumbotron>
                   <Row>
                     <Col>
-                      <Form>
+                    <Form>
                         <Form.Group controlId="seacrch1">
                           <Form.Label>Search</Form.Label>
                           <Form.Control type="text"  placeholder="Name" value={this.state.inputvalue} onChange={this.handleChange}/>
@@ -55,55 +56,7 @@ handleSubmit (event){
                       </Form>
                     </Col>
 
-                    <Col>
-                      
-                    <Table responsive>
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Last</th>
-      <th>First</th>
-      <th>Conf#</th>
-      <th>Pickup</th>
-      <th>Destination</th>
-      <th>Distance</th>
-      <th>Cost</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-    </tr>
-  </tbody>
-</Table>;
-                    </Col>
+                    
                   </Row>
                   </Jumbotron>
       </Container>
@@ -112,6 +65,6 @@ handleSubmit (event){
   }
 }
 
-if (document.getElementById('reports')) {
-  ReactDOM.render(<Reports />, document.getElementById('reports'));
+if (document.getElementById('search')) {
+  ReactDOM.render(<Search />, document.getElementById('search'));
 }
