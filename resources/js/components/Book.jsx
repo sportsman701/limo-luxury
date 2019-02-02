@@ -96,7 +96,10 @@ handleSubmit (event){
           <Col>
 
         
-          <Map />
+          <Map 
+            origin={this.state.start}
+            destination={this.state.end}
+          />
 
           </Col>
         </Row>

@@ -93211,7 +93211,10 @@ function (_Component) {
         variant: "primary",
         type: "submit",
         value: "Submit"
-      }, "Continue"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Map_js__WEBPACK_IMPORTED_MODULE_4__["default"], null)))));
+      }, "Continue"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Map_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        origin: this.state.start,
+        destination: this.state.end
+      })))));
     }
   }]);
 
@@ -93410,10 +93413,10 @@ var Map =
 function (_Component) {
   _inherits(Map, _Component);
 
-  function Map() {
+  function Map(props) {
     _classCallCheck(this, Map);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Map).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Map).call(this, props));
   }
 
   _createClass(Map, [{
@@ -93440,7 +93443,7 @@ function (_Component) {
             height: "100%"
           }
         })
-      }));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.origin), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.destination)));
     }
   }]);
 
