@@ -37,28 +37,25 @@ handleSubmit (event){
         <Row>
           <Col>
             <Form>
+
               <Form.Group controlId="start">
                 <Form.Label>Pick Up / Drop Off Information</Form.Label>
-                <input type="text" value={this.state.inputvalue} onChange={this.handleChange}/>
-                <Form.Control placeholder="Pick up" />
+                <Form.Control type= "text" placeholder="Pick up" value={this.state.inputvalue} onChange={this.handleChange}/>
               </Form.Group>
 
               <Form.Group controlId="end">
-              <input type="text" value={this.state.inputvalue} onChange={this.handleChange}/>
-                <Form.Control placeholder="Drop off" />
+                <Form.Control type="text" placeholder="Drop off" value={this.state.inputvalue} onChange={this.handleChange}/>
               </Form.Group>
 
                 <br />
                 <br />
                 <Form.Row>
                 <Form.Group controlId="Date">
-                <input type="text" value={this.state.inputvalue} onChange={this.handleChange}/>
-                  <Form.Control placeholder="Date" />
+                <Form.Control type="text" placeholder="Date" value={this.state.inputvalue} onChange={this.handleChange}/>
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="Time">
-                <input type="text" value={this.state.inputvalue} onChange={this.handleChange}/>
-                  <Form.Control placeholder="Time" />
+                <Form.Control type="text" placeholder="Time" value={this.state.inputvalue} onChange={this.handleChange}/>
                 </Form.Group>
                 </Form.Row>
 
