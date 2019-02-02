@@ -10,7 +10,10 @@ export default class Book extends Component {
   constructor (props) {
     super(props);
     this.state = {
-        inputvalue: ''
+        start: '',
+        end: '',
+        date: '',
+        time: ''
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,29 +43,29 @@ handleSubmit (event){
 
               <Form.Group controlId="start">
                 <Form.Label>Pick Up / Drop Off Information</Form.Label>
-                <Form.Control type= "text" placeholder="Pick up" value={this.state.inputvalue} onChange={this.handleChange}/>
+                <Form.Control type= "text" placeholder="Pick up" value={this.state.inputvalue} onChange={this.handleChange.bind(this)}/>
               </Form.Group>
 
               <Form.Group controlId="end">
-                <Form.Control type="text" placeholder="Drop off" value={this.state.inputvalue} onChange={this.handleChange}/>
+                <Form.Control type="text" placeholder="Drop off" value={this.state.inputvalue} onChange={this.handleChange.bind(this)}/>
               </Form.Group>
 
                 <br />
                 <br />
                 <Form.Row>
-                <Form.Group controlId="Date">
-                <Form.Control type="text" placeholder="Date" value={this.state.inputvalue} onChange={this.handleChange}/>
+                <Form.Group controlId="date">
+                <Form.Control type="text" placeholder="Date" value={this.state.inputvalue} onChange={this.handleChange.bind(this)}/>
                 </Form.Group>
 
-                <Form.Group as={Col} controlId="Time">
-                <Form.Control type="text" placeholder="Time" value={this.state.inputvalue} onChange={this.handleChange}/>
+                <Form.Group as={Col} controlId="time">
+                <Form.Control type="text" placeholder="Time" value={this.state.inputvalue} onChange={this.handleChange.bind(this)}/>
                 </Form.Group>
                 </Form.Row>
 
               <br></br>
               <br></br>
               
-              <Button variant="primary" type="submit">
+              <Button variant="primary" type="submit" value="Submit">
                 Continue
               </Button>
 

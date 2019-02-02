@@ -93145,7 +93145,10 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Book).call(this, props));
     _this.state = {
-      inputvalue: ''
+      start: '',
+      end: '',
+      date: '',
+      time: ''
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
@@ -93174,32 +93177,33 @@ function (_Component) {
         type: "text",
         placeholder: "Pick up",
         value: this.state.inputvalue,
-        onChange: this.handleChange
+        onChange: this.handleChange.bind(this)
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
         controlId: "end"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
         type: "text",
         placeholder: "Drop off",
         value: this.state.inputvalue,
-        onChange: this.handleChange
+        onChange: this.handleChange.bind(this)
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Row, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
-        controlId: "Date"
+        controlId: "date"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
         type: "text",
         placeholder: "Date",
         value: this.state.inputvalue,
-        onChange: this.handleChange
+        onChange: this.handleChange.bind(this)
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
         as: react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"],
-        controlId: "Time"
+        controlId: "time"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
         type: "text",
         placeholder: "Time",
         value: this.state.inputvalue,
-        onChange: this.handleChange
+        onChange: this.handleChange.bind(this)
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         variant: "primary",
-        type: "submit"
+        type: "submit",
+        value: "Submit"
       }, "Continue"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Map_js__WEBPACK_IMPORTED_MODULE_4__["default"], null)))));
     }
   }]);
