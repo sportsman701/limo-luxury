@@ -3,8 +3,8 @@ import { Jumbotron, Container, Row, Col, Button, Form } from "react-bootstrap";
 import './Booking.css';
 import Map from '../Map';
 
-export default class Booking extends Component {
-  render() {
+class Booking extends Component {
+  render() {   
     return (
       <Container>
         <br />
@@ -14,24 +14,24 @@ export default class Booking extends Component {
             <Col>
               <Form>
 
-                <Form.Group controlId="start">
+                <Form.Group controlId="origin">
                   <Form.Label>Pick Up / Drop Off Information</Form.Label>
                   <Form.Control
                     type="text"
-                    name="start"
+                    name="origin"
                     placeholder="Pick up"
                     value={this.props.origin}
-                    // onChange={this.handleChange.bind(this)} 
+                    onChange={this.props.handleInputChange} 
                   />
                 </Form.Group>
 
-                <Form.Group controlId="end">
+                <Form.Group controlId="destination">
                   <Form.Control
                     type="text"
-                    name="end"
+                    name="destination"
                     placeholder="Drop off"
                     value={this.props.destination}
-                    // onChange={this.handleChange.bind(this)} 
+                    onChange={this.props.handleInputChange} 
                   />
                 </Form.Group>
 
@@ -45,7 +45,7 @@ export default class Booking extends Component {
                       name="date"
                       placeholder="Date"
                       value={this.props.xfrDate}
-                      // onChange={this.handleChange.bind(this)}
+                      onChange={this.props.handleInputChange} 
                     />
                   </Form.Group>
 
@@ -55,7 +55,7 @@ export default class Booking extends Component {
                       name="time"
                       placeholder="Time"
                       value={this.props.xfrTime}
-                      // onChange={this.handleChange.bind(this)} 
+                      onChange={this.props.handleInputChange} 
                     />
                   </Form.Group>
                 </Form.Row>
@@ -81,3 +81,5 @@ export default class Booking extends Component {
     );
   };
 };
+
+export default Booking;

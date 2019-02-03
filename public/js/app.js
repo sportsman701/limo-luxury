@@ -93085,19 +93085,17 @@ function (_Component) {
       numAdults: "",
       numChildren: "",
       xfrNotes: "",
-      currentPage: [1]
+      currentPage: 0
+    }, _this.handleInputChange = function (event) {
+      var _event$target = event.target,
+          name = _event$target.name,
+          value = _event$target.value;
+
+      _this.setState(_defineProperty({}, name, value));
     }, _temp));
   }
 
   _createClass(BookingPages, [{
-    key: "handleChange",
-    value: function handleChange(event) {
-      var _event$target = event.target,
-          name = _event$target.name,
-          value = _event$target.value;
-      this.setState(_defineProperty({}, name, value));
-    }
-  }, {
     key: "handleSubmit",
     value: function handleSubmit(event) {
       event.preventDefault();
@@ -93106,22 +93104,18 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return (// <div> 
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookingPages_Booking__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          origin: this.state.origin,
-          destination: this.state.destination,
-          xfrDate: this.state.xfrDate,
-          xfrTime: this.state.xfrTime,
-          handleChange: this.state.handleChange
-        }) // <Client 
-        //   firstName={this.state.firstName}
-        // />
-        // <Recap 
-        //   origin={this.state.origin}
-        // />
-        // </div>
-
-      );
+      var steps = [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookingPages_Booking__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        origin: this.state.origin,
+        destination: this.state.destination,
+        xfrDate: this.state.xfrDate,
+        xfrTime: this.state.xfrTime,
+        handleInputChange: this.handleInputChange
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookingPages_Client__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        firstName: this.state.firstName
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookingPages_Recap__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        origin: this.state.origin
+      })];
+      return steps[this.state.currentPage];
     }
   }]);
 
@@ -93175,7 +93169,6 @@ if(false) {}
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Booking; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
@@ -93220,29 +93213,29 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
-        controlId: "start"
+        controlId: "origin"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, null, "Pick Up / Drop Off Information"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
         type: "text",
-        name: "start",
+        name: "origin",
         placeholder: "Pick up",
-        value: this.props.origin // onChange={this.handleChange.bind(this)} 
-
+        value: this.props.origin,
+        onChange: this.props.handleInputChange
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
-        controlId: "end"
+        controlId: "destination"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
         type: "text",
-        name: "end",
+        name: "destination",
         placeholder: "Drop off",
-        value: this.props.destination // onChange={this.handleChange.bind(this)} 
-
+        value: this.props.destination,
+        onChange: this.props.handleInputChange
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Row, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
         controlId: "date"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
         type: "text",
         name: "date",
         placeholder: "Date",
-        value: this.props.xfrDate // onChange={this.handleChange.bind(this)}
-
+        value: this.props.xfrDate,
+        onChange: this.props.handleInputChange
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
         as: react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"],
         controlId: "time"
@@ -93250,8 +93243,8 @@ function (_Component) {
         type: "text",
         name: "time",
         placeholder: "Time",
-        value: this.props.xfrTime // onChange={this.handleChange.bind(this)} 
-
+        value: this.props.xfrTime,
+        onChange: this.props.handleInputChange
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         variant: "primary",
         type: "submit",
@@ -93266,8 +93259,8 @@ function (_Component) {
   return Booking;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-
 ;
+/* harmony default export */ __webpack_exports__["default"] = (Booking);
 
 /***/ }),
 

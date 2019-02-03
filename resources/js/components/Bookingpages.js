@@ -22,14 +22,12 @@ export default class BookingPages extends Component {
     numAdults: "",
     numChildren: "",
     xfrNotes: "",
-    currentPage: [1]
+    currentPage: 0
   }
 
-  handleChange(event) {
-    const {name, value} = event.target;
-    this.setState({
-      [name]:value
-    })
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
   handleSubmit(event) {
@@ -38,23 +36,23 @@ export default class BookingPages extends Component {
   }
 
   render() {
-    return (
-      // <div> 
-        <Booking 
+    const steps = [
+      <Booking 
           origin={this.state.origin}
           destination={this.state.destination}
           xfrDate={this.state.xfrDate}
           xfrTime={this.state.xfrTime}
-          handleChange={this.state.handleChange}
+          handleInputChange={this.handleInputChange}
+        />,
+        <Client 
+          firstName={this.state.firstName}
+        />,
+        <Recap 
+          origin={this.state.origin}
         />
-        // <Client 
-        //   firstName={this.state.firstName}
-        // />
-        // <Recap 
-        //   origin={this.state.origin}
-        // />
-      // </div>
-    )
+    ]
+
+    return steps[this.state.currentPage];
   }
 }
 
