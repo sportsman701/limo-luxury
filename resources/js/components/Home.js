@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Jumbotron, Container } from "react-bootstrap";
 import ReactDOM from 'react-dom';
 
-import "./About.css";
+import './About';
 
 export default class Home extends Component {
   render() {

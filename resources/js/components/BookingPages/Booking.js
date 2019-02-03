@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Jumbotron, Container, Row, Col, Button, Form } from "react-bootstrap";
-import "../Book.css";
+import './Booking.css';
 import Map from '../Map';
 
-class Booking extends Component {
+export default class Booking extends Component {
   render() {
     return (
       <Container>
@@ -81,5 +81,3 @@ class Booking extends Component {
     );
   };
 };
-
-export default Booking;
