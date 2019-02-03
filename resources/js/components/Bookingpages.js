@@ -47,7 +47,10 @@ export default class BookingPages extends Component {
         handleInputChange={this.handleInputChange}
       />,
       <Client 
-        // origin={this.state.origin}
+        origin={this.state.origin}        
+        destination={this.state.destination}
+        xfrDate={this.state.xfrDate}
+        xfrTime={this.state.xfrTime}
         firstName={this.state.firstName}
         lasttName={this.state.firstName}
         cellPhone={this.state.firstName}

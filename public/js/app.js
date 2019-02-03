@@ -93109,8 +93109,11 @@ function (_Component) {
         xfrDate: this.state.xfrDate,
         xfrTime: this.state.xfrTime,
         handleInputChange: this.handleInputChange
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookingPages_Client__WEBPACK_IMPORTED_MODULE_3__["default"] // origin={this.state.origin}
-      , {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookingPages_Client__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        origin: this.state.origin,
+        destination: this.state.destination,
+        xfrDate: this.state.xfrDate,
+        xfrTime: this.state.xfrTime,
         firstName: this.state.firstName,
         lasttName: this.state.firstName,
         cellPhone: this.state.firstName,
@@ -93227,32 +93230,33 @@ function (_Component) {
         placeholder: "Pickup Location",
         value: this.props.origin,
         onChange: this.props.handleInputChange
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Lable, null, "Drop Off Location"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
         controlId: "destination"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, null, "Drop Off Location"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
         type: "text",
         name: "destination",
         placeholder: "Drop Off Location",
         value: this.props.destination,
         onChange: this.props.handleInputChange
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Row, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
+        as: react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"],
+        md: "5",
         controlId: "date"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, null, "Pickup Date"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
         type: "date",
         name: "xfrDate",
-        placeholder: "Date",
         value: this.props.xfrDate,
         onChange: this.props.handleInputChange
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
         as: react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"],
+        md: "5",
         controlId: "time"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, null, "Pickup Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
         type: "time",
         name: "xfrTime",
-        placeholder: "Time",
         value: this.props.xfrTime,
         onChange: this.props.handleInputChange
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         variant: "primary",
         type: "submit",
         value: "submit"
