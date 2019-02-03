@@ -1,21 +1,11 @@
 import React, { Component } from "react";
-import {
-    Jumbotron,
-    Container,
-    Row,
-    Col,
-    Button,
-    Card,
-    ButtonGroup
-} from "react-bootstrap";
+import { Jumbotron, Container, Row, Col, Button, Card, ButtonGroup } from "react-bootstrap";
 import "./Booking.css";
 
 class Recap extends Component {
   render() {
     return (
       <Container>
-        <br />
-        <br />
         <Jumbotron>
           <Row>
             <Col>

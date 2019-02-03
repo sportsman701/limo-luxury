@@ -20,7 +20,7 @@ class Map extends Component {
           containerElement={
             <div
               style={{
-                height: `600px`,
+                height: `450px`,
                 width: '500px'
               }}
             />

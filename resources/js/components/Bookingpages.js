@@ -32,6 +32,18 @@ export default class BookingPages extends Component {
     this.setState({ [name]: value });
   }
   
+  handleNextPageLoad = event => {
+    event.preventDefault();
+    // console.log("'I've been clicked")
+    this.setState({ [name]: this.state.currentPage++ })
+  }
+
+  handlePreviousPageLoad = event => {
+    event.preventDefault();
+    // console.log("I've been clicked")
+    this.setState({ [name]: this.state.currentPage-- })
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     console.log(`Form Value: ${this.state.inputvalue}`)
@@ -45,6 +57,7 @@ export default class BookingPages extends Component {
         xfrDate={this.state.xfrDate}
         xfrTime={this.state.xfrTime}
         handleInputChange={this.handleInputChange}
+        handleNextPageLoad={this.handleNextPageLoad}        
       />,
       <Client 
         origin={this.state.origin}        
@@ -59,6 +72,8 @@ export default class BookingPages extends Component {
         numChildren={this.state.firstName}
         xfrNotes={this.state.firstName}
         handleInputChange={this.handleInputChange}
+        handleNextPageLoad={this.handleNextPageLoad}
+        handleNextPageLoad={this.handleNextPageLoad}
       />,
       <Recap 
         origin={this.state.origin}

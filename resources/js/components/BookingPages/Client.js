@@ -6,8 +6,6 @@ class Client extends Component {
   render() {
     return (
       <Container>
-        <br />
-        <br />
         <Jumbotron>
           
         {/* Vehice Images */}
@@ -91,15 +89,16 @@ class Client extends Component {
                 <Form.Group as={Col} controlId="formGridOrigin">
                   <Form.Label>Pickup Location</Form.Label>
                   <Form.Control
-                    plaintext={this.props.origin}
-                    readOnly                  
+                    value={this.props.origin}
+                    readOnly
+                    style={{ color: "black" }}                  
                   />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGridDestination">
                   <Form.Label>Drop Off Location</Form.Label>
                   <Form.Control 
-                    plaintext={this.props.destination}
+                    value={this.props.destination}
                     readOnly                  
                   />
                 </Form.Group>
@@ -107,7 +106,7 @@ class Client extends Component {
                 <Form.Group as={Col} md="4" controlId="formGridXfrDate">
                   <Form.Label>Pickup Date</Form.Label>
                   <Form.Control 
-                    plaintext={this.props.xfrDate}
+                    value={this.props.xfrDate}
                     readOnly                  
                   />
                 </Form.Group>
@@ -115,7 +114,7 @@ class Client extends Component {
                 <Form.Group as={Col} md="4" controlId="formGridXfrTime">
                   <Form.Label>Pickup Time</Form.Label>
                   <Form.Control 
-                    plaintext={this.props.xfrTime}
+                    value={this.props.xfrTime}
                     readOnly                  
                   />
                 </Form.Group>
@@ -212,8 +211,26 @@ class Client extends Component {
                   </Form.Group>
                 </Form.Row>
 
-                <Button variant="primary" type="submit">
-                    Book it!
+                <Button
+                  variant="primary" 
+                  name="currentPage"
+                  type="submit"
+                  value="submit"
+                  onClick={this.props.handleNextPage}
+                  style={{ margin: "10px" }}
+                >
+                  Book it!
+                </Button>
+
+                <Button 
+                  variant="primary" 
+                  name="currentPage"
+                  type="submit"
+                  value="submit"
+                  onClick={this.props.handlePreviousPageLoad}
+                  style={{ margin: "10px" }}
+                >
+                  Back
                 </Button>
 
               </Form>

@@ -7,8 +7,6 @@ class Booking extends Component {
   render() {   
     return (
       <Container>
-        <br />
-        <br />
         <Jumbotron>
           <Row>
             <Col>
@@ -62,8 +60,11 @@ class Booking extends Component {
 
                 <Button 
                   variant="primary" 
+                  name="currentPage"
                   type="submit" 
-                  value="submit">
+                  value="submit"
+                  onClick={this.props.handleNextPageLoad}
+                >
                   Continue
                 </Button>
               </Form>
@@ -71,8 +72,8 @@ class Booking extends Component {
 
             <Col>
               <Map
-                origin={this.props.origin}
-                destination={this.props.destination}
+                // origin={this.props.origin}
+                // destination={this.props.destination}
               />
             </Col>
           </Row>
