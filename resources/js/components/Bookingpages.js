@@ -22,6 +22,8 @@ export default class BookingPages extends Component {
     numAdults: "",
     numChildren: "",
     xfrNotes: "",
+
+    // Controls what component to render
     currentPage: 0
   }
 
@@ -29,7 +31,7 @@ export default class BookingPages extends Component {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
-
+  
   handleSubmit(event) {
     event.preventDefault();
     console.log(`Form Value: ${this.state.inputvalue}`)
@@ -38,18 +40,26 @@ export default class BookingPages extends Component {
   render() {
     const steps = [
       <Booking 
-          origin={this.state.origin}
-          destination={this.state.destination}
-          xfrDate={this.state.xfrDate}
-          xfrTime={this.state.xfrTime}
-          handleInputChange={this.handleInputChange}
-        />,
-        <Client 
-          firstName={this.state.firstName}
-        />,
-        <Recap 
-          origin={this.state.origin}
-        />
+        origin={this.state.origin}
+        destination={this.state.destination}
+        xfrDate={this.state.xfrDate}
+        xfrTime={this.state.xfrTime}
+        handleInputChange={this.handleInputChange}
+      />,
+      <Client 
+        // origin={this.state.origin}
+        firstName={this.state.firstName}
+        lasttName={this.state.firstName}
+        cellPhone={this.state.firstName}
+        email={this.state.firstName}
+        numAdults={this.state.firstName}
+        numChildren={this.state.firstName}
+        xfrNotes={this.state.firstName}
+        handleInputChange={this.handleInputChange}
+      />,
+      <Recap 
+        origin={this.state.origin}
+      />
     ]
 
     return steps[this.state.currentPage];

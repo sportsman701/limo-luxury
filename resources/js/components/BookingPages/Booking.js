@@ -15,34 +15,33 @@ class Booking extends Component {
               <Form>
 
                 <Form.Group controlId="origin">
-                  <Form.Label>Pick Up / Drop Off Information</Form.Label>
+                  <Form.Label>Pickup Location</Form.Label>
                   <Form.Control
                     type="text"
                     name="origin"
-                    placeholder="Pick up"
+                    placeholder="Pickup Location"
                     value={this.props.origin}
                     onChange={this.props.handleInputChange} 
                   />
                 </Form.Group>
 
+                <Form.Lable>Drop Off Location</Form.Lable>
                 <Form.Group controlId="destination">
                   <Form.Control
                     type="text"
                     name="destination"
-                    placeholder="Drop off"
+                    placeholder="Drop Off Location"
                     value={this.props.destination}
                     onChange={this.props.handleInputChange} 
                   />
                 </Form.Group>
 
-                <br />
-                <br />
-                
                 <Form.Row>
                   <Form.Group controlId="date">
+                    <Form.Label>Pickup Date</Form.Label>
                     <Form.Control
-                      type="text"
-                      name="date"
+                      type="date"
+                      name="xfrDate"
                       placeholder="Date"
                       value={this.props.xfrDate}
                       onChange={this.props.handleInputChange} 
@@ -50,9 +49,10 @@ class Booking extends Component {
                   </Form.Group>
 
                   <Form.Group as={Col} controlId="time">
+                    <Form.Label>Pickup Time</Form.Label>
                     <Form.Control
-                      type="text"
-                      name="time"
+                      type="time"
+                      name="xfrTime"
                       placeholder="Time"
                       value={this.props.xfrTime}
                       onChange={this.props.handleInputChange} 
@@ -60,10 +60,10 @@ class Booking extends Component {
                   </Form.Group>
                 </Form.Row>
 
-                <br></br>
-                <br></br>
-
-                <Button variant="primary" type="submit" value="Submit">
+                <Button 
+                  variant="primary" 
+                  type="submit" 
+                  value="submit">
                   Continue
                 </Button>
               </Form>
