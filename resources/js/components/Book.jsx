@@ -3,7 +3,9 @@ import { Jumbotron, Container, Row, Col, Button, Form } from "react-bootstrap";
 import "./Book.css";
 import ReactDOM from 'react-dom';
 import Map from "./Map.js"
+import DatePicker from "react-date-picker";
 
+// onChange = date => this.setState({ date })
 
 export default class Book extends Component {
 
@@ -12,12 +14,13 @@ export default class Book extends Component {
     this.state = {
         start: '',
         end: '',
-        date: '',
+        date: new Date(),
         time: ''
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 }
+
 
 handleChange (event) {
   const { name, value } = event.target;
@@ -64,14 +67,14 @@ handleSubmit (event){
                 <br />
                 <br />
                 <Form.Row>
-                <Form.Group controlId="date">
+                {/* <Form.Group controlId="date">
                 <Form.Control 
                 type="text" 
                 name="date"
                 placeholder="Date" 
                 value={this.state.date} 
                 onChange={this.handleChange.bind(this)}/>
-                </Form.Group>
+                </Form.Group> */}
 
                 <Form.Group as={Col} controlId="time">
                 <Form.Control 
@@ -81,6 +84,13 @@ handleSubmit (event){
                 value={this.state.time} 
                 onChange={this.handleChange.bind(this)}/>
                 </Form.Group>
+
+                <div> 
+                  <DatePicker
+                  onChange= {this.onChange}
+                  value= {this.state.date}
+                  />
+                </div>
                 </Form.Row>
 
               <br></br>
