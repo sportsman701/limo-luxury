@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { withGoogleMap, GoogleMap, Marker, DirectionsRenderer } from 'react-google-maps'
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, DirectionsRenderer } from 'react-google-maps'
+
 
 class Map extends Component {
   constructor(props) {
@@ -13,7 +14,6 @@ class Map extends Component {
 
         <Marker
         position={{ lat: 28.56, lng: -81.44 }}
-        
         ></Marker>
 
         <Marker
