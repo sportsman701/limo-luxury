@@ -32,6 +32,7 @@
         "react-day-picker": "^7.2.4",
         "react-geocode": "^0.1.2",
         "react-google-autocomplete": "^1.0.18",
-        "react-google-maps": "^9.4.5"
+        "react-google-maps": "^9.4.5",
+        "react-time-picker": "^3.2.0"
     }
 }

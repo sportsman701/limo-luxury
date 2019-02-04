@@ -5423,6 +5423,14 @@ react-calendar@^2.18.0:
     prop-types "^15.6.0"
     react-lifecycles-compat "^3.0.4"
 
+react-clock@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-clock/-/react-clock-2.3.0.tgz#de5c328c7bdcec58348da5c2ccd8d8ca4fc10b76"
+  integrity sha1-3lwyjHvc7Fg0jaXCzNjYyk/BC3Y=
+  dependencies:
+    merge-class-names "^1.1.1"
+    prop-types "^15.6.0"
+
 react-context-toolbox@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/react-context-toolbox/-/react-context-toolbox-2.0.2.tgz#35637287cb23f801e6ed802c2bb7a97e1f04e3fb"
@@ -5545,6 +5553,19 @@ react-prop-types@^0.4.0:
   integrity sha1-+ZsL+0AGkpya8gUefBQUpcdbk9A=
   dependencies:
     warning "^3.0.0"
+
+react-time-picker@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-time-picker/-/react-time-picker-3.2.0.tgz#bac7506aa472473845dbfb012fcf5ad8861b5a8d"
+  integrity sha512-h1Ox1b5Skn0c1zVX/LfTm0Im20Q3rWNb6l+/kuwvPTJhU6wuE7UR6Z3mjtwxM2Nkxu6hssL/7xFS+dtnFu6pQQ==
+  dependencies:
+    detect-element-overflow "^1.1.1"
+    get-user-locale "^1.1.1"
+    make-event-props "^1.1.0"
+    merge-class-names "^1.1.1"
+    prop-types "^15.6.0"
+    react-clock "^2.3.0"
+    react-lifecycles-compat "^3.0.4"
 
 react-transition-group@^2.5.1:
   version "2.5.3"

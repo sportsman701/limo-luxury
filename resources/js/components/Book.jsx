@@ -4,8 +4,10 @@ import "./Book.css";
 import ReactDOM from 'react-dom';
 import Map from "./Map.js"
 import DatePicker from "react-date-picker";
+import TimePicker from "react-time-picker";
 
 // onChange = date => this.setState({ date })
+// onChange = time => this.setState({ time })
 
 export default class Book extends Component {
 
@@ -15,7 +17,7 @@ export default class Book extends Component {
         start: '',
         end: '',
         date: new Date(),
-        time: ''
+        time: '10:00'
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -82,16 +84,22 @@ handleSubmit (event){
                 onChange={this.handleChange.bind(this)}/>
                 </Form.Group> */}
 
-                <Form.Group as={Col} controlId="time">
+                {/* <Form.Group as={Col} controlId="time">
                 <Form.Control 
                 type="text" 
                 name="time"
                 placeholder="Time" 
                 value={this.state.time} 
                 onChange={this.handleChange.bind(this)}/>
-                </Form.Group>
+                </Form.Group> */}
 
                 <div> 
+
+                  <TimePicker
+                    onChange={this.onChange}
+                    value={this.state.time}
+                  />
+
                   <DatePicker
                   onChange= {this.onChange}
                   value= {this.state.date}
