@@ -99861,6 +99861,13 @@ function (_Component) {
       this.setState(_defineProperty({}, name, value));
     }
   }, {
+    key: "handleChange",
+    value: function handleChange(date) {
+      this.setState({
+        startDate: date
+      });
+    }
+  }, {
     key: "handleSubmit",
     value: function handleSubmit(event) {
       console.log('Form Value: ' + this.state.inputvalue);

@@ -29,6 +29,12 @@ handleChange (event) {
   })
 }
 
+handleChange (date) {
+  
+  this.setState({
+      startDate: date
+  });
+}
 handleSubmit (event){
   console.log('Form Value: ' + this.state.inputvalue);
   event.preventDefault();
