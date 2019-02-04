@@ -16,9 +16,9 @@
                     @endif -->
 
                     <!-- <div class="panel-body"> -->
-                        <div id="book">
+                        <div id="booking-pages">
 
-                        <h1>I'm the Booking Route</h1>
+                        <!-- <h1>I'm the Booking Route</h1> -->
 
                         </div>
                     <!-- </div> -->

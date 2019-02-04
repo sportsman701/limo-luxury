@@ -9,7 +9,7 @@ import {
   Card,
   ButtonGroup
 } from "react-bootstrap";
-import "./Vehicles.css";
+import './vehicles.css';
 import ReactDOM from 'react-dom';
 
 export default class Vehicles extends Component {

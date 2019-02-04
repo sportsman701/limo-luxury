@@ -13,9 +13,8 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-require('./components/Example');
 require('./components/About');
-require('./components/Book');
+require('./components/BookingPages');
 require('./components/Reports');
 require('./components/Vehicles');
 require('./components/Home');
