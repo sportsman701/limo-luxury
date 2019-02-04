@@ -93429,7 +93429,17 @@ function (_Component) {
             lng: -81.3792
           },
           defaultZoom: 10
-        });
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_1__["Marker"], {
+          position: {
+            lat: 28.56,
+            lng: -81.44
+          }
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_1__["Marker"], {
+          position: {
+            lat: 28.52,
+            lng: -81.54
+          }
+        }));
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GoogleMapExample, {
         containerElement: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
