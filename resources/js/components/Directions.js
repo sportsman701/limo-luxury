@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, DirectionsRenderer } from 'react-google-maps'
+import { DirectionService, DirectionsRenderer } from 'react-google-maps'
 
 
 export default class Directions extends Component {
-    
+
+
   render() {
     <MapPoints
     origin={this.state.origin} destination={this.state.destination} />

@@ -5622,6 +5622,14 @@ react-overlays@^1.0.0:
     uncontrollable "^6.0.0"
     warning "^4.0.2"
 
+react-places-autocomplete-extended@^6.0.8:
+  version "6.0.8"
+  resolved "https://registry.yarnpkg.com/react-places-autocomplete-extended/-/react-places-autocomplete-extended-6.0.8.tgz#8c19699290d6c8c41ea5fd9d8d5957b80ce1bed1"
+  integrity sha512-UGL06LWojKNd4rMbqgtGpWpPjbddN62COwTCfOCaerXCXExr2Yw/yCD6rJnyuJ3ZsSOp+1zl9PMdsKtl+PrmOg==
+  dependencies:
+    lodash.debounce "^4.0.8"
+    prop-types "^15.5.8"
+
 react-places-autocomplete@^7.2.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/react-places-autocomplete/-/react-places-autocomplete-7.2.0.tgz#85319ff42a1e3e0d2b02cc40471c1e2911e6dfbe"

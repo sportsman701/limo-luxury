@@ -93623,7 +93623,7 @@ function (_Component) {
         origin: this.state.origin,
         destination: this.state.destination
       });
-      DirectionService.route({
+      react_google_maps__WEBPACK_IMPORTED_MODULE_1__["DirectionService"].route({
         origin: this.props.origin,
         destination: this.props.destination,
         travelMode: google.maps.TravelMode.DRIVING
@@ -93636,37 +93636,6 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 
-
-/***/ }),
-
-/***/ "./resources/js/components/Geocoder.js":
-/*!*********************************************!*\
-  !*** ./resources/js/components/Geocoder.js ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// import React, { Component } from 'react'
-// import Geocode from "react-geocode";
-// import Map from "./Map.js"
-// import Bookingpages from "./Bookingpages.js"
-// export default class Geocoder extends Component {
-//   render() {
-//   Geocode.fromAddress(this.props.origin).then(
-//   response => {
-//     const { lat, lng } = response.results[0].geometry.location;
-//     console.log (lat, lng);
-//   },
-//   error =>{
-//     console.log(error);
-//   }
-// );
-//     return (
-//       <div>
-//       </div>
-//     )
-//   }
-// }
 
 /***/ }),
 
@@ -93751,9 +93720,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-google-maps */ "./node_modules/react-google-maps/lib/index.js");
 /* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_google_maps__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Geocoder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Geocoder */ "./resources/js/components/Geocoder.js");
-/* harmony import */ var _Geocoder__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Geocoder__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Directions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Directions */ "./resources/js/components/Directions.js");
+/* harmony import */ var _Directions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Directions */ "./resources/js/components/Directions.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -93771,7 +93738,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 
