@@ -93118,21 +93118,22 @@ function (_Component) {
         xfrTime: this.state.xfrTime,
         handleInputChange: this.handleInputChange,
         handleNextPageLoad: this.handleNextPageLoad
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookingPages_Client__WEBPACK_IMPORTED_MODULE_3__["default"], _defineProperty({
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookingPages_Client__WEBPACK_IMPORTED_MODULE_3__["default"], {
         origin: this.state.origin,
         destination: this.state.destination,
         xfrDate: this.state.xfrDate,
         xfrTime: this.state.xfrTime,
         firstName: this.state.firstName,
-        lasttName: this.state.firstName,
-        cellPhone: this.state.firstName,
-        email: this.state.firstName,
-        numAdults: this.state.firstName,
-        numChildren: this.state.firstName,
-        xfrNotes: this.state.firstName,
+        lasttName: this.state.lastName,
+        cellPhone: this.state.cellPhone,
+        email: this.state.email,
+        numAdults: this.state.numAdults,
+        numChildren: this.state.numChildren,
+        xfrNotes: this.state.xfrNotes,
         handleInputChange: this.handleInputChange,
-        handleNextPageLoad: this.handleNextPageLoad
-      }, "handleNextPageLoad", this.handleNextPageLoad)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookingPages_Recap__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        handleNextPageLoad: this.handleNextPageLoad,
+        handlePreviousPageLoad: this.handlePreviousPageLoad
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookingPages_Recap__WEBPACK_IMPORTED_MODULE_4__["default"], {
         origin: this.state.origin
       })];
       return steps[this.state.currentPage];
@@ -93469,7 +93470,7 @@ function (_Component) {
         name: "currentPage",
         type: "submit",
         value: "submit",
-        onClick: this.props.handleNextPage,
+        onClick: this.props.handleNextPageLoad,
         style: {
           margin: "10px"
         }

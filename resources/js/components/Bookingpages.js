@@ -65,15 +65,15 @@ export default class BookingPages extends Component {
         xfrDate={this.state.xfrDate}
         xfrTime={this.state.xfrTime}
         firstName={this.state.firstName}
-        lasttName={this.state.firstName}
-        cellPhone={this.state.firstName}
-        email={this.state.firstName}
-        numAdults={this.state.firstName}
-        numChildren={this.state.firstName}
-        xfrNotes={this.state.firstName}
+        lasttName={this.state.lastName}
+        cellPhone={this.state.cellPhone}
+        email={this.state.email}
+        numAdults={this.state.numAdults}
+        numChildren={this.state.numChildren}
+        xfrNotes={this.state.xfrNotes}
         handleInputChange={this.handleInputChange}
         handleNextPageLoad={this.handleNextPageLoad}
-        handleNextPageLoad={this.handleNextPageLoad}
+        handlePreviousPageLoad={this.handlePreviousPageLoad}
       />,
       <Recap 
         origin={this.state.origin}
