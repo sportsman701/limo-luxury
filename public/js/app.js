@@ -93026,6 +93026,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _BookingPages_booking__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BookingPages/booking */ "./resources/js/components/BookingPages/booking.js");
 /* harmony import */ var _BookingPages_Client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BookingPages/Client */ "./resources/js/components/BookingPages/Client.js");
 /* harmony import */ var _BookingPages_Recap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./BookingPages/Recap */ "./resources/js/components/BookingPages/Recap.js");
+/* harmony import */ var _Directions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Directions */ "./resources/js/components/Directions.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -93045,6 +93046,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -93521,7 +93523,7 @@ function (_Component) {
         name: "origin",
         placeholder: "Pickup Location",
         value: this.props.origin,
-        onChange: this.props.handleInputChange
+        onSubmit: this.handleFormSubmit
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
         controlId: "destination"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, null, "Drop Off Location"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
@@ -93568,14 +93570,103 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Geocode.js":
-/*!********************************************!*\
-  !*** ./resources/js/components/Geocode.js ***!
-  \********************************************/
+/***/ "./resources/js/components/Directions.js":
+/*!***********************************************!*\
+  !*** ./resources/js/components/Directions.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Directions; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-google-maps */ "./node_modules/react-google-maps/lib/index.js");
+/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_google_maps__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Directions =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Directions, _Component);
+
+  function Directions() {
+    _classCallCheck(this, Directions);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Directions).apply(this, arguments));
+  }
+
+  _createClass(Directions, [{
+    key: "render",
+    value: function render() {
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MapPoints, {
+        origin: this.state.origin,
+        destination: this.state.destination
+      });
+      DirectionService.route({
+        origin: this.props.origin,
+        destination: this.props.destination,
+        travelMode: google.maps.TravelMode.DRIVING
+      }, function (result, status) {});
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+    }
+  }]);
+
+  return Directions;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Geocoder.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Geocoder.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nTypeError: /Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/resources/js/components/Geocode.js: Duplicate declaration \"Geocode\"\n\u001b[0m \u001b[90m  5 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  6 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[36mclass\u001b[39m \u001b[33mGeocode\u001b[39m \u001b[36mextends\u001b[39m \u001b[33mComponent\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  8 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  9 | \u001b[39m  \u001b[0m\n\u001b[0m \u001b[90m 10 | \u001b[39m  render() {\u001b[0m\n    at File.buildCodeFrameError (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/core/lib/transformation/file/file.js:261:12)\n    at Scope.checkBlockScopedCollisions (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/scope/index.js:347:22)\n    at Scope.registerBinding (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/scope/index.js:504:16)\n    at Scope.registerDeclaration (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/scope/index.js:447:12)\n    at Object.BlockScoped (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/scope/index.js:189:28)\n    at Object.newFn (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/visitors.js:230:17)\n    at NodePath._call (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/path/context.js:53:20)\n    at NodePath.call (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/path/context.js:36:14)\n    at NodePath.visit (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/path/context.js:88:12)\n    at TraversalContext.visitQueue (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/context.js:118:16)\n    at TraversalContext.visitSingle (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/context.js:90:19)\n    at TraversalContext.visit (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/context.js:146:19)\n    at Function.traverse.node (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/index.js:94:17)\n    at NodePath.visit (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/path/context.js:95:18)\n    at TraversalContext.visitQueue (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/context.js:118:16)\n    at TraversalContext.visitMultiple (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/context.js:85:17)\n    at TraversalContext.visit (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/context.js:144:19)\n    at Function.traverse.node (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/index.js:94:17)\n    at traverse (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/index.js:76:12)\n    at NodePath.traverse (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/path/index.js:161:24)\n    at Scope.crawl (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/scope/index.js:684:10)\n    at Scope.init (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/scope/index.js:634:32)\n    at NodePath.setScope (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/path/context.js:126:30)\n    at NodePath.setContext (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/traverse/lib/path/context.js:141:8)\n    at new File (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/core/lib/transformation/file/file.js:104:8)\n    at normalizeFile (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/core/lib/transformation/normalize-file.js:141:10)\n    at runSync (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at process.nextTick (/Users/prestonmack/Google Drive/BootcampStuff/Group Projects/Luxury-Limo-Laravel-React/node_modules/@babel/core/lib/transform.js:34:34)\n    at _combinedTickCallback (internal/process/next_tick.js:131:7)\n    at process._tickCallback (internal/process/next_tick.js:180:9)");
+// import React, { Component } from 'react'
+// import Geocode from "react-geocode";
+// import Map from "./Map.js"
+// import Bookingpages from "./Bookingpages.js"
+// export default class Geocoder extends Component {
+//   render() {
+//   Geocode.fromAddress(this.props.origin).then(
+//   response => {
+//     const { lat, lng } = response.results[0].geometry.location;
+//     console.log (lat, lng);
+//   },
+//   error =>{
+//     console.log(error);
+//   }
+// );
+//     return (
+//       <div>
+//       </div>
+//     )
+//   }
+// }
 
 /***/ }),
 
@@ -93660,8 +93751,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-google-maps */ "./node_modules/react-google-maps/lib/index.js");
 /* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_google_maps__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Geocode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Geocode */ "./resources/js/components/Geocode.js");
-/* harmony import */ var _Geocode__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Geocode__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Geocoder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Geocoder */ "./resources/js/components/Geocoder.js");
+/* harmony import */ var _Geocoder__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Geocoder__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Directions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Directions */ "./resources/js/components/Directions.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -93679,6 +93771,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 

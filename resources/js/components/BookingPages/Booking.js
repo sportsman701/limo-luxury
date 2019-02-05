@@ -6,8 +6,6 @@ import Map from '../Map';
 
 class Booking extends Component {
 
-
-
   render() {   
     return (
       <Container>
