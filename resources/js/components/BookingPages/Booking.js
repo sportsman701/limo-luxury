@@ -3,11 +3,16 @@ import { Jumbotron, Container, Row, Col, Button, Form } from "react-bootstrap";
 import './Booking.css';
 import Map from '../Map';
 
+
 class Booking extends Component {
+
+
+
   render() {   
     return (
       <Container>
         <Jumbotron>
+        
           <Row>
             <Col>
               <Form>
@@ -15,14 +20,15 @@ class Booking extends Component {
                 <Form.Group controlId="origin">
                   <Form.Label>Pickup Location</Form.Label>
                   <Form.Control
+                  
                     type="text"
                     name="origin"
                     placeholder="Pickup Location"
                     value={this.props.origin}
-                    onChange={this.props.handleInputChange} 
+                    onSubmit={this.handleFormSubmit}
                   />
                 </Form.Group>
-                
+
                 <Form.Group controlId="destination">
                   <Form.Label>Drop Off Location</Form.Label>
                   <Form.Control
@@ -68,6 +74,9 @@ class Booking extends Component {
                   Continue
                 </Button>
               </Form>
+
+
+ 
             </Col>
 
             <Col>

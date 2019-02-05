@@ -1,12 +1,15 @@
 // import React, { Component } from 'react'
 // import Geocode from "react-geocode";
 // import Map from "./Map.js"
-// import Book from "./Book.js"
+// import Bookingpages from "./Bookingpages.js"
 
-// export default class Geocodejs extends Component {
+
+// export default class Geocode extends Component {
+
+  
 //   render() {
 
-// Geocode.fromAddress(this.props.origin).then(
+//   Geocode.fromAddress(this.props.origin).then(
 //   response => {
 //     const { lat, lng } = response.results[0].geometry.location;
 //     console.log (lat, lng);
@@ -24,3 +27,6 @@
 //     )
 //   }
 // }
+
+
+
