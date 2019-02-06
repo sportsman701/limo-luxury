@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+import Booking from './BookingPages/booking';
 
+// origin={this.props.origin}
 
 export default class GeocodeTry extends Component {
 
+  
+
     constructor(props) {
         super(props)
-        this.state = { address: 'Orlando, FL' }
-        this.onChange = (address) => this.setState({ address })
+        this.state = { origin: '' }
+        this.onChange = (address) => this.setState({ origin })
       }
      
       handleFormSubmit = (event) => {
@@ -21,7 +25,7 @@ export default class GeocodeTry extends Component {
      
       render() {
         const inputProps = {
-          value: this.state.address,
+          value: this.state.origin,
           onChange: this.onChange,
         }
      
