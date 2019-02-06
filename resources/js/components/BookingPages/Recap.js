@@ -39,6 +39,19 @@ class Recap extends Component {
                   Cancel 
                 </Button>
               </ButtonGroup>
+
+
+              <Button 
+                  variant="primary" 
+                  name="currentPage"
+                  type="submit"
+                  value="submit"
+                  onClick={this.props.handlePreviousPageLoad}
+                  style={{ margin: "10px" }}
+                >
+                  Back
+                </Button>
+
             </Col>
           </Row>
         </Jumbotron>

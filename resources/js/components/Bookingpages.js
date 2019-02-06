@@ -77,6 +77,7 @@ export default class BookingPages extends Component {
       />,
       <Recap 
         origin={this.state.origin}
+        handlePreviousPageLoad={this.handlePreviousPageLoad}
       />
     ]
 

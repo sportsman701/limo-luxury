@@ -93134,7 +93134,8 @@ function (_Component) {
         handleNextPageLoad: this.handleNextPageLoad,
         handlePreviousPageLoad: this.handlePreviousPageLoad
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookingPages_Recap__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        origin: this.state.origin
+        origin: this.state.origin,
+        handlePreviousPageLoad: this.handlePreviousPageLoad
       })];
       return steps[this.state.currentPage];
     }
@@ -93557,7 +93558,16 @@ function (_Component) {
         variant: "secondary"
       }, "Edit Details"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         variant: "secondary"
-      }, "Cancel"))))));
+      }, "Cancel")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        variant: "primary",
+        name: "currentPage",
+        type: "submit",
+        value: "submit",
+        onClick: this.props.handlePreviousPageLoad,
+        style: {
+          margin: "10px"
+        }
+      }, "Back")))));
     }
   }]);
 
