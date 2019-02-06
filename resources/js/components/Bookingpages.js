@@ -51,13 +51,13 @@ export default class BookingPages extends Component {
 
   render() {
     const steps = [
-      <Booking 
+      <Booking
         origin={this.state.origin}
         destination={this.state.destination}
         xfrDate={this.state.xfrDate}
         xfrTime={this.state.xfrTime}
         handleInputChange={this.handleInputChange}
-        handleNextPageLoad={this.handleNextPageLoad}        
+        handleNextPageLoad={this.handleNextPageLoad}      
       />,
       <Client 
         origin={this.state.origin}        

@@ -8,6 +8,10 @@ class VehicleController extends Controller
 {
     public function index() 
     {
-        return view('vehicle');
+        $vehicles = Vehicles::all();
+
+        return view('vehicle')->with([
+            'vehicle' => $vehicles
+        ]);
     }
 }
