@@ -23,6 +23,8 @@ class Recap extends Component {
 
             <Col>
               <h2>Details for the ride </h2>
+              <div> <p>origin={this.state.origin} </p> </div>
+              <div> <p>destination={this.state.destination} </p> </div>
               <p>
                   Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit, sed do eiusmod tempor

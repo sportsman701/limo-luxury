@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Booking from './BookingPages/booking';
 import Client from './BookingPages/Client';
 import Recap from './BookingPages/Recap';
-import Directions from './Directions';
+// import Directions from './Directions';
 
 
 export default class BookingPages extends Component {
