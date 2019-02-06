@@ -93050,7 +93050,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
- // import Directions from './Directions';
+
 
 var BookingPages =
 /*#__PURE__*/
@@ -93445,7 +93445,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Img, {
         variant: "top",
         src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Brk8rQnGIa_LRovCmgPmjE9wySCZB7xE5xSC00Z_yFY3Nugx"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, null, "Placeholder"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, null, "Selected car photo ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Details for the ride "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "origin=", this.state.origin, " "), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Posuere sollicitudin aliquam ultrices sagittis. Tincidunt tortor aliquam nulla facilisi."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonGroup"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, null, "Placeholder"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, null, "Selected car photo ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Details for the ride "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Posuere sollicitudin aliquam ultrices sagittis. Tincidunt tortor aliquam nulla facilisi."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonGroup"], {
         size: "sm"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         variant: "secondary"
@@ -93459,6 +93459,39 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Recap);
+{
+  /* <Form>
+  <Form.Group as={Col} controlId="formGridOrigin">
+   <Form.Label>Origin</Form.Label>
+   <Form.Control
+     value={this.props.origin}
+     readOnly
+     style={{ color: "black" }}                  
+   />
+  </Form.Group>
+  <Form.Group as={Col} controlId="formGridDestination">
+  <Form.Label>Destination</Form.Label>
+  <Form.Control 
+   value={this.props.destination}
+   readOnly                  
+  />
+  </Form.Group>
+  <Form.Group as={Col} md="4" controlId="formGridXfrDate">
+  <Form.Label>Pickup Date</Form.Label>
+  <Form.Control 
+   value={this.props.xfrDate}
+   readOnly                  
+  />
+  </Form.Group>
+  <Form.Group as={Col} md="4" controlId="formGridXfrTime">
+  <Form.Label>Pickup Time</Form.Label>
+  <Form.Control 
+  value={this.props.xfrTime}
+  readOnly                  
+  />
+  </Form.Group>
+  </Form> */
+}
 
 /***/ }),
 

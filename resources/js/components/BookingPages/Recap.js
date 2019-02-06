@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Jumbotron, Container, Row, Col, Button, Card, ButtonGroup } from "react-bootstrap";
 import "./Booking.css";
 
+
 class Recap extends Component {
   render() {
     return (
@@ -22,11 +23,10 @@ class Recap extends Component {
             </Col>
 
             <Col>
+
               <h2>Details for the ride </h2>
-              <div> <p>origin={this.state.origin} </p> </div>
-              <div> <p>destination={this.state.destination} </p> </div>
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur
+ 
+                <p>  Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit, sed do eiusmod tempor
                   incididunt ut labore et dolore magna aliqua.
                   Posuere sollicitudin aliquam ultrices sagittis.
@@ -50,3 +50,48 @@ class Recap extends Component {
 }
 
 export default Recap;
+
+
+
+
+
+
+
+
+
+
+{/* <Form>
+<Form.Group as={Col} controlId="formGridOrigin">
+  <Form.Label>Origin</Form.Label>
+  <Form.Control
+    value={this.props.origin}
+    readOnly
+    style={{ color: "black" }}                  
+  />
+</Form.Group>
+
+<Form.Group as={Col} controlId="formGridDestination">
+<Form.Label>Destination</Form.Label>
+<Form.Control 
+  value={this.props.destination}
+  readOnly                  
+/>
+</Form.Group>
+
+<Form.Group as={Col} md="4" controlId="formGridXfrDate">
+<Form.Label>Pickup Date</Form.Label>
+<Form.Control 
+  value={this.props.xfrDate}
+  readOnly                  
+/>
+</Form.Group>
+
+<Form.Group as={Col} md="4" controlId="formGridXfrTime">
+<Form.Label>Pickup Time</Form.Label>
+<Form.Control 
+value={this.props.xfrTime}
+readOnly                  
+/>
+</Form.Group>
+
+</Form> */}
