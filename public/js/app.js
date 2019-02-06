@@ -93134,7 +93134,12 @@ function (_Component) {
         handlePreviousPageLoad: this.handlePreviousPageLoad,
         handleNextPageLoad: this.handleNextPageLoad
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookingPages_Recap__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        origin: this.state.origin
+        origin: this.state.origin,
+        destination: this.state.destination,
+        xfrDate: this.state.xfrDate,
+        xfrTime: this.state.xfrTime,
+        firstName: this.state.firstName,
+        lasttName: this.state.lastName
       })];
       return steps[this.state.currentPage];
     }
