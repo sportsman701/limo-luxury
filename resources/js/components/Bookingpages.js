@@ -90,6 +90,16 @@ export default class BookingPages extends Component {
             />,
             <Recap
                 origin={this.state.origin}
+                destination={this.state.destination}
+                xfrDate={this.state.xfrDate}
+                xfrTime={this.state.xfrTime}
+                firstName={this.state.firstName}
+                lastName={this.state.lastName}
+                cellPhone={this.state.cellPhone}
+                email={this.state.email}
+                numAdults={this.state.numAdults}
+                numChildren={this.state.numChildren}
+                xfrNotes={this.state.xfrNotes}
             />
         ];
 

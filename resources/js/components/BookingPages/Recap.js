@@ -13,14 +13,15 @@ class Recap extends Component {
 
                <h1>  Reservation Details:   </h1>
                <hr />
-               <h4>  Name: {this.props.firstName} </h4> <h4> {this.props.lastName} </h4>
+               <hr />
+               <h4>  Name: {this.props.firstName} {this.props.lastName}  </h4> 
                <h4>  Email:  {this.props.email}    </h4>
                <h4>  Cell Phone: {this.props.cellPhone}  </h4>
                <h4>   Adults: {this.props.numAdults}   </h4>
-               <h4>  Kids: {this.props.numKids}  </h4>
-               <h4>    Notes: {this.props.xfrNotes} </h4>
+               <h4>   Kids: {this.props.numChildren}  </h4>
+               <h4>   Notes: {this.props.xfrNotes} </h4>
                <hr />
-               <h4>   Origin: {this.props.origin} </h4> 
+               <h4>   Origin:  {this.props.origin} </h4> 
                <h4>  Destination:  {this.props.destination} </h4>
                <h4>  Pickup Date: {this.props.xfrDate}  </h4>
                <h4>   Pickup Time: {this.props.xfrTime}   </h4>
