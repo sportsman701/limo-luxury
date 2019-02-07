@@ -100,6 +100,7 @@ export default class BookingPages extends Component {
                 numAdults={this.state.numAdults}
                 numChildren={this.state.numChildren}
                 xfrNotes={this.state.xfrNotes}
+                directions={this.state.directions}
             />
         ];
 

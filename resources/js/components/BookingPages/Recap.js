@@ -13,8 +13,7 @@ class Recap extends Component {
                <Col>
 
                <h1>  Reservation Details:   </h1>
-               <hr />
-               <hr />
+
                <h4>  Name: {this.props.firstName} {this.props.lastName}  </h4> 
                <h4>  Email:  {this.props.email}    </h4>
                <h4>  Cell Phone: {this.props.cellPhone}  </h4>
@@ -35,10 +34,8 @@ class Recap extends Component {
                   <Card.Text>Selected car photo </Card.Text>
                 </Card.Body>
                  </Card>
-
-                    <br />
-
-
+                 <br />
+                 <br />
               </Col>
           </Row>
 
@@ -57,14 +54,15 @@ class Recap extends Component {
                       Edit Details
                     </Button>
                     <Button variant="secondary">
-                      Cancel 
+                      Confirm Details
                     </Button>
                 </ButtonGroup>
               </Col>
 
 
             <Col>
-                <Map />
+            <Map origin={this.props.directions.origin} destination={this.props.directions.destination} />
+
             </Col>
           </Row>    
         </Jumbotron>
