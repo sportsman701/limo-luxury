@@ -15,6 +15,11 @@ class Booking extends Component {
             <Col>
               <Form>
 
+                {/* <GeocodeTry 
+                  origin={this.props.origin}
+                  destination={this.props.destination}
+                /> */}
+
                 <Form.Group controlId="origin">
                   <Form.Label>Pickup Location</Form.Label>
                   <Form.Control
@@ -23,7 +28,7 @@ class Booking extends Component {
                     name="origin"
                     placeholder="Pickup Location"
                     value={this.props.origin}
-                    onSubmit={this.handleFormSubmit}
+                    onChange={this.props.handleInputChange}
                   />
                 </Form.Group>
 
