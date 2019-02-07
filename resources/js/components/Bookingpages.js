@@ -83,6 +83,11 @@ export default class BookingPages extends Component {
         xfrTime={this.state.xfrTime}
         firstName={this.state.firstName}
         lasttName={this.state.lastName}
+        cellPhone={this.state.cellPhone}
+        email={this.state.email}
+        numAdults={this.state.numAdults}
+        numChildren={this.state.numChildren}
+        xfrNotes={this.state.xfrNotes}
       />
     ]
 

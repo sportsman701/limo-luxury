@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Jumbotron, Container, Row, Col, Button, Card, Form, ButtonGroup } from "react-bootstrap";
+import { Jumbotron, Container, Row, Col, Button, Card, ButtonGroup } from "react-bootstrap";
 import "./Booking.css";
 
 
@@ -9,6 +9,24 @@ class Recap extends Component {
       <Container>
         <Jumbotron>
           <Row>
+               <Col>
+
+               <h1>  Reservation Details:   </h1>
+               <hr />
+               <h4>  Name: {this.props.firstName} </h4> <h4> {this.props.lastName} </h4>
+               <h4>  Email:  {this.props.email}    </h4>
+               <h4>  Cell Phone: {this.props.cellPhone}  </h4>
+               <h4>   Adults: {this.props.numAdults}   </h4>
+               <h4>  Kids: {this.props.numKids}  </h4>
+               <h4>    Notes: {this.props.xfrNotes} </h4>
+               <hr />
+               <h4>   Origin: {this.props.origin} </h4> 
+               <h4>  Destination:  {this.props.destination} </h4>
+               <h4>  Pickup Date: {this.props.xfrDate}  </h4>
+               <h4>   Pickup Time: {this.props.xfrTime}   </h4>
+             
+            </Col>
+
             <Col>
               <Card style={{ width: "25rem" }}>
                 <Card.Img
@@ -19,59 +37,22 @@ class Recap extends Component {
                   <Card.Title>Placeholder</Card.Title>
                   <Card.Text>Selected car photo </Card.Text>
                 </Card.Body>
-              </Card>
-            </Col>
+                 </Card>
 
-            <Col>
+                 <ButtonGroup size="sm">
+                      <Button variant="secondary">
+                        Edit Details
+                      </Button>
+                      <Button variant="secondary">
+                        Cancel 
+                      </Button>
+                  </ButtonGroup>
 
-
-
-                <Form>
-                <Form.Group as={Col} controlId="formGridOrigin">
-                  <Form.Label>Origin</Form.Label>
-                  <Form.Control
-                    value={this.props.origin}
-                    readOnly
-                    style={{ color: "black" }}                  
-                  />
-                </Form.Group>
-
-                <Form.Group as={Col} controlId="formGridDestination">
-                <Form.Label>Destination</Form.Label>
-                <Form.Control 
-                  value={this.props.destination}
-                  readOnly                  
-                />
-                </Form.Group>
-
-                <Form.Group as={Col} md="4" controlId="formGridXfrDate">
-                <Form.Label>Pickup Date</Form.Label>
-                <Form.Control 
-                  value={this.props.xfrDate}
-                  readOnly                  
-                />
-                </Form.Group>
-
-                <Form.Group as={Col} md="4" controlId="formGridXfrTime">
-                <Form.Label>Pickup Time</Form.Label>
-                <Form.Control 
-                value={this.props.xfrTime}
-                readOnly                  
-                />
-                </Form.Group>
-
-                </Form>
+              </Col>
 
 
-              <ButtonGroup size="sm">
-                <Button variant="secondary">
-                  Edit Details
-                </Button>
-                <Button variant="secondary">
-                  Cancel 
-                </Button>
-              </ButtonGroup>
-            </Col>
+                
+
           </Row>
         </Jumbotron>
       </Container>
@@ -80,6 +61,15 @@ class Recap extends Component {
 }
 
 export default Recap;
+
+
+
+
+
+
+
+
+
 
 
 
