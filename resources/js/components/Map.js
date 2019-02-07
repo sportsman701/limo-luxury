@@ -2,61 +2,39 @@ import React, { Component } from 'react';
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
 import Directions from './Directions';
 
-
-
 class Map extends Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
+    }
 
-  }
-   render() {
-   const GoogleMapExample = withGoogleMap(props => (
-      <GoogleMap
-        defaultCenter = { { lat: 28.5383, lng: -81.3792 } }
-        defaultZoom = { 10 } >
+    render() {
+        const GoogleMapExample = withGoogleMap(() => {
+            const markers = [];
 
-        <Marker
-        position={{ lat: 28.56, lng: -81.44 }}
-        ></Marker>
+            if (this.props.origin) {
+                const { lat: originLat, lng: originLng } = this.props.origin;
+                markers.push(<Marker key="origin" position={{ lat: originLat, lng: originLng }}/>);
+            }
 
-        <Marker
-        position={{ lat: 28.52, lng: -81.54 }}
-        ></Marker>
+            if (this.props.destination) {
+                const { lat: destinationLat, lng: destinationLng } = this.props.destination;
+                markers.push(<Marker key="destination" position={{ lat: destinationLat, lng: destinationLng }}/>);
+            }
 
-        </GoogleMap>
+            return (
+                <GoogleMap defaultCenter={{ lat: 28.5383, lng: -81.3792 }} defaultZoom={10}>
+                    {markers}
+                </GoogleMap>
+            )
+        });
 
-
-
-    ));
-
-    return (
-      <div>
-        <GoogleMapExample
-          containerElement={
-            <div
-              style={{
-                height: `450px`,
-                width: '500px'
-              }}
+        return (
+            <GoogleMapExample
+                containerElement={<div style={{ height: `450px`, width: '500px' }}/>}
+                mapElement={<div style={{ height: `100%` }}/>}
             />
-          }
-          mapElement={
-            <div
-              style={{
-                height: `100%`
-              }}
-            />
-          }
-        />
-
-        <div>
-          <h3>{this.props.origin}</h3>
-          <h3>{this.props.destination}</h3>
-        </div>
-
-      </div>
-    );
-  }
+        );
+    }
 };
 
 export default Map;

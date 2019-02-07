@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXBh0Pf9RVhVuXh6YzaTHZJPDx_LSQgB0"></script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAXBh0Pf9RVhVuXh6YzaTHZJPDx_LSQgB0"></script>
 <!-- <div class="container"> -->
     <!-- <div class="row justify-content-center">
         <div class="col-md-8">
