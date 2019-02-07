@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Jumbotron, Container, Row, Col, Button, Card, ButtonGroup } from "react-bootstrap";
 import "./Booking.css";
+import Map from '../Map';
 
 
 class Recap extends Component {
@@ -20,11 +21,6 @@ class Recap extends Component {
                <h4>   Adults: {this.props.numAdults}   </h4>
                <h4>   Kids: {this.props.numChildren}  </h4>
                <h4>   Notes: {this.props.xfrNotes} </h4>
-               <hr />
-               <h4>   Origin:  {this.props.origin} </h4> 
-               <h4>  Destination:  {this.props.destination} </h4>
-               <h4>  Pickup Date: {this.props.xfrDate}  </h4>
-               <h4>   Pickup Time: {this.props.xfrTime}   </h4>
              
             </Col>
 
@@ -40,21 +36,37 @@ class Recap extends Component {
                 </Card.Body>
                  </Card>
 
-                 <ButtonGroup size="sm">
-                      <Button variant="secondary">
-                        Edit Details
-                      </Button>
-                      <Button variant="secondary">
-                        Cancel 
-                      </Button>
-                  </ButtonGroup>
+                    <br />
 
+
+              </Col>
+          </Row>
+
+          <Row>
+
+              <Col>
+              <h4>   Origin:  {this.props.origin} </h4> 
+              <h4>  Destination:  {this.props.destination} </h4>
+              <h4>  Pickup Date: {this.props.xfrDate}  </h4>
+              <h4>   Pickup Time: {this.props.xfrTime}   </h4>
+
+              <br />
+
+                <ButtonGroup size="sm">
+                    <Button variant="secondary">
+                      Edit Details
+                    </Button>
+                    <Button variant="secondary">
+                      Cancel 
+                    </Button>
+                </ButtonGroup>
               </Col>
 
 
-                
-
-          </Row>
+            <Col>
+                <Map />
+            </Col>
+          </Row>    
         </Jumbotron>
       </Container>
     );
@@ -62,6 +74,10 @@ class Recap extends Component {
 }
 
 export default Recap;
+
+
+
+
 
 
 
