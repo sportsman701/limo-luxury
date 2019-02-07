@@ -216,7 +216,7 @@ class Client extends Component {
                   name="currentPage"
                   type="submit"
                   value="submit"
-                  onClick={this.props.handleNextPage}
+                  onClick={this.props.handleNextPageLoad}
                   style={{ margin: "10px" }}
                 >
                   Book it!
