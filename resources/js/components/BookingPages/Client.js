@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import { Jumbotron, Container, Row, Col, Button, Form, Card, ButtonGroup, InputGroup } from "react-bootstrap";
 import "./Booking.css";
 import Vehicles from "../../Vehicles.json";
+import VehicleCard from "./../VehicleCard";
 
 class Client extends Component {
 
   state = {
-      Vehicles,
+    
+  Vehicles,
   };
-
+VehicleCard
 
   render() {
     return (

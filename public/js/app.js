@@ -9108,6 +9108,25 @@ exports.push([module.i, ".Row  {\n    text-align: center;\n    background: trans
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/VehicleCard.css":
+/*!*********************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/VehicleCard.css ***!
+  \*********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".card {\n    background: #fff;\n    border-radius: 10px;\n    height: 250px;\n    margin: 1px;;\n    position: relative;\n    width: 250px;\n    box-shadow: 0 3px 5px #999, 0 3px 5px #999;\n    text-align: left;\n    margin: 10px;\n  }\n  \n  .card > .img-container {\n    height: 100%;\n    overflow: hidden;\n    text-align: center;\n    background:white;\n    margin-top:20px;\n  }\n  .card > .img-container > img {\n    width: 80%\n  }\n  \n  .card > .content {\n    padding-left: 1px;;\n    padding-right: 1px;\n    font-size: 15px;\n  }\n  \n  .card > .content > ul {\n    list-style-type: none;\n  }\n  \n  .card > .content > ul > li {\n    margin-top: 10px;\n  }\n  \n  \n  \n  ", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/vehicles.css":
 /*!******************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/vehicles.css ***!
@@ -94302,6 +94321,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Booking_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Booking_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Vehicles_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Vehicles.json */ "./resources/js/Vehicles.json");
 var _Vehicles_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../Vehicles.json */ "./resources/js/Vehicles.json", 1);
+/* harmony import */ var _VehicleCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../VehicleCard */ "./resources/js/components/VehicleCard.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -94319,6 +94339,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -94350,7 +94371,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, this.state.Vehicles.map(function (Vehicles) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(VehicleCard, {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_VehicleCard__WEBPACK_IMPORTED_MODULE_4__["default"], {
           id: Vehicles.id,
           name: Vehicles.name,
           image: Vehicles.image,
@@ -95200,6 +95221,96 @@ function (_Component) {
 if (document.getElementById('search')) {
   react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Search, null), document.getElementById('search'));
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/VehicleCard.css":
+/*!*************************************************!*\
+  !*** ./resources/js/components/VehicleCard.css ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/postcss-loader/src??ref--6-2!./VehicleCard.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/VehicleCard.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/VehicleCard.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/VehicleCard.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _VehicleCard_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VehicleCard.css */ "./resources/js/components/VehicleCard.css");
+/* harmony import */ var _VehicleCard_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_VehicleCard_css__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function VehicleCard(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "img-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    alt: props.name,
+    src: props.image
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "content"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Name:"), " ", props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Description:"), " ", props.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Capacity:"), " ", props.capacity), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Quantity:"), " ", props.quantity))));
+} // import React from "react";
+// import "./style.css";
+// function FriendCard(props) {
+//   return (
+//     <div className="card">
+//       <div className="img-container">
+//         <img alt={props.name} src={props.image} />
+//       </div>
+//       <div className="content">
+//         <ul>
+//           <li>
+//             <strong>Name:</strong> {props.name}
+//           </li>
+//           <li>
+//             <strong>Occupation:</strong> {props.occupation}
+//           </li>
+//           <li>
+//             <strong>Location:</strong> {props.location}
+//           </li>
+//         </ul>
+//       </div>
+//       <span onClick={() => props.removeFriend(props.id)} className="remove">
+//         𝘅
+//       </span>
+//     </div>
+//   );
+// }
+
+
+/* harmony default export */ __webpack_exports__["default"] = (VehicleCard);
 
 /***/ }),
 
