@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Vehicle extends Migration
+class CreateVehiclesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class Vehicle extends Migration
      */
     public function up()
     {
-        Schema::create('vehicles', function(Blueprint $table) {
-            $table->increments('id')->nullable($value = false);
+        Schema::create('vehicles', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('type')->nullable($value = false);
             $table->text('description')->nullable($value = false);
             $table->integer('qty')->nullable($value = false);
@@ -24,8 +24,6 @@ class Vehicle extends Migration
             $table->string('base_rate')->nullable($value = false);
             $table->string('mileage_rate')->nullable($value = false);
             $table->timestamps();
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
