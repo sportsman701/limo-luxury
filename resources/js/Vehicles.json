@@ -2,39 +2,36 @@
     {
       "id": 1,
       "name": "Hummer H2 Stretch Limousine",
-      "capacity": 10,
       "image": "https://www.orlandolimoride.com/images/fleet/hummer/hummer3.jpg",
       "description": "The Hummer H2 Stretch Limousine is the luxury way to transport 10 of your closest friends to your party or event. Plentiful luggage capacity and leather seats make this ride vesitile as well. ",
+      "capacity": 10,
       "quantity": 3
       
     },
     {
       "id": 2,
       "name": "Lincoln Towncar",
-      "capacity": 4,
       "image": "https://www.orlandolimoride.com/images/fleet/towncar/lt1.jpg",
       "description": "The Lincoln Towncar is the quintessential American executive car. A popular choice for business and pleasure alike, our Towncar can take you to your destination in air-conditioned comfort. ",
-
+      "capacity": 4,
       "quantity": 4
       
     },
     {
       "id": 3,
       "name": "Mercedes Benz Sprinter",
-      "capacity": 22,
       "image": "https://www.orlandolimoride.com/images/fleet/van/van1.jpg",
       "description": " With the quality you've come to expect from Mercedes-Benz, the Sprinter Passenger Van delivers the ultimate comfort for drivers and passengers alike. ",
-
+      "capacity": 22,
       "quantity": 3
   
     },
     {
       "id": 4,
       "name": "Limo Bus",
-      "capacity": 30,
       "image": "https://www.orlandolimoride.com/images/fleet/bus/bus1.jpg",
       "description": "A limousine bus is the perfectly balanced way to travel, you have the benefit of a sophisticated exterior of a limousine while having all of the fun. amenities, and spacious room of a party bus. ",
-
+      "capacity": 30,
       "quantity": 2
       
     }
