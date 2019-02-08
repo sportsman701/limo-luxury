@@ -1,5 +1,6 @@
 import React from 'react';
 import "./VehicleCard.css";
+import { Button } from "react-bootstrap";
 
 
 
@@ -19,13 +20,18 @@ function VehicleCard(props){
             <li>
               <strong>Description:</strong> {props.description}
             </li>
-            <li>
-              <strong>Capacity:</strong> {props.capacity}
-            </li>
-            <li>
-              <strong>Quantity:</strong> {props.quantity}
-            </li>
           </ul>
+
+        <div class="text-center">
+          <Button
+                  variant="primary"
+                  name="VehicleSelect"
+                  type="submit"
+                  value="submit"
+                  onClick= "test">
+                  SELECT
+          </Button>
+          </div>
         </div>
 
       </div>

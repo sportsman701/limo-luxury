@@ -9120,7 +9120,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card {\n    background: #fff;\n    border-radius: 10px;\n    height: 250px;\n    margin: 1px;;\n    position: relative;\n    width: 250px;\n    box-shadow: 0 3px 5px #999, 0 3px 5px #999;\n    text-align: left;\n    margin: 10px;\n  }\n  \n  .card > .img-container {\n    height: 100%;\n    overflow: hidden;\n    text-align: center;\n    background:white;\n    margin-top:20px;\n  }\n  .card > .img-container > img {\n    width: 80%\n  }\n  \n  .card > .content {\n    padding-left: 1px;;\n    padding-right: 1px;\n    font-size: 15px;\n  }\n  \n  .card > .content > ul {\n    list-style-type: none;\n  }\n  \n  .card > .content > ul > li {\n    margin-top: 10px;\n  }\n  \n  \n  \n  ", ""]);
+exports.push([module.i, ".card {\n    background: #fff;\n    border-radius: 10px;\n    height: 500px;\n    margin: 1px;;\n    position: relative;\n    width: 500px;\n    box-shadow: 0 3px 5px #999, 0 3px 5px #999;\n    text-align: left;\n    margin: 10px;\n    padding-right: 15px;\n    \n  }\n  \n  .card > .img-container {\n    height: 100%;\n    overflow: hidden;\n    text-align: center;\n    background:white;\n    margin-top:20px;\n  }\n  .card > .img-container > img {\n    width: 80%\n  }\n  \n  .card > .content {\n    padding-left: 1px;;\n    padding-right: 1px;\n    font-size: 18px;\n  }\n  \n  .card > .content > ul {\n    list-style-type: none;\n  }\n  \n  .card > .content > ul > li {\n    margin-top: 10px;\n  }\n\n .text-center{\n   padding-bottom: 15px;\n }\n  \n  \n  \n  ", ""]);
 
 // exports
 
@@ -93827,7 +93827,7 @@ module.exports = function(module) {
 /*! exports provided: 0, 1, 2, 3, default */
 /***/ (function(module) {
 
-module.exports = [{"id":1,"name":"Hummer H2 Stretch Limousine","image":"https://www.orlandolimoride.com/images/fleet/hummer/hummer3.jpg","description":"The Hummer H2 Stretch Limousine is the luxury way to transport 10 of your closest friends to your party or event. Plentiful luggage capacity and leather seats make this ride vesitile as well. ","capacity":10,"quantity":3},{"id":2,"name":"Lincoln Towncar","image":"https://www.orlandolimoride.com/images/fleet/towncar/lt1.jpg","description":"The Lincoln Towncar is the quintessential American executive car. A popular choice for business and pleasure alike, our Towncar can take you to your destination in air-conditioned comfort. ","capacity":4,"quantity":4},{"id":3,"name":"Mercedes Benz Sprinter","image":"https://www.orlandolimoride.com/images/fleet/van/van1.jpg","description":" With the quality you've come to expect from Mercedes-Benz, the Sprinter Passenger Van delivers the ultimate comfort for drivers and passengers alike. ","capacity":22,"quantity":3},{"id":4,"name":"Limo Bus","image":"https://www.orlandolimoride.com/images/fleet/bus/bus1.jpg","description":"A limousine bus is the perfectly balanced way to travel, you have the benefit of a sophisticated exterior of a limousine while having all of the fun. amenities, and spacious room of a party bus. ","capacity":30,"quantity":2}];
+module.exports = [{"id":1,"name":"Hummer H2 Stretch Limousine","image":"https://www.orlandolimoride.com/images/fleet/hummer/hummer3.jpg","description":"The Hummer H2 Stretch Limousine is the luxury way to transport your closest friends to any event. Capacity is 10 passengers","capacity":10,"quantity":3},{"id":2,"name":"Lincoln Towncar","image":"https://www.orlandolimoride.com/images/fleet/towncar/lt1.jpg","description":"The Lincoln Towncar is the quintessential American executive car. A popular choice for business and pleasure alike, our Towncar can take you to your destination in air-conditioned comfort. Capacity is 4 passengers ","capacity":4,"quantity":4},{"id":3,"name":"Mercedes Benz Sprinter","image":"https://www.orlandolimoride.com/images/fleet/van/van1.jpg","description":" With the quality you've come to expect from Mercedes-Benz, the Sprinter Passenger Van delivers the ultimate comfort for drivers and passengers alike. Capacity is 20 passengers ","capacity":22,"quantity":3},{"id":4,"name":"Limo Bus","image":"https://www.orlandolimoride.com/images/fleet/bus/bus1.jpg","description":"A limousine bus is the perfectly balanced way to travel, you have the benefit of a sophisticated exterior of a limousine while having all of the fun. amenities, and spacious room of a party bus. Capacity is 30 passengers ","capacity":30,"quantity":2}];
 
 /***/ }),
 
@@ -95267,6 +95267,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _VehicleCard_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VehicleCard.css */ "./resources/js/components/VehicleCard.css");
 /* harmony import */ var _VehicleCard_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_VehicleCard_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+
 
 
 
@@ -95280,7 +95282,15 @@ function VehicleCard(props) {
     src: props.image
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "content"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Name:"), " ", props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Description:"), " ", props.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Capacity:"), " ", props.capacity), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Quantity:"), " ", props.quantity))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Name:"), " ", props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Description:"), " ", props.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    class: "text-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    variant: "primary",
+    name: "VehicleSelect",
+    type: "submit",
+    value: "submit",
+    onClick: "test"
+  }, "SELECT"))));
 } // import React from "react";
 // import "./style.css";
 // function FriendCard(props) {
