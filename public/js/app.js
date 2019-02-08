@@ -93801,6 +93801,17 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/Vehicles.json":
+/*!************************************!*\
+  !*** ./resources/js/Vehicles.json ***!
+  \************************************/
+/*! exports provided: 0, 1, 2, 3, default */
+/***/ (function(module) {
+
+module.exports = [{"id":1,"name":"Hummer H2 Stretch Limousine","image":"https://www.orlandolimoride.com/images/fleet/hummer/hummer3.jpg","description":"The Hummer H2 Stretch Limousine is the luxury way to transport 10 of your closest friends to your party or event. Plentiful luggage capacity and leather seats make this ride vesitile as well. ","capacity":10,"quantity":3},{"id":2,"name":"Lincoln Towncar","image":"https://www.orlandolimoride.com/images/fleet/towncar/lt1.jpg","description":"The Lincoln Towncar is the quintessential American executive car. A popular choice for business and pleasure alike, our Towncar can take you to your destination in air-conditioned comfort. ","capacity":4,"quantity":4},{"id":3,"name":"Mercedes Benz Sprinter","image":"https://www.orlandolimoride.com/images/fleet/van/van1.jpg","description":" With the quality you've come to expect from Mercedes-Benz, the Sprinter Passenger Van delivers the ultimate comfort for drivers and passengers alike. ","capacity":22,"quantity":3},{"id":4,"name":"Limo Bus","image":"https://www.orlandolimoride.com/images/fleet/bus/bus1.jpg","description":"A limousine bus is the perfectly balanced way to travel, you have the benefit of a sophisticated exterior of a limousine while having all of the fun. amenities, and spacious room of a party bus. ","capacity":30,"quantity":2}];
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -94289,7 +94300,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
 /* harmony import */ var _Booking_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Booking.css */ "./resources/js/components/BookingPages/Booking.css");
 /* harmony import */ var _Booking_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Booking_css__WEBPACK_IMPORTED_MODULE_2__);
-!(function webpackMissingModule() { var e = new Error("Cannot find module './Vehicles.json'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _Vehicles_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Vehicles.json */ "./resources/js/Vehicles.json");
+var _Vehicles_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../Vehicles.json */ "./resources/js/Vehicles.json", 1);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -94330,7 +94342,7 @@ function (_Component) {
     }
 
     return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Client)).call.apply(_getPrototypeOf2, [this].concat(args))), _this.state = {
-      Vehicles: !(function webpackMissingModule() { var e = new Error("Cannot find module './Vehicles.json'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())
+      Vehicles: _Vehicles_json__WEBPACK_IMPORTED_MODULE_3__
     }, _temp));
   }
 

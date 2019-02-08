@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Jumbotron, Container, Row, Col, Button, Form, Card, ButtonGroup, InputGroup } from "react-bootstrap";
 import "./Booking.css";
-import Vehicles from "./Vehicles.json";
+import Vehicles from "../../Vehicles.json";
 
 class Client extends Component {
 
