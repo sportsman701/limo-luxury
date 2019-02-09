@@ -20,51 +20,40 @@ class Recap extends Component {
                <h4>   Adults: {this.props.numAdults}   </h4>
                <h4>   Kids: {this.props.numChildren}  </h4>
                <h4>   Notes: {this.props.xfrNotes} </h4>
-             
-            </Col>
-
-            <Col>
-              <Card style={{ width: "25rem" }}>
-                <Card.Img
-                    variant="top"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Brk8rQnGIa_LRovCmgPmjE9wySCZB7xE5xSC00Z_yFY3Nugx"
-                />
-                <Card.Body>
-                  <Card.Title>Placeholder</Card.Title>
-                  <Card.Text>Selected car photo </Card.Text>
-                </Card.Body>
-                 </Card>
-                 <br />
-                 <br />
-              </Col>
-          </Row>
-
-          <Row>
-
-              <Col>
-              <h4>   Origin:  {this.props.origin} </h4> 
+               <hr />
+               <h4>   Origin:  {this.props.origin} </h4> 
               <h4>  Destination:  {this.props.destination} </h4>
               <h4>  Pickup Date: {this.props.xfrDate}  </h4>
               <h4>   Pickup Time: {this.props.xfrTime}   </h4>
 
-              <br />
+              <div class="text-center">
+          <Button
+                  variant="primary"
+                  name="Edit"
+                  type="submit"
+                  value="submit"
+                  onClick= "test">
+                  EDIT 
+          </Button>
 
-                <ButtonGroup size="sm">
-                    <Button variant="secondary">
-                      Edit Details
-                    </Button>
-                    <Button variant="secondary">
-                      Confirm Details
-                    </Button>
-                </ButtonGroup>
-              </Col>
-
+          <Button
+                  variant="primary"
+                  name="Confirm"
+                  type="submit"
+                  value="submit"
+                  onClick= "test">
+                  CONFIRM
+          </Button>
+          </div>
+             
+            </Col>
 
             <Col>
-            <Map origin={this.props.directions.origin} destination={this.props.directions.destination} />
-
+                <Map origin={this.props.directions.origin} destination={this.props.directions.destination} />
             </Col>
-          </Row>    
+          </Row>
+
+  
         </Jumbotron>
       </Container>
     );
