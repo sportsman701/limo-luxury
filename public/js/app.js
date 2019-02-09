@@ -9101,7 +9101,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".Row  {\n    text-align: center;\n    background: transparent;\n    \n    }\n\n .jumbotron{\n\n        border-radius: 20px;\n        border: 2px lightgrey solid;\n}\n\n\n.Card{\n    height:1000px;\n}", ""]);
+exports.push([module.i, ".Row  {\n    text-align: center;\n    background: transparent;\n    \n    }\n\n .jumbotron{\n\n        border-radius: 20px;\n        border: 2px lightgrey solid;\n}\n\n\n.Card{\n    height:1000px;\n}\n\nButton{\n\n}", ""]);
 
 // exports
 
@@ -94618,21 +94618,11 @@ function (_Component) {
   _createClass(Recap, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "  Reservation Details:   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Name: ", this.props.firstName, " ", this.props.lastName, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Email:  ", this.props.email, "    "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Cell Phone: ", this.props.cellPhone, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Adults: ", this.props.numAdults, "   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Kids: ", this.props.numChildren, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Notes: ", this.props.xfrNotes, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Origin:  ", this.props.origin, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Destination:  ", this.props.destination, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Pickup Date: ", this.props.xfrDate, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Pickup Time: ", this.props.xfrTime, "   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        class: "text-center"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        variant: "primary",
-        name: "Edit",
-        type: "submit",
-        value: "submit",
-        onClick: "test"
-      }, "EDIT"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        variant: "primary",
-        name: "Confirm",
-        type: "submit",
-        value: "submit",
-        onClick: "test"
-      }, "CONFIRM"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Map__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "  Reservation Details:   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Name: ", this.props.firstName, " ", this.props.lastName, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Email:  ", this.props.email, "    "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Cell Phone: ", this.props.cellPhone, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Adults: ", this.props.numAdults, "   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Kids: ", this.props.numChildren, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Notes: ", this.props.xfrNotes, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Origin:  ", this.props.origin, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Destination:  ", this.props.destination, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Pickup Date: ", this.props.xfrDate, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Pickup Time: ", this.props.xfrTime, "   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonToolbar"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        variant: "primary"
+      }, "Edit Reservation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        variant: "primary"
+      }, "Confirm Reservation"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Map__WEBPACK_IMPORTED_MODULE_3__["default"], {
         origin: this.props.directions.origin,
         destination: this.props.directions.destination
       })))));

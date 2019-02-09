@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Jumbotron, Container, Row, Col, Button, Card, ButtonGroup } from "react-bootstrap";
+import { Jumbotron, Container, Row, Col, Button, ButtonToolbar } from "react-bootstrap";
 import "./Booking.css";
 import Map from '../Map';
 
@@ -26,25 +26,17 @@ class Recap extends Component {
               <h4>  Pickup Date: {this.props.xfrDate}  </h4>
               <h4>   Pickup Time: {this.props.xfrTime}   </h4>
 
-              <div class="text-center">
-          <Button
-                  variant="primary"
-                  name="Edit"
-                  type="submit"
-                  value="submit"
-                  onClick= "test">
-                  EDIT 
-          </Button>
+              <hr />
+              
+          <ButtonToolbar>
+   
+              <Button variant="primary">Edit Reservation</Button>
+              <Button variant="primary">Confirm Reservation</Button>
 
-          <Button
-                  variant="primary"
-                  name="Confirm"
-                  type="submit"
-                  value="submit"
-                  onClick= "test">
-                  CONFIRM
-          </Button>
-          </div>
+          </ButtonToolbar>
+
+ 
+         
              
             </Col>
 
