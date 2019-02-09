@@ -8874,6 +8874,25 @@ exports.push([module.i, ".Row  {\n    text-align: center;\n    background: trans
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/VehicleCard.css":
+/*!*********************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/VehicleCard.css ***!
+  \*********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".card {\n    background: #fff;\n    border-radius: 10px;\n    height: 500px;\n    margin: 1px;;\n    position: relative;\n    width: 500px;\n    box-shadow: 0 3px 5px #999, 0 3px 5px #999;\n    text-align: left;\n    margin: 10px;\n    padding-right: 15px;\n    \n  }\n  \n  .card > .img-container {\n    height: 100%;\n    overflow: hidden;\n    text-align: center;\n    background:white;\n    margin-top:20px;\n  }\n  .card > .img-container > img {\n    width: 80%\n  }\n  \n  .card > .content {\n    padding-left: 1px;;\n    padding-right: 1px;\n    font-size: 18px;\n  }\n  \n  .card > .content > ul {\n    list-style-type: none;\n  }\n  \n  .card > .content > ul > li {\n    margin-top: 10px;\n  }\n\n .text-center{\n   padding-bottom: 15px;\n }\n  \n  \n  \n  ", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/vehicles.css":
 /*!******************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/vehicles.css ***!
@@ -20761,6 +20780,395 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
+
+/***/ }),
+
+/***/ "./node_modules/lodash.debounce/index.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash.debounce/index.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {/**
+ * lodash (Custom Build) <https://lodash.com/>
+ * Build: `lodash modularize exports="npm" -o ./`
+ * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */
+
+/** Used as the `TypeError` message for "Functions" methods. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/** Used as references for various `Number` constants. */
+var NAN = 0 / 0;
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/** Used to match leading and trailing whitespace. */
+var reTrim = /^\s+|\s+$/g;
+
+/** Used to detect bad signed hexadecimal string values. */
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+/** Used to detect binary string values. */
+var reIsBinary = /^0b[01]+$/i;
+
+/** Used to detect octal string values. */
+var reIsOctal = /^0o[0-7]+$/i;
+
+/** Built-in method references without a dependency on `root`. */
+var freeParseInt = parseInt;
+
+/** Detect free variable `global` from Node.js. */
+var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = freeGlobal || freeSelf || Function('return this')();
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeMax = Math.max,
+    nativeMin = Math.min;
+
+/**
+ * Gets the timestamp of the number of milliseconds that have elapsed since
+ * the Unix epoch (1 January 1970 00:00:00 UTC).
+ *
+ * @static
+ * @memberOf _
+ * @since 2.4.0
+ * @category Date
+ * @returns {number} Returns the timestamp.
+ * @example
+ *
+ * _.defer(function(stamp) {
+ *   console.log(_.now() - stamp);
+ * }, _.now());
+ * // => Logs the number of milliseconds it took for the deferred invocation.
+ */
+var now = function() {
+  return root.Date.now();
+};
+
+/**
+ * Creates a debounced function that delays invoking `func` until after `wait`
+ * milliseconds have elapsed since the last time the debounced function was
+ * invoked. The debounced function comes with a `cancel` method to cancel
+ * delayed `func` invocations and a `flush` method to immediately invoke them.
+ * Provide `options` to indicate whether `func` should be invoked on the
+ * leading and/or trailing edge of the `wait` timeout. The `func` is invoked
+ * with the last arguments provided to the debounced function. Subsequent
+ * calls to the debounced function return the result of the last `func`
+ * invocation.
+ *
+ * **Note:** If `leading` and `trailing` options are `true`, `func` is
+ * invoked on the trailing edge of the timeout only if the debounced function
+ * is invoked more than once during the `wait` timeout.
+ *
+ * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
+ * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+ *
+ * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
+ * for details over the differences between `_.debounce` and `_.throttle`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to debounce.
+ * @param {number} [wait=0] The number of milliseconds to delay.
+ * @param {Object} [options={}] The options object.
+ * @param {boolean} [options.leading=false]
+ *  Specify invoking on the leading edge of the timeout.
+ * @param {number} [options.maxWait]
+ *  The maximum time `func` is allowed to be delayed before it's invoked.
+ * @param {boolean} [options.trailing=true]
+ *  Specify invoking on the trailing edge of the timeout.
+ * @returns {Function} Returns the new debounced function.
+ * @example
+ *
+ * // Avoid costly calculations while the window size is in flux.
+ * jQuery(window).on('resize', _.debounce(calculateLayout, 150));
+ *
+ * // Invoke `sendMail` when clicked, debouncing subsequent calls.
+ * jQuery(element).on('click', _.debounce(sendMail, 300, {
+ *   'leading': true,
+ *   'trailing': false
+ * }));
+ *
+ * // Ensure `batchLog` is invoked once after 1 second of debounced calls.
+ * var debounced = _.debounce(batchLog, 250, { 'maxWait': 1000 });
+ * var source = new EventSource('/stream');
+ * jQuery(source).on('message', debounced);
+ *
+ * // Cancel the trailing debounced invocation.
+ * jQuery(window).on('popstate', debounced.cancel);
+ */
+function debounce(func, wait, options) {
+  var lastArgs,
+      lastThis,
+      maxWait,
+      result,
+      timerId,
+      lastCallTime,
+      lastInvokeTime = 0,
+      leading = false,
+      maxing = false,
+      trailing = true;
+
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  wait = toNumber(wait) || 0;
+  if (isObject(options)) {
+    leading = !!options.leading;
+    maxing = 'maxWait' in options;
+    maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
+    trailing = 'trailing' in options ? !!options.trailing : trailing;
+  }
+
+  function invokeFunc(time) {
+    var args = lastArgs,
+        thisArg = lastThis;
+
+    lastArgs = lastThis = undefined;
+    lastInvokeTime = time;
+    result = func.apply(thisArg, args);
+    return result;
+  }
+
+  function leadingEdge(time) {
+    // Reset any `maxWait` timer.
+    lastInvokeTime = time;
+    // Start the timer for the trailing edge.
+    timerId = setTimeout(timerExpired, wait);
+    // Invoke the leading edge.
+    return leading ? invokeFunc(time) : result;
+  }
+
+  function remainingWait(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime,
+        result = wait - timeSinceLastCall;
+
+    return maxing ? nativeMin(result, maxWait - timeSinceLastInvoke) : result;
+  }
+
+  function shouldInvoke(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime;
+
+    // Either this is the first call, activity has stopped and we're at the
+    // trailing edge, the system time has gone backwards and we're treating
+    // it as the trailing edge, or we've hit the `maxWait` limit.
+    return (lastCallTime === undefined || (timeSinceLastCall >= wait) ||
+      (timeSinceLastCall < 0) || (maxing && timeSinceLastInvoke >= maxWait));
+  }
+
+  function timerExpired() {
+    var time = now();
+    if (shouldInvoke(time)) {
+      return trailingEdge(time);
+    }
+    // Restart the timer.
+    timerId = setTimeout(timerExpired, remainingWait(time));
+  }
+
+  function trailingEdge(time) {
+    timerId = undefined;
+
+    // Only invoke if we have `lastArgs` which means `func` has been
+    // debounced at least once.
+    if (trailing && lastArgs) {
+      return invokeFunc(time);
+    }
+    lastArgs = lastThis = undefined;
+    return result;
+  }
+
+  function cancel() {
+    if (timerId !== undefined) {
+      clearTimeout(timerId);
+    }
+    lastInvokeTime = 0;
+    lastArgs = lastCallTime = lastThis = timerId = undefined;
+  }
+
+  function flush() {
+    return timerId === undefined ? result : trailingEdge(now());
+  }
+
+  function debounced() {
+    var time = now(),
+        isInvoking = shouldInvoke(time);
+
+    lastArgs = arguments;
+    lastThis = this;
+    lastCallTime = time;
+
+    if (isInvoking) {
+      if (timerId === undefined) {
+        return leadingEdge(lastCallTime);
+      }
+      if (maxing) {
+        // Handle invocations in a tight loop.
+        timerId = setTimeout(timerExpired, wait);
+        return invokeFunc(lastCallTime);
+      }
+    }
+    if (timerId === undefined) {
+      timerId = setTimeout(timerExpired, wait);
+    }
+    return result;
+  }
+  debounced.cancel = cancel;
+  debounced.flush = flush;
+  return debounced;
+}
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return !!value && (type == 'object' || type == 'function');
+}
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return !!value && typeof value == 'object';
+}
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && objectToString.call(value) == symbolTag);
+}
+
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */
+function toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return NAN;
+  }
+  if (isObject(value)) {
+    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+    value = isObject(other) ? (other + '') : other;
+  }
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+  value = value.replace(reTrim, '');
+  var isBinary = reIsBinary.test(value);
+  return (isBinary || reIsOctal.test(value))
+    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+    : (reIsBadHex.test(value) ? NAN : +value);
+}
+
+module.exports = debounce;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -86116,6 +86524,569 @@ module.exports = exports["default"];
 
 /***/ }),
 
+/***/ "./node_modules/react-places-autocomplete/dist/PlacesAutocomplete.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/react-places-autocomplete/dist/PlacesAutocomplete.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _lodash = __webpack_require__(/*! lodash.debounce */ "./node_modules/lodash.debounce/index.js");
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _helpers = __webpack_require__(/*! ./helpers */ "./node_modules/react-places-autocomplete/dist/helpers.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               * Copyright (c) 2016-present, Ken Hibino.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               * Licensed under the MIT License (MIT).
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               * See https://kenny-hibino.github.io/react-places-autocomplete
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               */
+
+// transform snake_case to camelCase
+var formattedSuggestion = function formattedSuggestion(structured_formatting) {
+  return {
+    mainText: structured_formatting.main_text,
+    secondaryText: structured_formatting.secondary_text
+  };
+};
+
+var PlacesAutocomplete = function (_React$Component) {
+  _inherits(PlacesAutocomplete, _React$Component);
+
+  function PlacesAutocomplete(props) {
+    _classCallCheck(this, PlacesAutocomplete);
+
+    var _this = _possibleConstructorReturn(this, (PlacesAutocomplete.__proto__ || Object.getPrototypeOf(PlacesAutocomplete)).call(this, props));
+
+    _this.init = function () {
+      if (!window.google) {
+        throw new Error('[react-places-autocomplete]: Google Maps JavaScript API library must be loaded. See: https://github.com/kenny-hibino/react-places-autocomplete#load-google-library');
+      }
+
+      if (!window.google.maps.places) {
+        throw new Error('[react-places-autocomplete]: Google Maps Places library must be loaded. Please add `libraries=places` to the src URL. See: https://github.com/kenny-hibino/react-places-autocomplete#load-google-library');
+      }
+
+      _this.autocompleteService = new window.google.maps.places.AutocompleteService();
+      _this.autocompleteOK = window.google.maps.places.PlacesServiceStatus.OK;
+      _this.setState(function (state) {
+        if (state.ready) {
+          return null;
+        } else {
+          return { ready: true };
+        }
+      });
+    };
+
+    _this.autocompleteCallback = function (predictions, status) {
+      _this.setState({ loading: false });
+      if (status !== _this.autocompleteOK) {
+        _this.props.onError(status, _this.clearSuggestions);
+        return;
+      }
+      var highlightFirstSuggestion = _this.props.highlightFirstSuggestion;
+
+      _this.setState({
+        suggestions: predictions.map(function (p, idx) {
+          return {
+            id: p.id,
+            description: p.description,
+            placeId: p.place_id,
+            active: highlightFirstSuggestion && idx === 0 ? true : false,
+            index: idx,
+            formattedSuggestion: formattedSuggestion(p.structured_formatting),
+            matchedSubstrings: p.matched_substrings,
+            terms: p.terms,
+            types: p.types
+          };
+        })
+      });
+    };
+
+    _this.fetchPredictions = function () {
+      var value = _this.props.value;
+
+      if (value.length) {
+        _this.setState({ loading: true });
+        _this.autocompleteService.getPlacePredictions(_extends({}, _this.props.searchOptions, {
+          input: value
+        }), _this.autocompleteCallback);
+      }
+    };
+
+    _this.clearSuggestions = function () {
+      _this.setState({ suggestions: [] });
+    };
+
+    _this.clearActive = function () {
+      _this.setState({
+        suggestions: _this.state.suggestions.map(function (suggestion) {
+          return _extends({}, suggestion, {
+            active: false
+          });
+        })
+      });
+    };
+
+    _this.handleSelect = function (address, placeId) {
+      _this.clearSuggestions();
+      if (_this.props.onSelect) {
+        _this.props.onSelect(address, placeId);
+      } else {
+        _this.props.onChange(address);
+      }
+    };
+
+    _this.getActiveSuggestion = function () {
+      return _this.state.suggestions.find(function (suggestion) {
+        return suggestion.active;
+      });
+    };
+
+    _this.selectActiveAtIndex = function (index) {
+      var activeName = _this.state.suggestions.find(function (suggestion) {
+        return suggestion.index === index;
+      }).description;
+      _this.setActiveAtIndex(index);
+      _this.props.onChange(activeName);
+    };
+
+    _this.selectUserInputValue = function () {
+      _this.clearActive();
+      _this.props.onChange(_this.state.userInputValue);
+    };
+
+    _this.handleEnterKey = function () {
+      var activeSuggestion = _this.getActiveSuggestion();
+      if (activeSuggestion === undefined) {
+        _this.handleSelect(_this.props.value, null);
+      } else {
+        _this.handleSelect(activeSuggestion.description, activeSuggestion.placeId);
+      }
+    };
+
+    _this.handleDownKey = function () {
+      if (_this.state.suggestions.length === 0) {
+        return;
+      }
+
+      var activeSuggestion = _this.getActiveSuggestion();
+      if (activeSuggestion === undefined) {
+        _this.selectActiveAtIndex(0);
+      } else if (activeSuggestion.index === _this.state.suggestions.length - 1) {
+        _this.selectUserInputValue();
+      } else {
+        _this.selectActiveAtIndex(activeSuggestion.index + 1);
+      }
+    };
+
+    _this.handleUpKey = function () {
+      if (_this.state.suggestions.length === 0) {
+        return;
+      }
+
+      var activeSuggestion = _this.getActiveSuggestion();
+      if (activeSuggestion === undefined) {
+        _this.selectActiveAtIndex(_this.state.suggestions.length - 1);
+      } else if (activeSuggestion.index === 0) {
+        _this.selectUserInputValue();
+      } else {
+        _this.selectActiveAtIndex(activeSuggestion.index - 1);
+      }
+    };
+
+    _this.handleInputKeyDown = function (event) {
+      /* eslint-disable indent */
+      switch (event.key) {
+        case 'Enter':
+          event.preventDefault();
+          _this.handleEnterKey();
+          break;
+        case 'ArrowDown':
+          event.preventDefault(); // prevent the cursor from moving
+          _this.handleDownKey();
+          break;
+        case 'ArrowUp':
+          event.preventDefault(); // prevent the cursor from moving
+          _this.handleUpKey();
+          break;
+        case 'Escape':
+          _this.clearSuggestions();
+          break;
+      }
+      /* eslint-enable indent */
+    };
+
+    _this.setActiveAtIndex = function (index) {
+      _this.setState({
+        suggestions: _this.state.suggestions.map(function (suggestion, idx) {
+          if (idx === index) {
+            return _extends({}, suggestion, { active: true });
+          } else {
+            return _extends({}, suggestion, { active: false });
+          }
+        })
+      });
+    };
+
+    _this.handleInputChange = function (event) {
+      var value = event.target.value;
+
+      _this.props.onChange(value);
+      _this.setState({ userInputValue: value });
+      if (!value) {
+        _this.clearSuggestions();
+        return;
+      }
+      if (_this.props.shouldFetchSuggestions) {
+        _this.debouncedFetchPredictions();
+      }
+    };
+
+    _this.handleInputOnBlur = function () {
+      if (!_this.mousedownOnSuggestion) {
+        _this.clearSuggestions();
+      }
+    };
+
+    _this.getActiveSuggestionId = function () {
+      var activeSuggestion = _this.getActiveSuggestion();
+      return activeSuggestion ? 'PlacesAutocomplete__suggestion-' + activeSuggestion.placeId : null;
+    };
+
+    _this.getIsExpanded = function () {
+      return _this.state.suggestions.length > 0;
+    };
+
+    _this.getInputProps = function () {
+      var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+      if (options.hasOwnProperty('value')) {
+        throw new Error('[react-places-autocomplete]: getInputProps does not accept `value`. Use `value` prop instead');
+      }
+
+      if (options.hasOwnProperty('onChange')) {
+        throw new Error('[react-places-autocomplete]: getInputProps does not accept `onChange`. Use `onChange` prop instead');
+      }
+
+      var defaultInputProps = {
+        type: 'text',
+        autoComplete: 'off',
+        role: 'combobox',
+        'aria-autocomplete': 'list',
+        'aria-expanded': _this.getIsExpanded(),
+        'aria-activedescendant': _this.getActiveSuggestionId(),
+        disabled: !_this.state.ready
+      };
+
+      return _extends({}, defaultInputProps, options, {
+        onKeyDown: (0, _helpers.compose)(_this.handleInputKeyDown, options.onKeyDown),
+        onBlur: (0, _helpers.compose)(_this.handleInputOnBlur, options.onBlur),
+        value: _this.props.value,
+        onChange: function onChange(event) {
+          _this.handleInputChange(event);
+        }
+      });
+    };
+
+    _this.getSuggestionItemProps = function (suggestion) {
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+      var handleSuggestionMouseEnter = _this.handleSuggestionMouseEnter.bind(_this, suggestion.index);
+      var handleSuggestionClick = _this.handleSuggestionClick.bind(_this, suggestion);
+
+      return _extends({}, options, {
+        key: suggestion.id,
+        id: _this.getActiveSuggestionId(),
+        role: 'option',
+        onMouseEnter: (0, _helpers.compose)(handleSuggestionMouseEnter, options.onMouseEnter),
+        onMouseLeave: (0, _helpers.compose)(_this.handleSuggestionMouseLeave, options.onMouseLeave),
+        onMouseDown: (0, _helpers.compose)(_this.handleSuggestionMouseDown, options.onMouseDown),
+        onMouseUp: (0, _helpers.compose)(_this.handleSuggestionMouseUp, options.onMouseUp),
+        onTouchStart: (0, _helpers.compose)(_this.handleSuggestionTouchStart, options.onTouchStart),
+        onTouchEnd: (0, _helpers.compose)(_this.handleSuggestionMouseUp, options.onTouchEnd),
+        onClick: (0, _helpers.compose)(handleSuggestionClick, options.onClick)
+      });
+    };
+
+    _this.handleSuggestionMouseEnter = function (index) {
+      _this.setActiveAtIndex(index);
+    };
+
+    _this.handleSuggestionMouseLeave = function () {
+      _this.mousedownOnSuggestion = false;
+      _this.clearActive();
+    };
+
+    _this.handleSuggestionMouseDown = function (event) {
+      event.preventDefault();
+      _this.mousedownOnSuggestion = true;
+    };
+
+    _this.handleSuggestionTouchStart = function () {
+      _this.mousedownOnSuggestion = true;
+    };
+
+    _this.handleSuggestionMouseUp = function () {
+      _this.mousedownOnSuggestion = false;
+    };
+
+    _this.handleSuggestionClick = function (suggestion, event) {
+      if (event && event.preventDefault) {
+        event.preventDefault();
+      }
+      var description = suggestion.description,
+          placeId = suggestion.placeId;
+
+      _this.handleSelect(description, placeId);
+      setTimeout(function () {
+        _this.mousedownOnSuggestion = false;
+      });
+    };
+
+    _this.state = {
+      loading: false,
+      suggestions: [],
+      userInputValue: props.value,
+      ready: !props.googleCallbackName
+    };
+
+    _this.debouncedFetchPredictions = (0, _lodash2.default)(_this.fetchPredictions, _this.props.debounce);
+    return _this;
+  }
+
+  _createClass(PlacesAutocomplete, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var googleCallbackName = this.props.googleCallbackName;
+
+      if (googleCallbackName) {
+        if (!window.google) {
+          window[googleCallbackName] = this.init;
+        } else {
+          this.init();
+        }
+      } else {
+        this.init();
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      var googleCallbackName = this.props.googleCallbackName;
+
+      if (googleCallbackName && window[googleCallbackName]) {
+        delete window[googleCallbackName];
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return this.props.children({
+        getInputProps: this.getInputProps,
+        getSuggestionItemProps: this.getSuggestionItemProps,
+        loading: this.state.loading,
+        suggestions: this.state.suggestions
+      });
+    }
+  }]);
+
+  return PlacesAutocomplete;
+}(_react2.default.Component);
+
+PlacesAutocomplete.propTypes = {
+  onChange: _propTypes2.default.func.isRequired,
+  value: _propTypes2.default.string.isRequired,
+  children: _propTypes2.default.func.isRequired,
+  onError: _propTypes2.default.func,
+  onSelect: _propTypes2.default.func,
+  searchOptions: _propTypes2.default.shape({
+    bounds: _propTypes2.default.object,
+    componentRestrictions: _propTypes2.default.object,
+    location: _propTypes2.default.object,
+    offset: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
+    radius: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
+    types: _propTypes2.default.array
+  }),
+  debounce: _propTypes2.default.number,
+  highlightFirstSuggestion: _propTypes2.default.bool,
+  shouldFetchSuggestions: _propTypes2.default.bool,
+  googleCallbackName: _propTypes2.default.string
+};
+
+PlacesAutocomplete.defaultProps = {
+  /* eslint-disable no-unused-vars, no-console */
+  onError: function onError(status, _clearSuggestions) {
+    return console.error('[react-places-autocomplete]: error happened when fetching data from Google Maps API.\nPlease check the docs here (https://developers.google.com/maps/documentation/javascript/places#place_details_responses)\nStatus: ', status);
+  },
+  /* eslint-enable no-unused-vars, no-console */
+  searchOptions: {},
+  debounce: 200,
+  highlightFirstSuggestion: false,
+  shouldFetchSuggestions: true
+};
+
+exports.default = PlacesAutocomplete;
+
+/***/ }),
+
+/***/ "./node_modules/react-places-autocomplete/dist/helpers.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/react-places-autocomplete/dist/helpers.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var compose = exports.compose = function compose() {
+  for (var _len = arguments.length, fns = Array(_len), _key = 0; _key < _len; _key++) {
+    fns[_key] = arguments[_key];
+  }
+
+  return function () {
+    for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+      args[_key2] = arguments[_key2];
+    }
+
+    fns.forEach(function (fn) {
+      return fn && fn.apply(undefined, args);
+    });
+  };
+};
+
+var pick = exports.pick = function pick(obj) {
+  for (var _len3 = arguments.length, props = Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+    props[_key3 - 1] = arguments[_key3];
+  }
+
+  return props.reduce(function (newObj, prop) {
+    if (obj.hasOwnProperty(prop)) {
+      newObj[prop] = obj[prop];
+    }
+    return newObj;
+  }, {});
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-places-autocomplete/dist/index.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/react-places-autocomplete/dist/index.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getLatLng = exports.geocodeByPlaceId = exports.geocodeByAddress = undefined;
+
+var _PlacesAutocomplete = __webpack_require__(/*! ./PlacesAutocomplete */ "./node_modules/react-places-autocomplete/dist/PlacesAutocomplete.js");
+
+var _PlacesAutocomplete2 = _interopRequireDefault(_PlacesAutocomplete);
+
+var _utils = __webpack_require__(/*! ./utils */ "./node_modules/react-places-autocomplete/dist/utils.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.geocodeByAddress = _utils.geocodeByAddress;
+exports.geocodeByPlaceId = _utils.geocodeByPlaceId;
+exports.getLatLng = _utils.getLatLng;
+exports.default = _PlacesAutocomplete2.default;
+
+/***/ }),
+
+/***/ "./node_modules/react-places-autocomplete/dist/utils.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/react-places-autocomplete/dist/utils.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var geocodeByAddress = exports.geocodeByAddress = function geocodeByAddress(address) {
+  var geocoder = new window.google.maps.Geocoder();
+  var OK = window.google.maps.GeocoderStatus.OK;
+
+  return new Promise(function (resolve, reject) {
+    geocoder.geocode({ address: address }, function (results, status) {
+      if (status !== OK) {
+        reject(status);
+      }
+      resolve(results);
+    });
+  });
+};
+
+var getLatLng = exports.getLatLng = function getLatLng(result) {
+  return new Promise(function (resolve, reject) {
+    try {
+      var latLng = {
+        lat: result.geometry.location.lat(),
+        lng: result.geometry.location.lng()
+      };
+      resolve(latLng);
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+var geocodeByPlaceId = exports.geocodeByPlaceId = function geocodeByPlaceId(placeId) {
+  var geocoder = new window.google.maps.Geocoder();
+  var OK = window.google.maps.GeocoderStatus.OK;
+
+  return new Promise(function (resolve, reject) {
+    geocoder.geocode({ placeId: placeId }, function (results, status) {
+      if (status !== OK) {
+        reject(status);
+      }
+      resolve(results);
+    });
+  });
+};
+
+/***/ }),
+
 /***/ "./node_modules/react-popper/lib/esm/Manager.js":
 /*!******************************************************!*\
   !*** ./node_modules/react-popper/lib/esm/Manager.js ***!
@@ -92849,6 +93820,17 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/Vehicles.json":
+/*!************************************!*\
+  !*** ./resources/js/Vehicles.json ***!
+  \************************************/
+/*! exports provided: 0, 1, 2, 3, default */
+/***/ (function(module) {
+
+module.exports = [{"id":1,"name":"Hummer H2 Stretch Limousine","image":"https://www.orlandolimoride.com/images/fleet/hummer/hummer3.jpg","description":"The Hummer H2 Stretch Limousine is the luxury way to transport your closest friends to any event. Capacity is 10 passengers","capacity":10,"quantity":3},{"id":2,"name":"Lincoln Towncar","image":"https://www.orlandolimoride.com/images/fleet/towncar/lt1.jpg","description":"The Lincoln Towncar is the quintessential American executive car. A popular choice for business and pleasure alike, our Towncar can take you to your destination in air-conditioned comfort. Capacity is 4 passengers ","capacity":4,"quantity":4},{"id":3,"name":"Mercedes Benz Sprinter","image":"https://www.orlandolimoride.com/images/fleet/van/van1.jpg","description":" With the quality you've come to expect from Mercedes-Benz, the Sprinter Passenger Van delivers the ultimate comfort for drivers and passengers alike. Capacity is 20 passengers ","capacity":22,"quantity":3},{"id":4,"name":"Limo Bus","image":"https://www.orlandolimoride.com/images/fleet/bus/bus1.jpg","description":"A limousine bus is the perfectly balanced way to travel, you have the benefit of a sophisticated exterior of a limousine while having all of the fun. amenities, and spacious room of a party bus. Capacity is 30 passengers ","capacity":30,"quantity":2}];
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -93028,6 +94010,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _BookingPages_Recap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./BookingPages/Recap */ "./resources/js/components/BookingPages/Recap.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -93073,6 +94057,10 @@ function (_Component) {
       // values to be passed to the booking component
       origin: "",
       destination: "",
+      directions: {
+        origin: null,
+        destination: null
+      },
       xfrDate: "",
       xfrTime: "",
       // values to be passed to the client component
@@ -93086,11 +94074,27 @@ function (_Component) {
       // Controls what component to render
       currentPage: 0
     }, _this.handleInputChange = function (event) {
+      console.log(event);
       var _event$target = event.target,
           name = _event$target.name,
           value = _event$target.value;
 
       _this.setState(_defineProperty({}, name, value));
+    }, _this.handleAutocompleteSelect = function (data) {
+      console.log({
+        data: data
+      });
+
+      _this.handleInputChange({
+        target: {
+          name: data.name,
+          value: data.address
+        }
+      });
+
+      _this.setState({
+        directions: _objectSpread({}, _this.state.directions, _defineProperty({}, data.name, data.coordinates))
+      });
     }, _this.handleNextPageLoad = function (event) {
       event.preventDefault(); // console.log("'I've been clicked")
 
@@ -93114,10 +94118,12 @@ function (_Component) {
       var steps = [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookingPages_Booking__WEBPACK_IMPORTED_MODULE_2__["default"], {
         origin: this.state.origin,
         destination: this.state.destination,
+        directions: this.state.directions,
         xfrDate: this.state.xfrDate,
         xfrTime: this.state.xfrTime,
         handleInputChange: this.handleInputChange,
-        handleNextPageLoad: this.handleNextPageLoad
+        handleNextPageLoad: this.handleNextPageLoad,
+        handleAutocompleteSelect: this.handleAutocompleteSelect
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookingPages_Client__WEBPACK_IMPORTED_MODULE_3__["default"], {
         origin: this.state.origin,
         destination: this.state.destination,
@@ -93131,11 +94137,21 @@ function (_Component) {
         numChildren: this.state.numChildren,
         xfrNotes: this.state.xfrNotes,
         handleInputChange: this.handleInputChange,
-        handleNextPageLoad: this.handleNextPageLoad,
-        handlePreviousPageLoad: this.handlePreviousPageLoad
+        handlePreviousPageLoad: this.handlePreviousPageLoad,
+        handleNextPageLoad: this.handleNextPageLoad
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookingPages_Recap__WEBPACK_IMPORTED_MODULE_4__["default"], {
         origin: this.state.origin,
-        handlePreviousPageLoad: this.handlePreviousPageLoad
+        destination: this.state.destination,
+        xfrDate: this.state.xfrDate,
+        xfrTime: this.state.xfrTime,
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        cellPhone: this.state.cellPhone,
+        email: this.state.email,
+        numAdults: this.state.numAdults,
+        numChildren: this.state.numChildren,
+        xfrNotes: this.state.xfrNotes,
+        directions: this.state.directions
       })];
       return steps[this.state.currentPage];
     }
@@ -93197,6 +94213,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Booking_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Booking.css */ "./resources/js/components/BookingPages/Booking.css");
 /* harmony import */ var _Booking_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Booking_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Map */ "./resources/js/components/Map.js");
+/* harmony import */ var _LocationSearchInput__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../LocationSearchInput */ "./resources/js/components/LocationSearchInput.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -93220,6 +94237,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Booking =
 /*#__PURE__*/
 function (_Component) {
@@ -93236,20 +94254,18 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
         controlId: "origin"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, null, "Pickup Location"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
-        type: "text",
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, null, "Pickup Location"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LocationSearchInput__WEBPACK_IMPORTED_MODULE_4__["default"], {
         name: "origin",
-        placeholder: "Pickup Location",
         value: this.props.origin,
-        onChange: this.props.handleInputChange
+        handleChange: this.props.handleInputChange,
+        handleAutocompleteSelect: this.props.handleAutocompleteSelect
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
         controlId: "destination"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, null, "Drop Off Location"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
-        type: "text",
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, null, "Drop Off Location"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LocationSearchInput__WEBPACK_IMPORTED_MODULE_4__["default"], {
         name: "destination",
-        placeholder: "Drop Off Location",
         value: this.props.destination,
-        onChange: this.props.handleInputChange
+        handleChange: this.props.handleInputChange,
+        handleAutocompleteSelect: this.props.handleAutocompleteSelect
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Row, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
         as: react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"],
         md: "5",
@@ -93274,9 +94290,10 @@ function (_Component) {
         type: "submit",
         value: "submit",
         onClick: this.props.handleNextPageLoad
-      }, "Continue"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Map__WEBPACK_IMPORTED_MODULE_3__["default"] // origin={this.props.origin}
-      // destination={this.props.destination}
-      , null)))));
+      }, "Continue"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Map__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        origin: this.props.directions.origin,
+        destination: this.props.directions.destination
+      })))));
     }
   }]);
 
@@ -93302,6 +94319,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
 /* harmony import */ var _Booking_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Booking.css */ "./resources/js/components/BookingPages/Booking.css");
 /* harmony import */ var _Booking_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Booking_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Vehicles_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Vehicles.json */ "./resources/js/Vehicles.json");
+var _Vehicles_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../Vehicles.json */ "./resources/js/Vehicles.json", 1);
+/* harmony import */ var _VehicleCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../VehicleCard */ "./resources/js/components/VehicleCard.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -93324,54 +94344,42 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var Client =
 /*#__PURE__*/
 function (_Component) {
   _inherits(Client, _Component);
 
   function Client() {
+    var _getPrototypeOf2;
+
+    var _temp, _this;
+
     _classCallCheck(this, Client);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Client).apply(this, arguments));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Client)).call.apply(_getPrototypeOf2, [this].concat(args))), _this.state = {
+      Vehicles: _Vehicles_json__WEBPACK_IMPORTED_MODULE_3__
+    }, _temp));
   }
 
   _createClass(Client, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
-        style: {
-          width: "15rem"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Img, {
-        variant: "top",
-        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Brk8rQnGIa_LRovCmgPmjE9wySCZB7xE5xSC00Z_yFY3Nugx"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, null, "Cadillac CT8 Limo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, null, "This is a 2 passenger luxury vehicle that is popular for airport drops"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonGroup"], {
-        size: "sm"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        variant: "secondary"
-      }, "Select"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
-        style: {
-          width: "15rem"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Img, {
-        variant: "top",
-        src: "http://funeralcarstore.com/wp-content/gallery/2016-lincoln-mkt-eaton/1393859343_fedmktlimo-fp-md5.png"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, null, "Lincoln MKT Eaton Limo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, null, "This 10 passenger business transport vehicle that is popular for moving important people"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonGroup"], {
-        size: "sm"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        variant: "secondary"
-      }, "Select"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
-        style: {
-          width: "15rem"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Img, {
-        variant: "top",
-        src: "https://www.fleet.ford.com/resources/ford/general/images/showroom/speciality-vehicle/lincoln_mkt_limo_front.png"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, null, "Lincoln MKT Stretch"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, null, "This is a 20 passenger luxury vehicle that is popular for large groups who want to travel in style"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonGroup"], {
-        size: "sm"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        variant: "secondary"
-      }, "Select")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, this.state.Vehicles.map(function (Vehicles) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_VehicleCard__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          id: Vehicles.id,
+          name: Vehicles.name,
+          image: Vehicles.image,
+          description: Vehicles.description,
+          capacity: Vehicles.capacity,
+          quantity: Vehicles.quantity
+        });
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
         as: react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"],
         controlId: "formGridOrigin"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, null, "Pickup Location"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
@@ -93491,7 +94499,70 @@ function (_Component) {
   return Client;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (Client);
+/* harmony default export */ __webpack_exports__["default"] = (Client); // <Col>
+// <Card style={{ width: "15rem" }}>
+//   <Card.Img
+//     variant="top"
+//     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Brk8rQnGIa_LRovCmgPmjE9wySCZB7xE5xSC00Z_yFY3Nugx"
+//   />
+//   <Card.Body>
+//     <Card.Title>Cadillac CT8 Limo</Card.Title>
+//     <Card.Text>
+//       This is a 2 passenger luxury vehicle
+//       that is popular for airport drops
+//     </Card.Text>
+//     <ButtonGroup size="sm">
+//       <Button variant="secondary">
+//         Select
+//       </Button>
+//     </ButtonGroup>
+//   </Card.Body>
+// </Card>
+// </Col>
+// <Col>
+// <Card style={{ width: "15rem" }}>
+//   <Card.Img
+//       variant="top"
+//       src="http://funeralcarstore.com/wp-content/gallery/2016-lincoln-mkt-eaton/1393859343_fedmktlimo-fp-md5.png"
+//   />
+//   <Card.Body>
+//     <Card.Title>
+//       Lincoln MKT Eaton Limo
+//     </Card.Title>
+//     <Card.Text>
+//       This 10 passenger business transport
+//       vehicle that is popular for moving
+//       important people
+//     </Card.Text>
+//     <ButtonGroup size="sm">
+//       <Button variant="secondary">
+//         Select
+//       </Button>
+//     </ButtonGroup>
+//   </Card.Body>
+// </Card>
+// </Col>
+// <Col>
+// <Card style={{ width: "15rem" }}>
+//   <Card.Img
+//     variant="top"
+//     src="https://www.fleet.ford.com/resources/ford/general/images/showroom/speciality-vehicle/lincoln_mkt_limo_front.png"
+//   />
+//   <Card.Body>
+//     <Card.Title>Lincoln MKT Stretch</Card.Title>
+//     <Card.Text>
+//       This is a 20 passenger luxury vehicle
+//       that is popular for large groups who
+//       want to travel in style
+//     </Card.Text>
+//     <ButtonGroup size="sm">
+//       <Button variant="secondary">
+//         Select
+//       </Button>
+//     </ButtonGroup>
+//   </Card.Body>
+// </Card>
+// </Col>
 
 /***/ }),
 
@@ -93509,6 +94580,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
 /* harmony import */ var _Booking_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Booking.css */ "./resources/js/components/BookingPages/Booking.css");
 /* harmony import */ var _Booking_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Booking_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Map */ "./resources/js/components/Map.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -93531,6 +94603,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Recap =
 /*#__PURE__*/
 function (_Component) {
@@ -93545,29 +94618,23 @@ function (_Component) {
   _createClass(Recap, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "  Reservation Details:   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Name: ", this.props.firstName, " ", this.props.lastName, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Email:  ", this.props.email, "    "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Cell Phone: ", this.props.cellPhone, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Adults: ", this.props.numAdults, "   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Kids: ", this.props.numChildren, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Notes: ", this.props.xfrNotes, " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
         style: {
           width: "25rem"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Img, {
         variant: "top",
         src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Brk8rQnGIa_LRovCmgPmjE9wySCZB7xE5xSC00Z_yFY3Nugx"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, null, "Placeholder"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, null, "Selected car photo ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Details for the ride "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Posuere sollicitudin aliquam ultrices sagittis. Tincidunt tortor aliquam nulla facilisi."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonGroup"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, null, "Placeholder"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, null, "Selected car photo "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Origin:  ", this.props.origin, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Destination:  ", this.props.destination, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Pickup Date: ", this.props.xfrDate, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Pickup Time: ", this.props.xfrTime, "   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonGroup"], {
         size: "sm"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         variant: "secondary"
       }, "Edit Details"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         variant: "secondary"
-      }, "Cancel")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        variant: "primary",
-        name: "currentPage",
-        type: "submit",
-        value: "submit",
-        onClick: this.props.handlePreviousPageLoad,
-        style: {
-          margin: "10px"
-        }
-      }, "Back")))));
+      }, "Confirm Details"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Map__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        origin: this.props.directions.origin,
+        destination: this.props.directions.destination
+      })))));
     }
   }]);
 
@@ -93575,6 +94642,75 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Recap);
+
+/***/ }),
+
+/***/ "./resources/js/components/Directions.js":
+/*!***********************************************!*\
+  !*** ./resources/js/components/Directions.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Directions; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-google-maps */ "./node_modules/react-google-maps/lib/index.js");
+/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_google_maps__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Directions =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Directions, _Component);
+
+  function Directions() {
+    _classCallCheck(this, Directions);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Directions).apply(this, arguments));
+  }
+
+  _createClass(Directions, [{
+    key: "render",
+    value: function render() {
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MapPoints, {
+        origin: this.state.origin,
+        destination: this.state.destination
+      });
+      react_google_maps__WEBPACK_IMPORTED_MODULE_1__["DirectionService"].route({
+        origin: this.props.origin,
+        destination: this.props.destination,
+        travelMode: google.maps.TravelMode.DRIVING
+      }, function (result, status) {});
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+    }
+  }]);
+
+  return Directions;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
 
 /***/ }),
 
@@ -93646,10 +94782,10 @@ if (document.getElementById('open')) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Map.js":
-/*!****************************************!*\
-  !*** ./resources/js/components/Map.js ***!
-  \****************************************/
+/***/ "./resources/js/components/LocationSearchInput.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/LocationSearchInput.js ***!
+  \********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -93657,8 +94793,8 @@ if (document.getElementById('open')) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-google-maps */ "./node_modules/react-google-maps/lib/index.js");
-/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_google_maps__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_places_autocomplete__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-places-autocomplete */ "./node_modules/react-places-autocomplete/dist/index.js");
+/* harmony import */ var react_places_autocomplete__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_places_autocomplete__WEBPACK_IMPORTED_MODULE_1__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -93680,30 +94816,181 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+var LocationSearchInput =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(LocationSearchInput, _React$Component);
+
+  function LocationSearchInput(props) {
+    var _this;
+
+    _classCallCheck(this, LocationSearchInput);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(LocationSearchInput).call(this, props));
+
+    _this.handleChange = function (address) {
+      var event = {
+        target: {
+          name: _this.props.name,
+          value: address
+        }
+      };
+
+      _this.props.handleChange(event);
+    };
+
+    _this.handleSelect = function (address) {
+      Object(react_places_autocomplete__WEBPACK_IMPORTED_MODULE_1__["geocodeByAddress"])(address).then(function (results) {
+        return Object(react_places_autocomplete__WEBPACK_IMPORTED_MODULE_1__["getLatLng"])(results[0]);
+      }).then(function (latLng) {
+        _this.props.handleAutocompleteSelect({
+          name: _this.props.name,
+          coordinates: latLng,
+          address: address
+        });
+      }).catch(function (error) {
+        return console.error('Error', error);
+      });
+    };
+
+    return _this;
+  }
+
+  _createClass(LocationSearchInput, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_places_autocomplete__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        value: this.props.value,
+        onChange: this.handleChange,
+        onSelect: this.handleSelect
+      }, function (_ref) {
+        var getInputProps = _ref.getInputProps,
+            suggestions = _ref.suggestions,
+            getSuggestionItemProps = _ref.getSuggestionItemProps,
+            loading = _ref.loading;
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", getInputProps({
+          placeholder: "Enter ".concat(_this2.props.name),
+          className: 'form-control'
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "autocomplete-dropdown-container"
+        }, loading && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading..."), suggestions.map(function (suggestion) {
+          var className = suggestion.active ? 'suggestion-item--active' : 'suggestion-item'; // inline style for demonstration purpose
+
+          var style = suggestion.active ? {
+            backgroundColor: '#fafafa',
+            cursor: 'pointer'
+          } : {
+            backgroundColor: '#ffffff',
+            cursor: 'pointer'
+          };
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", getSuggestionItemProps(suggestion, {
+            className: className,
+            style: style
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, suggestion.description));
+        })));
+      });
+    }
+  }]);
+
+  return LocationSearchInput;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (LocationSearchInput);
+
+/***/ }),
+
+/***/ "./resources/js/components/Map.js":
+/*!****************************************!*\
+  !*** ./resources/js/components/Map.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-google-maps */ "./node_modules/react-google-maps/lib/index.js");
+/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_google_maps__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Directions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Directions */ "./resources/js/components/Directions.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
 var Map =
 /*#__PURE__*/
 function (_Component) {
   _inherits(Map, _Component);
 
-  function Map() {
+  function Map(props) {
     _classCallCheck(this, Map);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Map).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Map).call(this, props));
   }
 
   _createClass(Map, [{
     key: "render",
     value: function render() {
-      var GoogleMapExample = Object(react_google_maps__WEBPACK_IMPORTED_MODULE_1__["withGoogleMap"])(function (props) {
+      var _this = this;
+
+      var GoogleMapExample = Object(react_google_maps__WEBPACK_IMPORTED_MODULE_1__["withGoogleMap"])(function () {
+        var markers = [];
+
+        if (_this.props.origin) {
+          var _this$props$origin = _this.props.origin,
+              originLat = _this$props$origin.lat,
+              originLng = _this$props$origin.lng;
+          markers.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_1__["Marker"], {
+            key: "origin",
+            position: {
+              lat: originLat,
+              lng: originLng
+            }
+          }));
+        }
+
+        if (_this.props.destination) {
+          var _this$props$destinati = _this.props.destination,
+              destinationLat = _this$props$destinati.lat,
+              destinationLng = _this$props$destinati.lng;
+          markers.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_1__["Marker"], {
+            key: "destination",
+            position: {
+              lat: destinationLat,
+              lng: destinationLng
+            }
+          }));
+        }
+
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_1__["GoogleMap"], {
           defaultCenter: {
             lat: 28.5383,
             lng: -81.3792
           },
           defaultZoom: 10
-        });
+        }, markers);
       });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GoogleMapExample, {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GoogleMapExample, {
         containerElement: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           style: {
             height: "450px",
@@ -93715,7 +95002,7 @@ function (_Component) {
             height: "100%"
           }
         })
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.origin), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.destination)));
+      });
     }
   }]);
 
@@ -93934,6 +95221,106 @@ function (_Component) {
 if (document.getElementById('search')) {
   react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Search, null), document.getElementById('search'));
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/VehicleCard.css":
+/*!*************************************************!*\
+  !*** ./resources/js/components/VehicleCard.css ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/postcss-loader/src??ref--6-2!./VehicleCard.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/VehicleCard.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/VehicleCard.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/VehicleCard.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _VehicleCard_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VehicleCard.css */ "./resources/js/components/VehicleCard.css");
+/* harmony import */ var _VehicleCard_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_VehicleCard_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+
+
+
+
+function VehicleCard(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "img-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    alt: props.name,
+    src: props.image
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "content"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Name:"), " ", props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Description:"), " ", props.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    class: "text-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    variant: "primary",
+    name: "VehicleSelect",
+    type: "submit",
+    value: "submit",
+    onClick: "test"
+  }, "SELECT"))));
+} // import React from "react";
+// import "./style.css";
+// function FriendCard(props) {
+//   return (
+//     <div className="card">
+//       <div className="img-container">
+//         <img alt={props.name} src={props.image} />
+//       </div>
+//       <div className="content">
+//         <ul>
+//           <li>
+//             <strong>Name:</strong> {props.name}
+//           </li>
+//           <li>
+//             <strong>Occupation:</strong> {props.occupation}
+//           </li>
+//           <li>
+//             <strong>Location:</strong> {props.location}
+//           </li>
+//         </ul>
+//       </div>
+//       <span onClick={() => props.removeFriend(props.id)} className="remove">
+//         𝘅
+//       </span>
+//     </div>
+//   );
+// }
+
+
+/* harmony default export */ __webpack_exports__["default"] = (VehicleCard);
 
 /***/ }),
 
