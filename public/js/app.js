@@ -9108,6 +9108,25 @@ exports.push([module.i, ".Row  {\n    text-align: center;\n    background: trans
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/VehicleCard.css":
+/*!*********************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/VehicleCard.css ***!
+  \*********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".card {\n    background: #fff;\n    border-radius: 10px;\n    height: 500px;\n    margin: 1px;;\n    position: relative;\n    width: 500px;\n    box-shadow: 0 3px 5px #999, 0 3px 5px #999;\n    text-align: left;\n    margin: 10px;\n    padding-right: 15px;\n    \n  }\n  \n  .card > .img-container {\n    height: 100%;\n    overflow: hidden;\n    text-align: center;\n    background:white;\n    margin-top:20px;\n  }\n  .card > .img-container > img {\n    width: 80%\n  }\n  \n  .card > .content {\n    padding-left: 1px;;\n    padding-right: 1px;\n    font-size: 18px;\n  }\n  \n  .card > .content > ul {\n    list-style-type: none;\n  }\n  \n  .card > .content > ul > li {\n    margin-top: 10px;\n  }\n\n .text-center{\n   padding-bottom: 15px;\n }\n  \n  \n  \n  ", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/vehicles.css":
 /*!******************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/vehicles.css ***!
@@ -93801,6 +93820,17 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/Vehicles.json":
+/*!************************************!*\
+  !*** ./resources/js/Vehicles.json ***!
+  \************************************/
+/*! exports provided: 0, 1, 2, 3, default */
+/***/ (function(module) {
+
+module.exports = [{"id":1,"name":"Hummer H2 Stretch Limousine","image":"https://www.orlandolimoride.com/images/fleet/hummer/hummer3.jpg","description":"The Hummer H2 Stretch Limousine is the luxury way to transport your closest friends to any event. Capacity is 10 passengers","capacity":10,"quantity":3},{"id":2,"name":"Lincoln Towncar","image":"https://www.orlandolimoride.com/images/fleet/towncar/lt1.jpg","description":"The Lincoln Towncar is the quintessential American executive car. A popular choice for business and pleasure alike, our Towncar can take you to your destination in air-conditioned comfort. Capacity is 4 passengers ","capacity":4,"quantity":4},{"id":3,"name":"Mercedes Benz Sprinter","image":"https://www.orlandolimoride.com/images/fleet/van/van1.jpg","description":" With the quality you've come to expect from Mercedes-Benz, the Sprinter Passenger Van delivers the ultimate comfort for drivers and passengers alike. Capacity is 20 passengers ","capacity":22,"quantity":3},{"id":4,"name":"Limo Bus","image":"https://www.orlandolimoride.com/images/fleet/bus/bus1.jpg","description":"A limousine bus is the perfectly balanced way to travel, you have the benefit of a sophisticated exterior of a limousine while having all of the fun. amenities, and spacious room of a party bus. Capacity is 30 passengers ","capacity":30,"quantity":2}];
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -94120,7 +94150,8 @@ function (_Component) {
         email: this.state.email,
         numAdults: this.state.numAdults,
         numChildren: this.state.numChildren,
-        xfrNotes: this.state.xfrNotes
+        xfrNotes: this.state.xfrNotes,
+        directions: this.state.directions
       })];
       return steps[this.state.currentPage];
     }
@@ -94288,6 +94319,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
 /* harmony import */ var _Booking_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Booking.css */ "./resources/js/components/BookingPages/Booking.css");
 /* harmony import */ var _Booking_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Booking_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Vehicles_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Vehicles.json */ "./resources/js/Vehicles.json");
+var _Vehicles_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../Vehicles.json */ "./resources/js/Vehicles.json", 1);
+/* harmony import */ var _VehicleCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../VehicleCard */ "./resources/js/components/VehicleCard.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -94310,54 +94344,42 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var Client =
 /*#__PURE__*/
 function (_Component) {
   _inherits(Client, _Component);
 
   function Client() {
+    var _getPrototypeOf2;
+
+    var _temp, _this;
+
     _classCallCheck(this, Client);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Client).apply(this, arguments));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Client)).call.apply(_getPrototypeOf2, [this].concat(args))), _this.state = {
+      Vehicles: _Vehicles_json__WEBPACK_IMPORTED_MODULE_3__
+    }, _temp));
   }
 
   _createClass(Client, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
-        style: {
-          width: "15rem"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Img, {
-        variant: "top",
-        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Brk8rQnGIa_LRovCmgPmjE9wySCZB7xE5xSC00Z_yFY3Nugx"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, null, "Cadillac CT8 Limo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, null, "This is a 2 passenger luxury vehicle that is popular for airport drops"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonGroup"], {
-        size: "sm"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        variant: "secondary"
-      }, "Select"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
-        style: {
-          width: "15rem"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Img, {
-        variant: "top",
-        src: "http://funeralcarstore.com/wp-content/gallery/2016-lincoln-mkt-eaton/1393859343_fedmktlimo-fp-md5.png"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, null, "Lincoln MKT Eaton Limo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, null, "This 10 passenger business transport vehicle that is popular for moving important people"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonGroup"], {
-        size: "sm"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        variant: "secondary"
-      }, "Select"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
-        style: {
-          width: "15rem"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Img, {
-        variant: "top",
-        src: "https://www.fleet.ford.com/resources/ford/general/images/showroom/speciality-vehicle/lincoln_mkt_limo_front.png"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, null, "Lincoln MKT Stretch"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, null, "This is a 20 passenger luxury vehicle that is popular for large groups who want to travel in style"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonGroup"], {
-        size: "sm"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        variant: "secondary"
-      }, "Select")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, this.state.Vehicles.map(function (Vehicles) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_VehicleCard__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          id: Vehicles.id,
+          name: Vehicles.name,
+          image: Vehicles.image,
+          description: Vehicles.description,
+          capacity: Vehicles.capacity,
+          quantity: Vehicles.quantity
+        });
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
         as: react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"],
         controlId: "formGridOrigin"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, null, "Pickup Location"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
@@ -94477,7 +94499,70 @@ function (_Component) {
   return Client;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (Client);
+/* harmony default export */ __webpack_exports__["default"] = (Client); // <Col>
+// <Card style={{ width: "15rem" }}>
+//   <Card.Img
+//     variant="top"
+//     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Brk8rQnGIa_LRovCmgPmjE9wySCZB7xE5xSC00Z_yFY3Nugx"
+//   />
+//   <Card.Body>
+//     <Card.Title>Cadillac CT8 Limo</Card.Title>
+//     <Card.Text>
+//       This is a 2 passenger luxury vehicle
+//       that is popular for airport drops
+//     </Card.Text>
+//     <ButtonGroup size="sm">
+//       <Button variant="secondary">
+//         Select
+//       </Button>
+//     </ButtonGroup>
+//   </Card.Body>
+// </Card>
+// </Col>
+// <Col>
+// <Card style={{ width: "15rem" }}>
+//   <Card.Img
+//       variant="top"
+//       src="http://funeralcarstore.com/wp-content/gallery/2016-lincoln-mkt-eaton/1393859343_fedmktlimo-fp-md5.png"
+//   />
+//   <Card.Body>
+//     <Card.Title>
+//       Lincoln MKT Eaton Limo
+//     </Card.Title>
+//     <Card.Text>
+//       This 10 passenger business transport
+//       vehicle that is popular for moving
+//       important people
+//     </Card.Text>
+//     <ButtonGroup size="sm">
+//       <Button variant="secondary">
+//         Select
+//       </Button>
+//     </ButtonGroup>
+//   </Card.Body>
+// </Card>
+// </Col>
+// <Col>
+// <Card style={{ width: "15rem" }}>
+//   <Card.Img
+//     variant="top"
+//     src="https://www.fleet.ford.com/resources/ford/general/images/showroom/speciality-vehicle/lincoln_mkt_limo_front.png"
+//   />
+//   <Card.Body>
+//     <Card.Title>Lincoln MKT Stretch</Card.Title>
+//     <Card.Text>
+//       This is a 20 passenger luxury vehicle
+//       that is popular for large groups who
+//       want to travel in style
+//     </Card.Text>
+//     <ButtonGroup size="sm">
+//       <Button variant="secondary">
+//         Select
+//       </Button>
+//     </ButtonGroup>
+//   </Card.Body>
+// </Card>
+// </Col>
 
 /***/ }),
 
@@ -94495,6 +94580,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
 /* harmony import */ var _Booking_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Booking.css */ "./resources/js/components/BookingPages/Booking.css");
 /* harmony import */ var _Booking_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Booking_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Map */ "./resources/js/components/Map.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -94517,6 +94603,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Recap =
 /*#__PURE__*/
 function (_Component) {
@@ -94531,20 +94618,23 @@ function (_Component) {
   _createClass(Recap, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "  Reservation Details:   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Name: ", this.props.firstName, " ", this.props.lastName, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Email:  ", this.props.email, "    "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Cell Phone: ", this.props.cellPhone, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Adults: ", this.props.numAdults, "   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Kids: ", this.props.numChildren, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Notes: ", this.props.xfrNotes, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Origin:  ", this.props.origin, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Destination:  ", this.props.destination, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Pickup Date: ", this.props.xfrDate, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Pickup Time: ", this.props.xfrTime, "   ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "  Reservation Details:   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Name: ", this.props.firstName, " ", this.props.lastName, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Email:  ", this.props.email, "    "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Cell Phone: ", this.props.cellPhone, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Adults: ", this.props.numAdults, "   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Kids: ", this.props.numChildren, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Notes: ", this.props.xfrNotes, " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
         style: {
           width: "25rem"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Img, {
         variant: "top",
         src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Brk8rQnGIa_LRovCmgPmjE9wySCZB7xE5xSC00Z_yFY3Nugx"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, null, "Placeholder"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, null, "Selected car photo "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonGroup"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, null, "Placeholder"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, null, "Selected car photo "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Origin:  ", this.props.origin, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Destination:  ", this.props.destination, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Pickup Date: ", this.props.xfrDate, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Pickup Time: ", this.props.xfrTime, "   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonGroup"], {
         size: "sm"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         variant: "secondary"
       }, "Edit Details"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         variant: "secondary"
-      }, "Cancel"))))));
+      }, "Confirm Details"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Map__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        origin: this.props.directions.origin,
+        destination: this.props.directions.destination
+      })))));
     }
   }]);
 
@@ -95131,6 +95221,106 @@ function (_Component) {
 if (document.getElementById('search')) {
   react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Search, null), document.getElementById('search'));
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/VehicleCard.css":
+/*!*************************************************!*\
+  !*** ./resources/js/components/VehicleCard.css ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/postcss-loader/src??ref--6-2!./VehicleCard.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/VehicleCard.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/VehicleCard.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/VehicleCard.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _VehicleCard_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VehicleCard.css */ "./resources/js/components/VehicleCard.css");
+/* harmony import */ var _VehicleCard_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_VehicleCard_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+
+
+
+
+function VehicleCard(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "img-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    alt: props.name,
+    src: props.image
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "content"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Name:"), " ", props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Description:"), " ", props.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    class: "text-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    variant: "primary",
+    name: "VehicleSelect",
+    type: "submit",
+    value: "submit",
+    onClick: "test"
+  }, "SELECT"))));
+} // import React from "react";
+// import "./style.css";
+// function FriendCard(props) {
+//   return (
+//     <div className="card">
+//       <div className="img-container">
+//         <img alt={props.name} src={props.image} />
+//       </div>
+//       <div className="content">
+//         <ul>
+//           <li>
+//             <strong>Name:</strong> {props.name}
+//           </li>
+//           <li>
+//             <strong>Occupation:</strong> {props.occupation}
+//           </li>
+//           <li>
+//             <strong>Location:</strong> {props.location}
+//           </li>
+//         </ul>
+//       </div>
+//       <span onClick={() => props.removeFriend(props.id)} className="remove">
+//         𝘅
+//       </span>
+//     </div>
+//   );
+// }
+
+
+/* harmony default export */ __webpack_exports__["default"] = (VehicleCard);
 
 /***/ }),
 
