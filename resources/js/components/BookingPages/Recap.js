@@ -13,21 +13,19 @@ class Recap extends Component {
                <Col>
 
                <h1>  Reservation Details:   </h1>
-
+               <hr />
                <h4>  Name: {this.props.firstName} {this.props.lastName}  </h4> 
                <h4>  Email:  {this.props.email}    </h4>
                <h4>  Cell Phone: {this.props.cellPhone}  </h4>
+               <h4>  Notes: {this.props.xfrNotes} </h4>
+               <hr />
+               <h4>   Vehicle:   </h4> 
                <h4>   Adults: {this.props.numAdults}   </h4>
                <h4>   Kids: {this.props.numChildren}  </h4>
-               <h4>   Notes: {this.props.xfrNotes} </h4>
-               <hr />
-               <h4>   Origin:  {this.props.origin} </h4> 
-              <h4>  Destination:  {this.props.destination} </h4>
-              <h4>  Pickup Date: {this.props.xfrDate}  </h4>
-              <h4>   Pickup Time: {this.props.xfrTime}   </h4>
-
-              <hr />
+              <h4>    Luggage:   </h4>
               
+              <hr />
+
           <ButtonToolbar>
    
               <Button variant="primary">Edit Reservation</Button>
@@ -42,7 +40,14 @@ class Recap extends Component {
 
             <Col>
                 <Map origin={this.props.directions.origin} destination={this.props.directions.destination} />
+                  <br />
+                  <h4>   Origin:  {this.props.origin} </h4> 
+                  <h4>  Destination:  {this.props.destination} </h4>
+                  <hr />
+                  <h4>  Pickup Date: {this.props.xfrDate}  </h4>
+                  <h4>   Pickup Time: {this.props.xfrTime}   </h4>
             </Col>
+            
           </Row>
 
   
