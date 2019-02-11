@@ -16,10 +16,9 @@
 
                     <!-- <div class="panel-body"> -->
                         <div id="about">
-
-                        <h1>I'm the About Route</h1>
-
                         </div>
+
+                        
                     <!-- </div> -->
                 <!-- </div>
             </div>
