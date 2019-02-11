@@ -94071,6 +94071,9 @@ function (_Component) {
       numAdults: "",
       numChildren: "",
       xfrNotes: "",
+      // values to be passed to the Recap Component
+      vehicleType: "",
+      xfrCost: "",
       // Controls what component to render
       currentPage: 0
     }, _this.handleInputChange = function (event) {

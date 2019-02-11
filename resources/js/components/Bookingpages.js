@@ -23,6 +23,10 @@ export default class BookingPages extends Component {
         numChildren: "",
         xfrNotes: "",
 
+        // values to be passed to the Recap Component
+        vehicleType: "",
+        xfrCost: "",
+        
         // Controls what component to render
         currentPage: 0
     }

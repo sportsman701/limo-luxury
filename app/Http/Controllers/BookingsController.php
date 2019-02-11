@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Booking;
 
 class BookingsController extends Controller
 {
@@ -34,7 +35,41 @@ class BookingsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'cell_phone' => 'required',
+            'email' => 'required',
+            'xfer_date' => 'required',
+            'xfer_time' => 'required',
+            'origin' => 'required',
+            'destination' => 'required',
+            'num_adults' => 'required',
+            'vehicle_type' => 'required',
+            'xfer_cost' => 'required'
+        ]);
+
+        // Create Booking Record
+        $booking = new Booking;
+
+        $booking->first_name = $request->firstName;
+        $booking->last_name = $request->lastName;
+        $booking->phone_number = $request->phoneNumber;
+        $booking->cell_phone = $request->cellPhone;
+        $booking->email = $request->email;
+        $booking->xfer_date = $request->xferDate;
+        $booking->xfer_time = $request->xferTime;
+        $booking->origin = $request->origin;
+        $booking->destination = $request->destination;
+        $booking->num_adults = $request->numAdults;
+        $booking->num_children = $request->numChildren;
+        $booking->vehicle_type = $request->vehicleType;
+        $booking->xfer_cost = $request->xferCost;
+        $booking->xfer_notes = $request->xferNotes;
+        
+        $booking->save();
+
+        return redirect('/booking/$id');
     }
 
     /**
