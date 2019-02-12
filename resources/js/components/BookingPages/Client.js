@@ -1,36 +1,34 @@
 import React, { Component } from "react";
 import { Jumbotron, Container, Row, Col, Button, Form, Card, ButtonGroup, InputGroup } from "react-bootstrap";
-import "./Booking.css";
+// import "./Booking.css";
 import Vehicles from "../../Vehicles.json";
 import VehicleCard from "./../VehicleCard";
 
 class Client extends Component {
 
   state = {
-    
-  Vehicles,
-  };
 
+    Vehicles,
+  };
 
   render() {
     return (
       <Container>
         <Jumbotron>
           
-        {/* Vehice Images */}
-          <Row> 
-          {this.state.Vehicles.map(Vehicles => (
-          <VehicleCard
+          {/* Vehice Images */}
+          <Row>
+            {this.state.Vehicles.map(Vehicles => (
+              <VehicleCard
+                id={Vehicles.id}
+                name={Vehicles.name}
+                image={Vehicles.image}
+                description={Vehicles.description}
+                capacity={Vehicles.capacity}
+                quantity={Vehicles.quantity}
+              />
 
-            id={Vehicles.id}
-            name={Vehicles.name}
-            image={Vehicles.image}
-            description={Vehicles.description}
-            capacity={Vehicles.capacity}
-            quantity={Vehicles.quantity}
-          />
-          
-        ))}
+            ))}
 
           </Row>
 

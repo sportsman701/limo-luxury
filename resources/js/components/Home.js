@@ -9,12 +9,12 @@ export default class Home extends Component {
     return (
       <Container>
 
-<br />
+        <br />
         <br />
         <Jumbotron>
-        <h2>Luxury Limo</h2>
-        
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar neque laoreet suspendisse interdum consectetur libero. In hendrerit gravida rutrum quisque. Aliquet enim tortor at auctor urna nunc. </p>
+          <h2>Luxury Limo</h2>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar neque laoreet suspendisse interdum consectetur libero. In hendrerit gravida rutrum quisque. Aliquet enim tortor at auctor urna nunc. </p>
         </Jumbotron>
       </Container>
     )
