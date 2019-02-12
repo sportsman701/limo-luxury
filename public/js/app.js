@@ -94077,17 +94077,14 @@ function (_Component) {
       // Controls what component to render
       currentPage: 0
     }, _this.handleInputChange = function (event) {
-      console.log(event);
+      // console.log(event);
       var _event$target = event.target,
           name = _event$target.name,
           value = _event$target.value;
 
       _this.setState(_defineProperty({}, name, value));
     }, _this.handleAutocompleteSelect = function (data) {
-      console.log({
-        data: data
-      });
-
+      // console.log({ data });
       _this.handleInputChange({
         target: {
           name: data.name,
@@ -94106,14 +94103,56 @@ function (_Component) {
       event.preventDefault(); // console.log("I've been clicked")
 
       _this.setState(_defineProperty({}, name, _this.state.currentPage--));
+    }, _this.createNewBooking = function (event) {
+      console.log(event);
+      event.preventDefault();
+      var newBooking = {
+        firstName: _this.state.firstName,
+        lastName: _this.state.lastName,
+        cellPhone: _this.state.cellPhone,
+        email: _this.state.email,
+        xfrDate: _this.state.xfrDate,
+        xfrTime: _this.state.xfrTime,
+        origin: _this.state.origin,
+        destination: _this.state.destination,
+        numAdults: _this.state.numAdults,
+        numChildren: _this.state.numChildren,
+        vehicleType: _this.state.vehicle,
+        xfrNotes: _this.state.xfrNotes
+      };
+      axios.post('/api/booking', newBooking).then(function (response) {
+        console.log("Booking Created");
+      }).catch(function (error) {
+        console.log(error);
+      }); // $.ajax({
+      //     headers: {
+      //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      //     },
+      //     url: '/api/booking',
+      //     type: 'post',
+      //     data: newBooking,
+      //     dataType: 'json'
+      // this.setState(
+      //   this.state.firstName = "",
+      //   this.state.lastName = "",
+      //   this.state.cellPhone = "",
+      //   this.state.email = "",
+      //   this.state.xfrDate = "",
+      //   this.state.xfrTime = "",
+      //   this.state.origin = "",
+      //   this.state.destination = "",
+      //   this.state.numAdults = "",
+      //   this.state.numChildren = "",
+      //   this.state.vehicleType = "",
+      //   this.state.xfrNotes = ""
+      // );
     }, _temp));
   }
 
   _createClass(BookingPages, [{
     key: "handleSubmit",
     value: function handleSubmit(event) {
-      event.preventDefault();
-      console.log("Form Value: ".concat(this.state.inputvalue));
+      event.preventDefault(); // console.log(`Form Value: ${this.state.inputvalue}`)
     }
   }, {
     key: "render",
@@ -94154,7 +94193,9 @@ function (_Component) {
         numAdults: this.state.numAdults,
         numChildren: this.state.numChildren,
         xfrNotes: this.state.xfrNotes,
-        directions: this.state.directions
+        directions: this.state.directions,
+        createNewBooking: this.createNewBooking,
+        handlePreviousPageLoad: this.handlePreviousPageLoad
       })];
       return steps[this.state.currentPage];
     }
@@ -94373,6 +94414,7 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, this.state.Vehicles.map(function (Vehicles) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_VehicleCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          key: Vehicles.id,
           id: Vehicles.id,
           name: Vehicles.name,
           image: Vehicles.image,
@@ -94620,9 +94662,23 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "  Reservation Details:   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Name: ", this.props.firstName, " ", this.props.lastName, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Email:  ", this.props.email, "    "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Cell Phone: ", this.props.cellPhone, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Notes: ", this.props.xfrNotes, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Vehicle:   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Adults: ", this.props.numAdults, "   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Kids: ", this.props.numChildren, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "    Luggage:   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonToolbar"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        variant: "primary"
+        variant: "primary",
+        name: "currentPage",
+        type: "submit",
+        value: "submit",
+        onClick: this.props.handlePreviousPageLoad,
+        style: {
+          margin: "10px"
+        }
       }, "Edit Reservation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        variant: "primary"
+        variant: "primary",
+        name: "create-new-booking",
+        type: "submit",
+        value: "submit",
+        onClick: this.props.createNewBooking,
+        style: {
+          margin: "10px"
+        }
       }, "Confirm Reservation"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Map__WEBPACK_IMPORTED_MODULE_3__["default"], {
         origin: this.props.directions.origin,
         destination: this.props.directions.destination
@@ -95275,15 +95331,15 @@ function VehicleCard(props) {
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "content"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Name:"), " ", props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Description:"), " ", props.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    class: "text-center"
+    className: "text-center"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     variant: "primary",
     name: "VehicleSelect",
     type: "submit",
-    value: "submit",
-    onClick: "test"
+    value: "submit"
   }, "SELECT"))));
-} // import React from "react";
+} // onClick= "test"
+// import React from "react";
 // import "./style.css";
 // function FriendCard(props) {
 //   return (

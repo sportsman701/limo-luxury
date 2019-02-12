@@ -28,8 +28,27 @@ class Recap extends Component {
 
           <ButtonToolbar>
    
-              <Button variant="primary">Edit Reservation</Button>
-              <Button variant="primary">Confirm Reservation</Button>
+              <Button 
+                variant="primary"
+                name="currentPage"
+                type="submit"
+                value="submit"
+                onClick={this.props.handlePreviousPageLoad}
+                style={{ margin: "10px" }}
+              >
+                Edit Reservation
+              </Button>
+              
+              <Button 
+                variant="primary"
+                name="create-new-booking"
+                type="submit"
+                value="submit"
+                onClick={this.props.createNewBooking}
+                style={{ margin: "10px" }}
+              >
+                Confirm Reservation
+              </Button>
 
           </ButtonToolbar>
 
