@@ -48,7 +48,7 @@ class Client extends Component {
    
                   
           
-          {/* Vehice Images */}
+          {/* Vehice Images
           <Row>
             {this.state.Vehicles.map(Vehicles => (
               <VehicleCard
@@ -62,7 +62,7 @@ class Client extends Component {
               />
 
             ))}
-          </Row>
+          </Row> */}
 
           <br />
           <hr />
