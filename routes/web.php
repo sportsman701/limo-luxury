@@ -23,6 +23,7 @@ Route::middleware(['auth'])->group(function(){
     // Page Routes
     Route::get('/about', 'PagesController@about');
     Route::get('/booking', 'PagesController@booking');
+    Route::get('/booking/{booking}', 'PagesController@show');
     Route::get('/vehicles', 'PagesController@vehicles');
     Route::get('/reports', 'PagesController@reports');
     Route::get('/search', 'PagesController@search');
@@ -36,7 +37,3 @@ Route::prefix('api')->middleware(['auth'])->group(function() {
     Route::resource('/booking', 'BookingsController');
     Route::resource('/vehicles', 'VehiclesController');
 });
-
-// Route::get('/api/booking/vehicle', 'BookingsController@vehicleCard');
-// Route::get('/api/vehicle/vehicleInfo', 'VehiclesController@vehicleInfo');
-// Route::post('/api/vehicle/vehicleInfo', 'VehiclesController@store');

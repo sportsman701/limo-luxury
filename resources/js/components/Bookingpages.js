@@ -32,13 +32,13 @@ export default class BookingPages extends Component {
     }
 
     handleInputChange = event => {
-        console.log(event);
+        // console.log(event);
         const { name, value } = event.target;
         this.setState({ [name]: value });
     }
 
     handleAutocompleteSelect = (data) => {
-        console.log({ data });
+        // console.log({ data });
 
         this.handleInputChange({ target: { name: data.name, value: data.address }});
 
@@ -61,8 +61,62 @@ export default class BookingPages extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log(`Form Value: ${this.state.inputvalue}`)
+        // console.log(`Form Value: ${this.state.inputvalue}`)
     }
+
+    createNewBooking = event => {
+        console.log(event);
+        event.preventDefault();
+    
+        let newBooking = {
+          firstName: this.state.firstName,
+          lastName: this.state.lastName,
+          cellPhone: this.state.cellPhone,
+          email: this.state.email,
+          xfrDate: this.state.xfrDate,
+          xfrTime: this.state.xfrTime,
+          origin: this.state.origin,
+          destination: this.state.destination,
+          numAdults: this.state.numAdults,
+          numChildren: this.state.numChildren,
+          vehicleType: this.state.vehicle,
+          xfrNotes: this.state.xfrNotes
+        };
+    
+        axios.post('/api/booking', newBooking)
+          .then(function (response) {
+            console.log("Booking Created");
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+        // $.ajax({
+        //     headers: {
+        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //     },
+        //     url: '/api/booking',
+        //     type: 'post',
+        //     data: newBooking,
+        //     dataType: 'json'
+
+        // this.setState(
+        //   this.state.firstName = "",
+        //   this.state.lastName = "",
+        //   this.state.cellPhone = "",
+        //   this.state.email = "",
+        //   this.state.xfrDate = "",
+        //   this.state.xfrTime = "",
+        //   this.state.origin = "",
+        //   this.state.destination = "",
+        //   this.state.numAdults = "",
+        //   this.state.numChildren = "",
+        //   this.state.vehicleType = "",
+        //   this.state.xfrNotes = ""
+        // );
+      
+      }
+    
 
     render() {
         const steps = [
@@ -105,6 +159,8 @@ export default class BookingPages extends Component {
                 numChildren={this.state.numChildren}
                 xfrNotes={this.state.xfrNotes}
                 directions={this.state.directions}
+                createNewBooking={this.createNewBooking}
+                handlePreviousPageLoad={this.handlePreviousPageLoad}
             />
         ];
 
