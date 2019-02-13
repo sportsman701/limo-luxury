@@ -15,23 +15,23 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('first_name')->nullable($value = false);
-            $table->string('last_name')->nullable($value = false);
-            $table->string('phone_number');
-            $table->string('cell_phone')->nullable($value = false);
-            $table->string('email')->nullable($value = false);
-            $table->date('xfer_date')->nullable($value = false);
-            $table->time('xfer_time')->nullable($value = false);
-            $table->string('origin')->nullable($value = false);
-            $table->string('destination')->nullable($value = false);
-            $table->integer('num_adults')->nullable($value = false);
-            $table->integer('num_children');
-            $table->string('vehicle_type')->nullable($value = false);
-            $table->decimal('xfer_cost', 9, 2)->nullable($value = false);
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('phone_number')->nullable();
+            $table->string('cell_phone');
+            $table->string('email');
+            $table->date('xfer_date');
+            $table->time('xfer_time');
+            $table->string('origin');
+            $table->string('destination');
+            $table->integer('num_adults');
+            $table->integer('num_children')->nullable();
+            $table->string('vehicle_type')->nullable();
+            $table->decimal('xfer_cost', 9, 2)->nullable();
             $table->mediumText('xfer_notes');
-            $table->boolean('xfer_status');
-            $table->integer('xfer_confirmation');
-            $table->integer('xfer_cancel');
+            $table->boolean('xfer_status')->nullable();
+            $table->integer('xfer_confirmation')->nullable();
+            $table->integer('xfer_cancel')->nullable();
             $table->timestamps();
         });
     }

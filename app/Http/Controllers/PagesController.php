@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Booking;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -14,6 +15,13 @@ class PagesController extends Controller
     public function booking() 
     {
         return view('booking');
+    }
+
+    public function show(Booking $booking)
+    {
+        return view('booking')->with([
+            'booking' => $booking,
+        ]);
     }
 
     public function vehicles() 
