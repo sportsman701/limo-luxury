@@ -94323,7 +94323,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Vehicles_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Vehicles.json */ "./resources/js/Vehicles.json");
 var _Vehicles_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../Vehicles.json */ "./resources/js/Vehicles.json", 1);
 /* harmony import */ var _VehicleCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../VehicleCard */ "./resources/js/components/VehicleCard.js");
-/* harmony import */ var _Toggle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../Toggle */ "./resources/js/components/Toggle.js");
+/* harmony import */ var _ToggleRenderProps__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../ToggleRenderProps */ "./resources/js/components/ToggleRenderProps.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -94373,16 +94373,26 @@ function (_Component) {
   _createClass(Client, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Toggle__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, this.state.Vehicles.map(function (Vehicles) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_VehicleCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          id: Vehicles.id,
-          name: Vehicles.name,
-          image: Vehicles.image,
-          description: Vehicles.description,
-          capacity: Vehicles.capacity,
-          quantity: Vehicles.quantity
-        });
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
+      var _this2 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ToggleRenderProps__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        render: function render(_ref) {
+          var on = _ref.on,
+              toggle = _ref.toggle;
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, on && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, _this2.state.Vehicles.map(function (Vehicles) {
+            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_VehicleCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              id: Vehicles.id,
+              name: Vehicles.name,
+              image: Vehicles.image,
+              description: Vehicles.description,
+              capacity: Vehicles.capacity,
+              quantity: Vehicles.quantity
+            });
+          })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            onClick: toggle
+          }, "Show/Hide"));
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
         as: react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"],
         controlId: "formGridOrigin"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, null, "Pickup Location"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
@@ -95218,10 +95228,10 @@ if (document.getElementById('search')) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Toggle.js":
-/*!*******************************************!*\
-  !*** ./resources/js/components/Toggle.js ***!
-  \*******************************************/
+/***/ "./resources/js/components/ToggleRenderProps.js":
+/*!******************************************************!*\
+  !*** ./resources/js/components/ToggleRenderProps.js ***!
+  \******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -95278,9 +95288,11 @@ function (_Component) {
   _createClass(Toggle, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.on && this.props.children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.toggle
-      }, "Hide/Show Vehicle"));
+      var render = this.props.render;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, render({
+        on: this.state.on,
+        toggle: this.toggle
+      }));
     }
   }]);
 

@@ -3,7 +3,7 @@ import { Jumbotron, Container, Row, Col, Button, Form, Card, ButtonGroup, InputG
 // import "./Booking.css";
 import Vehicles from "../../Vehicles.json";
 import VehicleCard from "./../VehicleCard";
-import Toggle from "./../Toggle";
+import Toggle from "./../ToggleRenderProps";
 
 class Client extends Component {
 
@@ -17,11 +17,14 @@ class Client extends Component {
       <Container>
         <Jumbotron>
              
-                <Toggle>
-                <Row>
+                <Toggle render={ ({on, toggle}) => (
+                  <div>
+                    {on && 
+
+                      <Row>
 
                     {/* Vehice Images */}
-                    
+
                       {this.state.Vehicles.map(Vehicles => (
                         <VehicleCard
                           id={Vehicles.id}
@@ -32,10 +35,18 @@ class Client extends Component {
                           quantity={Vehicles.quantity}
                         />
 
-                      ))}
-                 
-                  </Row>
-                  </Toggle>
+                        ))}
+
+                        </Row>
+                    
+                    }
+                  
+                  <button onClick={toggle}>Show/Hide</button>
+                  </div>
+                  )}/>
+
+   
+                  
           
 
 
