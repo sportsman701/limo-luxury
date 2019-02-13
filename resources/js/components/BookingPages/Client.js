@@ -3,6 +3,7 @@ import { Jumbotron, Container, Row, Col, Button, Form, Card, ButtonGroup, InputG
 // import "./Booking.css";
 import Vehicles from "../../Vehicles.json";
 import VehicleCard from "./../VehicleCard";
+import Toggle from "./../Toggle";
 
 class Client extends Component {
 
@@ -15,22 +16,28 @@ class Client extends Component {
     return (
       <Container>
         <Jumbotron>
+             
+                <Toggle>
+                <Row>
+
+                    {/* Vehice Images */}
+                    
+                      {this.state.Vehicles.map(Vehicles => (
+                        <VehicleCard
+                          id={Vehicles.id}
+                          name={Vehicles.name}
+                          image={Vehicles.image}
+                          description={Vehicles.description}
+                          capacity={Vehicles.capacity}
+                          quantity={Vehicles.quantity}
+                        />
+
+                      ))}
+                 
+                  </Row>
+                  </Toggle>
           
-          {/* Vehice Images */}
-          <Row>
-            {this.state.Vehicles.map(Vehicles => (
-              <VehicleCard
-                id={Vehicles.id}
-                name={Vehicles.name}
-                image={Vehicles.image}
-                description={Vehicles.description}
-                capacity={Vehicles.capacity}
-                quantity={Vehicles.quantity}
-              />
 
-            ))}
-
-          </Row>
 
           <br />
           <hr />
