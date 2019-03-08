@@ -17,10 +17,24 @@ class PagesController extends Controller
         return view('booking');
     }
 
-    public function show(Booking $booking)
+    public function show($bookingID)
     {
-        return view('booking')->with([
-            'booking' => $booking,
+        $confirmID = Booking::find($bookingID);
+
+        return view('confirmation')->with([
+            'confirmationNum' => $confirmID->id,
+            'firstName' => $confirmID->first_name,
+            'lastName' => $confirmID->last_name,
+            'cellPhone' => $confirmID->last_name,
+            'email' => $confirmID->email,
+            'xfrDate' => $confirmID->xfer_date,
+            'xfrTime' => $confirmID->xfer_time,
+            'origin' => $confirmID->origin,
+            'destination' => $confirmID->destination,
+            'numAdults' => $confirmID->num_adults,
+            'numChildren' => $confirmID->num_children,
+            'vehicleType' => $confirmID->vehicle_type,
+            'xfrNotes' => $confirmID->xfer_notes
         ]);
     }
 

@@ -85,7 +85,7 @@ class VehiclesController extends Controller
      */
     public function edit($id)
     {
-        $vehicle = Vehicle::find($id);
+        $vehicleInfo = Vehicle::find($id);
         return response()->json($vehicleInfo);
     }
 
@@ -109,7 +109,7 @@ class VehiclesController extends Controller
             'mileage-rate' => 'required',
         ]);        
 
-        // Create Vehicle
+        // Update Vehicle
         $vehicle = Vehicle::find($id);
         
         $vehicle->type = $request->input('type');

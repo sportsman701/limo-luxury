@@ -19,3 +19,4 @@ require('./components/Reports');
 require('./components/Vehicles');
 require('./components/Home');
 require('./components/Search');
+require('./components/Confirmation');

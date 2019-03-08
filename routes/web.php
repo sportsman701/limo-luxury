@@ -23,7 +23,7 @@ Route::middleware(['auth'])->group(function(){
     // Page Routes
     Route::get('/about', 'PagesController@about');
     Route::get('/booking', 'PagesController@booking');
-    Route::get('/booking/{booking}', 'PagesController@show');
+    Route::get('/confirmation/{booking}', 'PagesController@show');
     Route::get('/vehicles', 'PagesController@vehicles');
     Route::get('/reports', 'PagesController@reports');
     Route::get('/search', 'PagesController@search');

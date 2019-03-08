@@ -8,20 +8,20 @@ export default class BookingPages extends Component {
     state = {
         // ALL values to be passed to the Recap component
         // values to be passed to the booking component
-        origin: "",
-        destination: "",
+        origin: "Villas of Grand Cypress, North Jacaranda Street, Orlando, FL, USA",
+        destination: "Orlando International Airport, Orlando, FL, USA",
         directions: { origin: null, destination: null },
         xfrDate: "",
         xfrTime: "",
 
         // values to be passed to the client component
-        firstName: "",
-        lastName: "",
-        cellPhone: "",
-        email: "",
-        numAdults: "",
+        firstName: "Test",
+        lastName: "test",
+        cellPhone: "555-123-1234",
+        email: "test@test.com",
+        numAdults: "2",
         numChildren: "",
-        xfrNotes: "",
+        xfrNotes: "test",
 
         // values to be passed to the Recap Component
         vehicleType: "",
@@ -65,7 +65,7 @@ export default class BookingPages extends Component {
     }
 
     createNewBooking = event => {
-        console.log(event);
+        
         event.preventDefault();
     
         let newBooking = {
@@ -86,34 +86,14 @@ export default class BookingPages extends Component {
         axios.post('/api/booking', newBooking)
           .then(function (response) {
             console.log("Booking Created");
+            // console.log(response);
+            // console.log(response.request.responseURL);
+            window.location.replace(response.request.responseURL);
           })
           .catch(function (error) {
             console.log(error);
           });
 
-        // $.ajax({
-        //     headers: {
-        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //     },
-        //     url: '/api/booking',
-        //     type: 'post',
-        //     data: newBooking,
-        //     dataType: 'json'
-
-        // this.setState(
-        //   this.state.firstName = "",
-        //   this.state.lastName = "",
-        //   this.state.cellPhone = "",
-        //   this.state.email = "",
-        //   this.state.xfrDate = "",
-        //   this.state.xfrTime = "",
-        //   this.state.origin = "",
-        //   this.state.destination = "",
-        //   this.state.numAdults = "",
-        //   this.state.numChildren = "",
-        //   this.state.vehicleType = "",
-        //   this.state.xfrNotes = ""
-        // );
       
       }
     
