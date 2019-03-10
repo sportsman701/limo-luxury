@@ -94698,6 +94698,8 @@ function (_Component) {
   _createClass(Directions, [{
     key: "render",
     value: function render() {
+      var _this = this;
+
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MapPoints, {
         origin: this.state.origin,
         destination: this.state.destination
@@ -94706,7 +94708,13 @@ function (_Component) {
         origin: this.props.origin,
         destination: this.props.destination,
         travelMode: google.maps.TravelMode.DRIVING
-      }, function (result, status) {});
+      }, function (result, status) {
+        if (status === google.maps.DirectionsStatus.OK) {
+          _this.setState({
+            directions: result
+          });
+        }
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
     }
   }]);
@@ -94995,7 +95003,7 @@ function (_Component) {
           },
           defaultZoom: 10
         }, markers, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_1__["DirectionsRenderer"], {
-          Directions: _this.state.Directions
+          directions: _this.props.directions
         }));
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GoogleMapExample, {
