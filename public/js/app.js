@@ -94966,6 +94966,7 @@ function (_Component) {
               originLng = _this$props$origin.lng;
           markers.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_1__["Marker"], {
             key: "origin",
+            name: "origin",
             position: {
               lat: originLat,
               lng: originLng
@@ -94979,6 +94980,7 @@ function (_Component) {
               destinationLng = _this$props$destinati.lng;
           markers.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_1__["Marker"], {
             key: "destination",
+            name: "destination",
             position: {
               lat: destinationLat,
               lng: destinationLng
@@ -94992,7 +94994,9 @@ function (_Component) {
             lng: -81.3792
           },
           defaultZoom: 10
-        }, markers);
+        }, markers, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_1__["DirectionsRenderer"], {
+          Directions: _this.state.Directions
+        }));
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GoogleMapExample, {
         containerElement: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
