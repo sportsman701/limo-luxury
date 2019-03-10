@@ -95003,7 +95003,7 @@ function (_Component) {
           },
           defaultZoom: 10
         }, markers, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_1__["DirectionsRenderer"], {
-          directions: _this.props.directions
+          Directions: _this.props.directions
         }));
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GoogleMapExample, {
