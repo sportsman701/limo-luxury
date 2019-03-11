@@ -6,5 +6,12 @@
 }
 
 .body{
-padding-top: -5px;
+   
+
+}
+
+.card {
+    width: 33%;
+    text-overflow: ellipsis;
+
 }
