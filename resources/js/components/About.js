@@ -15,7 +15,6 @@ export default class About extends Component {
                         <Col>
                             <h1> Luxury Limo</h1>
                             <h3>
-                                {" "}
                                 The business way to book your resort's
                                 transportation
                             </h3>
@@ -28,6 +27,7 @@ export default class About extends Component {
 
                     <Toggle>
                         <Row>
+                          <Col>
                             <Card>
                                 <Card.Img
                                     variant="top"
@@ -46,7 +46,10 @@ export default class About extends Component {
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
+                            </Col>
 
+                            <Col>
+                          
                             <Card>
                                 <Card.Img
                                     variant="top"
@@ -71,6 +74,9 @@ export default class About extends Component {
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
+                            </Col>
+
+                            <Col>
 
                             <Card>
                                 <Card.Img
@@ -84,6 +90,7 @@ export default class About extends Component {
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
+                            </Col>
                         </Row>
                     </Toggle>
                 </Jumbotron>
