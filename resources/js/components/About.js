@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Jumbotron, Container, Card, Row, Col, Image } from "react-bootstrap";
 import ReactDOM from 'react-dom';
 import './About.css';
-import Toggle from "./../ToggleRenderProps";
+import Toggle from './Toggle';
 
 export default class About extends Component {
   render() {
@@ -22,8 +22,13 @@ export default class About extends Component {
                 </Col>
               </Row>
 
-              <Row>
 
+
+              <Toggle>
+              <Row>
+              
+
+                
                   <Card>
                   <Card.Img
                     variant="top"
@@ -32,12 +37,13 @@ export default class About extends Component {
                     <Card.Body>
                         <Card.Title>Technologies Used</Card.Title>
                         <Card.Text>
-                        This project was created by Jeff McINtosh and Preston Mack - This utilizes Laravel and MySQL on the backend, and React on the front end. React Google Maps, React Bootstrap, React Date Picker, React Time Picker and React Places Autocomplete
+                        This project was created by Jeff McINtosh and Preston Mack - Thisutilizes Laravel and MySQL on the backend, and React on the front end. React Google Maps, React Bootstrap, React Date Picker, React Time Picker and React Places Autocomplete
                         </Card.Text>
                     </Card.Body>
                     </Card>
+                    
    
-
+                
                 <Card>
                   <Card.Img
                     variant="top"
@@ -50,10 +56,10 @@ export default class About extends Component {
                         </Card.Text>
                     </Card.Body>
                 </Card>
-
+               
                
 
- 
+                
                 <Card>
                   <Card.Img
                     variant="top"
@@ -66,9 +72,9 @@ export default class About extends Component {
                         </Card.Text>
                     </Card.Body>
                 </Card>
-
-              
+                
               </Row>
+              </Toggle>
 
         </Jumbotron>
       </Container>
