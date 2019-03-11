@@ -1,8 +1,10 @@
 .jumbotron  {
     text-align: center;
     background: transparent;
-    border-radius: 20px;
-    border: 2px lightgrey solid;
-    
+    width: 120%;
+    border: 20px red solid;
 }
 
+.body{
+padding-top: -5px;
+}

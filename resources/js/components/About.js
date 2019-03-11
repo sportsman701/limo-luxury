@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Jumbotron, Container } from "react-bootstrap";
+import { Jumbotron, Container, Card, Row, Col, Image } from "react-bootstrap";
 import ReactDOM from 'react-dom';
-
-import './About';
+import './About.css';
+import Toggle from "./../ToggleRenderProps";
 
 export default class About extends Component {
   render() {
@@ -12,9 +12,64 @@ export default class About extends Component {
 <br />
         <br />
         <Jumbotron>
-        <h2>Luxury Limo is the final project created by Jeffrey McIntosh and Preston Mack</h2>
-        
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar neque laoreet suspendisse interdum consectetur libero. In hendrerit gravida rutrum quisque. Aliquet enim tortor at auctor urna nunc. </p>
+            <Row>
+              <Col>
+                
+                <h1> Luxury Limo</h1>
+                <h3> The business way to book your resort's transportation</h3>
+                <Image src="http://www.allwhitebackground.com/images/1/1183.png" fluid />
+
+                </Col>
+              </Row>
+
+              <Row>
+
+                  <Card>
+                  <Card.Img
+                    variant="top"
+                    src="https://irp-cdn.multiscreensite.com/b9968a14/dms3rep/multi/tablet/Lincoln%20Town%20Car%20Limousine%20White-631x307.dm.edit_BWyuFx.png"
+                  />
+                    <Card.Body>
+                        <Card.Title>Technologies Used</Card.Title>
+                        <Card.Text>
+                        This project was created by Jeff McINtosh and Preston Mack - This utilizes Laravel and MySQL on the backend, and React on the front end. React Google Maps, React Bootstrap, React Date Picker, React Time Picker and React Places Autocomplete
+                        </Card.Text>
+                    </Card.Body>
+                    </Card>
+   
+
+                <Card>
+                  <Card.Img
+                    variant="top"
+                    src="https://irp-cdn.multiscreensite.com/b9968a14/dms3rep/multi/tablet/Lincoln%20Town%20Car%20Limousine%20White-631x307.dm.edit_BWyuFx.png"
+                  />
+                    <Card.Body>
+                        <Card.Title>Jeffrey McIntosh</Card.Title>
+                        <Card.Text>
+                       Jeffrey McIntosh Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium labore eos aliquid assumenda enim officia saepe error unde excepturi, velit laudantium porro asperiores ipsum iusto! Hic omnis quasi suscipit molestiae.
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+
+               
+
+ 
+                <Card>
+                  <Card.Img
+                    variant="top"
+                    src="https://irp-cdn.multiscreensite.com/b9968a14/dms3rep/multi/tablet/Lincoln%20Town%20Car%20Limousine%20White-631x307.dm.edit_BWyuFx.png"
+                  />
+                    <Card.Body>
+                        <Card.Title>Preston Mack</Card.Title>
+                        <Card.Text>
+                        Presotn Mack Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, cumque eius nesciunt nulla ab possimus. Quaerat repellendus deserunt temporibus ad sed incidunt porro repudiandae voluptas, quam dolore autem rem sit!
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+
+              
+              </Row>
+
         </Jumbotron>
       </Container>
     )

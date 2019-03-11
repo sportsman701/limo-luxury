@@ -25,7 +25,7 @@ class Map extends Component {
                 <GoogleMap defaultCenter={{ lat: 28.5383, lng: -81.3792 }} defaultZoom={10}>
                     {markers}
 
-                <DirectionsRenderer Directions = {this.props.directions} /> 
+                {/* <DirectionsRenderer Directions = {this.props.directions} />  */}
                 </GoogleMap>
             )
         });
