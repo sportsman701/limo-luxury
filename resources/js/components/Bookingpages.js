@@ -3,29 +3,32 @@ import ReactDOM from 'react-dom';
 import Booking from './BookingPages/Booking';
 import Client from './BookingPages/Client';
 import Recap from './BookingPages/Recap';
+import Confirmation from './BookingPages/Confirmation';
 
 export default class BookingPages extends Component {
     state = {
         // ALL values to be passed to the Recap component
         // values to be passed to the booking component
-        origin: "Villas of Grand Cypress, North Jacaranda Street, Orlando, FL, USA",
-        destination: "Orlando International Airport, Orlando, FL, USA",
+        origin: "",
+        destination: "",
         directions: { origin: null, destination: null },
         xfrDate: "",
         xfrTime: "",
 
         // values to be passed to the client component
-        firstName: "Test",
-        lastName: "test",
-        cellPhone: "555-123-1234",
-        email: "test@test.com",
-        numAdults: "2",
+        firstName: "",
+        lastName: "",
+        cellPhone: "",
+        email: "",
+        numAdults: "",
         numChildren: "",
-        xfrNotes: "test",
+        xfrNotes: "",
 
         // values to be passed to the Recap Component
         vehicleType: "",
         xfrCost: "",
+
+        confirmationNum: "",
         
         // Controls what component to render
         currentPage: 0
@@ -64,6 +67,10 @@ export default class BookingPages extends Component {
         // console.log(`Form Value: ${this.state.inputvalue}`)
     }
 
+    updateBookingID(data) {
+        this.setState({ confirmationNum: data })
+    }
+
     createNewBooking = event => {
         
         event.preventDefault();
@@ -84,17 +91,15 @@ export default class BookingPages extends Component {
         };
     
         axios.post('/api/booking', newBooking)
-          .then(function (response) {
-            console.log("Booking Created");
-            // console.log(response);
-            // console.log(response.request.responseURL);
-            window.location.replace(response.request.responseURL);
+          .then(response => {
+            console.log("Booking Created");            
+            this.setState({ confirmationNum: response.data });            
           })
           .catch(function (error) {
             console.log(error);
           });
 
-      
+        this.setState({ [name]: this.state.currentPage++ })
       }
     
 
@@ -141,6 +146,21 @@ export default class BookingPages extends Component {
                 directions={this.state.directions}
                 createNewBooking={this.createNewBooking}
                 handlePreviousPageLoad={this.handlePreviousPageLoad}
+            />,
+            <Confirmation 
+                confirmationNum={this.state.confirmationNum}
+                origin={this.state.origin}
+                destination={this.state.destination}
+                xfrDate={this.state.xfrDate}
+                xfrTime={this.state.xfrTime}
+                firstName={this.state.firstName}
+                lastName={this.state.lastName}
+                cellPhone={this.state.cellPhone}
+                email={this.state.email}
+                numAdults={this.state.numAdults}
+                numChildren={this.state.numChildren}
+                xfrNotes={this.state.xfrNotes}
+                directions={this.state.directions}
             />
         ];
 

@@ -68,7 +68,7 @@ class BookingsController extends Controller
         
         $booking->save();
 
-        return redirect("/confirmation/{$booking->id}");
+        return $booking->id;
         
     }
 

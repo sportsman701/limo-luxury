@@ -93863,8 +93863,6 @@ __webpack_require__(/*! ./components/Home */ "./resources/js/components/Home.js"
 
 __webpack_require__(/*! ./components/Search */ "./resources/js/components/Search.js");
 
-__webpack_require__(/*! ./components/Confirmation */ "./resources/js/components/Confirmation.js");
-
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -94010,6 +94008,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _BookingPages_Booking__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BookingPages/Booking */ "./resources/js/components/BookingPages/Booking.js");
 /* harmony import */ var _BookingPages_Client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BookingPages/Client */ "./resources/js/components/BookingPages/Client.js");
 /* harmony import */ var _BookingPages_Recap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./BookingPages/Recap */ "./resources/js/components/BookingPages/Recap.js");
+/* harmony import */ var _BookingPages_Confirmation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./BookingPages/Confirmation */ "./resources/js/components/BookingPages/Confirmation.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
@@ -94038,6 +94037,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var BookingPages =
 /*#__PURE__*/
 function (_Component) {
@@ -94057,8 +94057,8 @@ function (_Component) {
     return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(BookingPages)).call.apply(_getPrototypeOf2, [this].concat(args))), _this.state = {
       // ALL values to be passed to the Recap component
       // values to be passed to the booking component
-      origin: "Villas of Grand Cypress, North Jacaranda Street, Orlando, FL, USA",
-      destination: "Orlando International Airport, Orlando, FL, USA",
+      origin: "",
+      destination: "",
       directions: {
         origin: null,
         destination: null
@@ -94066,16 +94066,17 @@ function (_Component) {
       xfrDate: "",
       xfrTime: "",
       // values to be passed to the client component
-      firstName: "Test",
-      lastName: "test",
-      cellPhone: "555-123-1234",
-      email: "test@test.com",
-      numAdults: "2",
+      firstName: "",
+      lastName: "",
+      cellPhone: "",
+      email: "",
+      numAdults: "",
       numChildren: "",
-      xfrNotes: "test",
+      xfrNotes: "",
       // values to be passed to the Recap Component
       vehicleType: "",
       xfrCost: "",
+      confirmationNum: "",
       // Controls what component to render
       currentPage: 0
     }, _this.handleInputChange = function (event) {
@@ -94122,13 +94123,16 @@ function (_Component) {
         xfrNotes: _this.state.xfrNotes
       };
       axios.post('/api/booking', newBooking).then(function (response) {
-        console.log("Booking Created"); // console.log(response);
-        // console.log(response.request.responseURL);
+        console.log("Booking Created");
 
-        window.location.replace(response.request.responseURL);
+        _this.setState({
+          confirmationNum: response.data
+        });
       }).catch(function (error) {
         console.log(error);
       });
+
+      _this.setState(_defineProperty({}, name, _this.state.currentPage++));
     }, _temp));
   }
 
@@ -94136,6 +94140,13 @@ function (_Component) {
     key: "handleSubmit",
     value: function handleSubmit(event) {
       event.preventDefault(); // console.log(`Form Value: ${this.state.inputvalue}`)
+    }
+  }, {
+    key: "updateBookingID",
+    value: function updateBookingID(data) {
+      this.setState({
+        confirmationNum: data
+      });
     }
   }, {
     key: "render",
@@ -94179,6 +94190,20 @@ function (_Component) {
         directions: this.state.directions,
         createNewBooking: this.createNewBooking,
         handlePreviousPageLoad: this.handlePreviousPageLoad
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookingPages_Confirmation__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        confirmationNum: this.state.confirmationNum,
+        origin: this.state.origin,
+        destination: this.state.destination,
+        xfrDate: this.state.xfrDate,
+        xfrTime: this.state.xfrTime,
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        cellPhone: this.state.cellPhone,
+        email: this.state.email,
+        numAdults: this.state.numAdults,
+        numChildren: this.state.numChildren,
+        xfrNotes: this.state.xfrNotes,
+        directions: this.state.directions
       })];
       return steps[this.state.currentPage];
     }
@@ -94413,8 +94438,8 @@ function (_Component) {
               quantity: Vehicles.quantity
             });
           })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-            onClick: toggle
-          }, "Show/Hide"));
+            onClick: _ToggleRenderProps__WEBPACK_IMPORTED_MODULE_4__["default"]
+          }, "Show/Hide Vehicles"));
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
         as: react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"],
@@ -94603,6 +94628,75 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./resources/js/components/BookingPages/Confirmation.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/BookingPages/Confirmation.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+/* harmony import */ var _Booking_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Booking.css */ "./resources/js/components/BookingPages/Booking.css");
+/* harmony import */ var _Booking_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Booking_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Map */ "./resources/js/components/Map.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var Confirmation =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Confirmation, _Component);
+
+  function Confirmation() {
+    _classCallCheck(this, Confirmation);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Confirmation).apply(this, arguments));
+  }
+
+  _createClass(Confirmation, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        id: "confirmNum"
+      }, "Confirmation #: ", this.props.confirmationNum), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "  Reservation Details:   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Name: ", this.props.firstName, " ", this.props.lastName, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Email:  ", this.props.email, "    "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Cell Phone: ", this.props.cellPhone, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Notes: ", this.props.xfrNotes, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Vehicle:   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Adults: ", this.props.numAdults, "   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Kids: ", this.props.numChildren, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "    Luggage:   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Map__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        origin: this.props.directions.origin,
+        destination: this.props.directions.destination
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Origin:  ", this.props.origin, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Destination:  ", this.props.destination, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Pickup Date: ", this.props.xfrDate, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Pickup Time: ", this.props.xfrTime, "   ")))));
+    }
+  }]);
+
+  return Confirmation;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (Confirmation);
+
+/***/ }),
+
 /***/ "./resources/js/components/BookingPages/Recap.js":
 /*!*******************************************************!*\
   !*** ./resources/js/components/BookingPages/Recap.js ***!
@@ -94655,7 +94749,7 @@ function (_Component) {
   _createClass(Recap, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "  Reservation Details:   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Name: ", this.props.firstName, " ", this.props.lastName, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Email:  ", this.props.email, "    "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Cell Phone: ", this.props.cellPhone, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Notes: ", this.props.xfrNotes, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Vehicle:   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Adults: ", this.props.numAdults, "   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Kids: ", this.props.numChildren, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "    Luggage:   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonToolbar"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, " Reservation Details: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, " ", "Name: ", this.props.firstName, " ", this.props.lastName, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, " Email: ", this.props.email, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, " Cell Phone: ", this.props.cellPhone, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, " Notes: ", this.props.xfrNotes, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, " Vehicle: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, " Adults: ", this.props.numAdults, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, " Kids: ", this.props.numChildren, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, " Luggage: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonToolbar"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         variant: "primary",
         name: "currentPage",
         type: "submit",
@@ -94676,7 +94770,7 @@ function (_Component) {
       }, "Confirm Reservation"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Map__WEBPACK_IMPORTED_MODULE_3__["default"], {
         origin: this.props.directions.origin,
         destination: this.props.directions.destination
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Origin:  ", this.props.origin, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Destination:  ", this.props.destination, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Pickup Date: ", this.props.xfrDate, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Pickup Time: ", this.props.xfrTime, "   ")))));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, " Origin: ", this.props.origin, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, " Destination: ", this.props.destination, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, " Pickup Date: ", this.props.xfrDate, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, " Pickup Time: ", this.props.xfrTime, " ")))));
     }
   }]);
 
@@ -94684,138 +94778,6 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Recap);
-
-/***/ }),
-
-/***/ "./resources/js/components/Confirmation.js":
-/*!*************************************************!*\
-  !*** ./resources/js/components/Confirmation.js ***!
-  \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Confirmation; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
-/* harmony import */ var _BookingPages_Booking_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BookingPages/Booking.css */ "./resources/js/components/BookingPages/Booking.css");
-/* harmony import */ var _BookingPages_Booking_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_BookingPages_Booking_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Map__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Map */ "./resources/js/components/Map.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-
-
-var Confirmation =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Confirmation, _Component);
-
-  function Confirmation() {
-    var _getPrototypeOf2;
-
-    var _temp, _this;
-
-    _classCallCheck(this, Confirmation);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Confirmation)).call.apply(_getPrototypeOf2, [this].concat(args))), _this.state = {
-      confirmationNum: "",
-      origin: "",
-      destination: "",
-      directions: {
-        origin: null,
-        destination: null
-      },
-      xfrDate: "",
-      xfrTime: "",
-      firstName: "",
-      lastName: "",
-      cellPhone: "",
-      email: "",
-      numAdults: "",
-      numChildren: "",
-      xfrNotes: "",
-      vehicleType: "",
-      xfrCost: "" // this.setState({
-      //     directions: { ...this.state.directions, [data.name]: data.coordinates },
-
-    }, _temp));
-  }
-
-  _createClass(Confirmation, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      // const bookingID = this.props.match
-      axios.get("/confirmation/55").then(function (response) {
-        var confirm = response.data;
-
-        _this2.setState({
-          confirmationNum: confirm.id,
-          firstName: confirm.first_name,
-          lastName: confirm.last_name,
-          cellPhone: confirm.cell_phone,
-          email: confirm.email,
-          xfrDate: confirm.xfer_date,
-          xfrTime: confirm.xfer_time,
-          origin: confirm.origin,
-          destination: confirm.destination,
-          numAdults: confirm.num_adults,
-          numChildren: confirm.num_children,
-          vehicleType: confirm.vehicle_type,
-          xfrNotes: confirm.xfer_notes
-        });
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        id: "confirmNum"
-      }, "Confirmation #: ", this.state.confirmationNum), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "  Reservation Details:   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Name: ", this.state.firstName, " ", this.state.lastName, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Email:  ", this.state.email, "    "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Cell Phone: ", this.state.cellPhone, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Notes: ", this.state.xfrNotes, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Vehicle:   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Adults: ", this.state.numAdults, "   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Kids: ", this.state.numChildren, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "    Luggage:   "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Map__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        origin: this.state.directions.origin,
-        destination: this.state.directions.destination
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Origin:  ", this.state.origin, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Destination:  ", this.state.destination, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "  Pickup Date: ", this.state.xfrDate, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "   Pickup Time: ", this.state.xfrTime, "   ")))));
-    }
-  }]);
-
-  return Confirmation;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-
-;
-
-if (document.getElementById('confirmation')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Confirmation, null), document.getElementById('confirmation'));
-}
 
 /***/ }),
 
@@ -95023,7 +94985,7 @@ function (_React$Component) {
           address: address
         });
       }).catch(function (error) {
-        return console.error('Error', error);
+        return console.error("Error", error);
       });
     };
 
@@ -95046,18 +95008,18 @@ function (_React$Component) {
             loading = _ref.loading;
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", getInputProps({
           placeholder: "Enter ".concat(_this2.props.name),
-          className: 'form-control'
+          className: "form-control"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "autocomplete-dropdown-container"
         }, loading && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading..."), suggestions.map(function (suggestion) {
-          var className = suggestion.active ? 'suggestion-item--active' : 'suggestion-item'; // inline style for demonstration purpose
+          var className = suggestion.active ? "suggestion-item--active" : "suggestion-item"; // inline style for demonstration purpose
 
           var style = suggestion.active ? {
-            backgroundColor: '#fafafa',
-            cursor: 'pointer'
+            backgroundColor: "#fafafa",
+            cursor: "pointer"
           } : {
-            backgroundColor: '#ffffff',
-            cursor: 'pointer'
+            backgroundColor: "#ffffff",
+            cursor: "pointer"
           };
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", getSuggestionItemProps(suggestion, {
             className: className,
