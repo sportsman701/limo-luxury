@@ -2,36 +2,37 @@ import React, { Component } from 'react';
 import { Jumbotron, Container, Row, Col, Button, Form } from "react-bootstrap";
 import './Booking.css';
 import Map from '../Map';
+import LocationSearchInput from '../LocationSearchInput';
 
 class Booking extends Component {
-  render() {   
+
+  render() {
     return (
       <Container>
         <Jumbotron>
+
           <Row>
             <Col>
               <Form>
 
                 <Form.Group controlId="origin">
                   <Form.Label>Pickup Location</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="origin"
-                    placeholder="Pickup Location"
-                    value={this.props.origin}
-                    onChange={this.props.handleInputChange} 
-                  />
+                    <LocationSearchInput
+                        name="origin"
+                        value={this.props.origin}
+                        handleChange={this.props.handleInputChange}
+                        handleAutocompleteSelect={this.props.handleAutocompleteSelect}>
+                    </LocationSearchInput>
                 </Form.Group>
-                
+
                 <Form.Group controlId="destination">
                   <Form.Label>Drop Off Location</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="destination"
-                    placeholder="Drop Off Location"
-                    value={this.props.destination}
-                    onChange={this.props.handleInputChange} 
-                  />
+                    <LocationSearchInput
+                        name="destination"
+                        value={this.props.destination}
+                        handleChange={this.props.handleInputChange}
+                        handleAutocompleteSelect={this.props.handleAutocompleteSelect}>
+                    </LocationSearchInput>
                 </Form.Group>
 
                 <Form.Row>
@@ -39,9 +40,9 @@ class Booking extends Component {
                     <Form.Label>Pickup Date</Form.Label>
                     <Form.Control
                       type="date"
-                      name="xfrDate"                      
+                      name="xfrDate"
                       value={this.props.xfrDate}
-                      onChange={this.props.handleInputChange} 
+                      onChange={this.props.handleInputChange}
                     />
                   </Form.Group>
 
@@ -51,29 +52,28 @@ class Booking extends Component {
                       type="time"
                       name="xfrTime"
                       value={this.props.xfrTime}
-                      onChange={this.props.handleInputChange} 
+                      onChange={this.props.handleInputChange}
                     />
                   </Form.Group>
                 </Form.Row>
 
                 <br />
 
-                <Button 
-                  variant="primary" 
+                <Button
+                  variant="primary"
                   name="currentPage"
-                  type="submit" 
+                  type="submit"
                   value="submit"
-                  onClick={this.props.handleNextPageLoad}
-                >
+                  onClick={this.props.handleNextPageLoad}>
                   Continue
                 </Button>
               </Form>
             </Col>
 
             <Col>
-              <Map
-                // origin={this.props.origin}
-                // destination={this.props.destination}
+              <Map 
+                origin={this.props.directions.origin} 
+                destination={this.props.directions.destination} 
               />
             </Col>
           </Row>

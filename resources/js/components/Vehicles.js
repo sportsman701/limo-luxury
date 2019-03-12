@@ -9,7 +9,7 @@ import {
   Card,
   ButtonGroup
 } from "react-bootstrap";
-import './vehicles.css';
+import './Vehicles.css';
 import ReactDOM from 'react-dom';
 
 export default class Vehicles extends Component {
@@ -22,7 +22,7 @@ export default class Vehicles extends Component {
           <Jumbotron>
             <Row>
               <Col>
-                <Card style={{ width: "15rem" }}>
+                <Card>
                   <Card.Img
                     variant="top"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Brk8rQnGIa_LRovCmgPmjE9wySCZB7xE5xSC00Z_yFY3Nugx"

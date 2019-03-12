@@ -12,15 +12,31 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('about');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/home', 'HomeController@index');
 
-Route::get('/booking', 'BookingController@index')->name('booking');
-Route::get('/vehicle', 'VehicleController@index')->name('vehicle');
-Route::get('/search', 'SearchController@index')->name('search');
-Route::get('/reports', 'ReportsController@index')->name('reports');
-Route::get('/about', 'AboutController@index')->name('about');
+    // Page Routes
+    Route::get('/about', 'PagesController@about');
+    Route::get('/booking', 'PagesController@booking');
+    Route::get('/vehicles', 'PagesController@vehicles');
+    Route::get('/reports', 'PagesController@reports');
+    Route::get('/search', 'PagesController@search');
+
+    
+
+});
+
+Route::prefix('api')->middleware(['auth'])->group(function() {
+    // API Routes
+    Route::resource('/booking', 'BookingsController');
+    Route::resource('/vehicles', 'VehiclesController');
+});
+
+// Route::get('/api/booking/vehicle', 'BookingsController@vehicleCard');
+// Route::get('/api/vehicle/vehicleInfo', 'VehiclesController@vehicleInfo');
+// Route::post('/api/vehicle/vehicleInfo', 'VehiclesController@store');

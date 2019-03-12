@@ -1,0 +1,46 @@
+.card {
+    background: #fff;
+    border-radius: 5px;
+    height: 500px;
+    margin: 2px;;
+    position: relative;
+    width: 400px;
+    box-shadow: 0 3px 5px #999, 0 3px 5px #999;
+    text-align: left;
+    margin: 10px;
+    padding-right: 15px;
+    
+  }
+  
+  .card > .img-container {
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    background:white;
+    margin-top:20px;
+  }
+  .card > .img-container > img {
+    width: 80%
+  }
+  
+  .card > .content {
+    padding-left: 2px;;
+    padding-right: 2px;
+    font-size: 18px;
+  }
+  
+  .card > .content > ul {
+    list-style-type: none;
+  }
+  
+  .card > .content > ul > li {
+    margin-top: 10px;
+  }
+
+ .text-center{
+   padding-bottom: 15px;
+ }
+  
+  
+  
+  

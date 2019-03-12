@@ -50,15 +50,15 @@
                            <a id="navbar" class="nav-link" href="/booking" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                               Book
                           </a>
-                          <a id="navbar" class="nav-link" href="/vehicle" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                          <a id="navbar" class="nav-link" href="/vehicles" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                               Vehicle
                           </a>
-                          <a id="navbar" class="nav-link" href="/search" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                          <!-- <a id="navbar" class="nav-link" href="/search" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                               Search
                           </a>
                           <a id="navbar" class="nav-link" href="/reports" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                               Reports
-                          </a>
+                          </a> -->
 
                           <a id="navbar" class="nav-link" href="/about" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                               About

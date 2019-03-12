@@ -17,7 +17,7 @@
                     <!-- <div class="panel-body"> -->
                         <div id="vehicles">
 
-                        <h1>I'm the Vehicle Route</h1>
+                        <!-- <h1>I'm the Vehicle Route</h1> -->
                         
                         </div>
                     <!-- </div> -->
