@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
-import { DirectionService, DirectionsRenderer } from 'react-google-maps'
-
+import React, { Component } from "react";
+import { DirectionService, DirectionsRenderer } from "react-google-maps";
 
 export default class Directions extends Component {
 
@@ -25,7 +24,3 @@ export default class Directions extends Component {
     )
   }
 }
-
-
-
-

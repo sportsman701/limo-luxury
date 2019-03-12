@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Booking from './BookingPages/Booking';
 import Client from './BookingPages/Client';
 import Recap from './BookingPages/Recap';
+import Confirmation from './BookingPages/Confirmation';
 
 export default class BookingPages extends Component {
     state = {
@@ -26,19 +27,21 @@ export default class BookingPages extends Component {
         // values to be passed to the Recap Component
         vehicleType: "",
         xfrCost: "",
+
+        confirmationNum: "",
         
         // Controls what component to render
         currentPage: 0
     }
 
     handleInputChange = event => {
-        console.log(event);
+        // console.log(event);
         const { name, value } = event.target;
         this.setState({ [name]: value });
     }
 
     handleAutocompleteSelect = (data) => {
-        console.log({ data });
+        // console.log({ data });
 
         this.handleInputChange({ target: { name: data.name, value: data.address }});
 
@@ -59,10 +62,42 @@ export default class BookingPages extends Component {
         this.setState({ [name]: this.state.currentPage-- })
     }
 
-    handleSubmit(event) {
+    // handleSubmit(event) {
+    //     event.preventDefault();
+    //     console.log(`Form Value: ${this.state.inputvalue}`)
+    // }
+
+    createNewBooking = event => {
+        
         event.preventDefault();
-        console.log(`Form Value: ${this.state.inputvalue}`)
-    }
+    
+        let newBooking = {
+          firstName: this.state.firstName,
+          lastName: this.state.lastName,
+          cellPhone: this.state.cellPhone,
+          email: this.state.email,
+          xfrDate: this.state.xfrDate,
+          xfrTime: this.state.xfrTime,
+          origin: this.state.origin,
+          destination: this.state.destination,
+          numAdults: this.state.numAdults,
+          numChildren: this.state.numChildren,
+          vehicleType: this.state.vehicle,
+          xfrNotes: this.state.xfrNotes
+        };
+    
+        axios.post('/api/booking', newBooking)
+          .then(response => {
+            console.log("Booking Created");            
+            this.setState({ confirmationNum: response.data });            
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+        this.setState({ [name]: this.state.currentPage++ })
+      }
+    
 
     render() {
         const steps = [
@@ -93,6 +128,23 @@ export default class BookingPages extends Component {
                 handleNextPageLoad={this.handleNextPageLoad}
             />,
             <Recap
+                origin={this.state.origin}
+                destination={this.state.destination}
+                xfrDate={this.state.xfrDate}
+                xfrTime={this.state.xfrTime}
+                firstName={this.state.firstName}
+                lastName={this.state.lastName}
+                cellPhone={this.state.cellPhone}
+                email={this.state.email}
+                numAdults={this.state.numAdults}
+                numChildren={this.state.numChildren}
+                xfrNotes={this.state.xfrNotes}
+                directions={this.state.directions}
+                createNewBooking={this.createNewBooking}
+                handlePreviousPageLoad={this.handlePreviousPageLoad}
+            />,
+            <Confirmation 
+                confirmationNum={this.state.confirmationNum}
                 origin={this.state.origin}
                 destination={this.state.destination}
                 xfrDate={this.state.xfrDate}

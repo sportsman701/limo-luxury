@@ -12,20 +12,20 @@ class BookingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+    // public function index()
+    // {
+    //     //
+    // }
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+    // public function create()
+    // {
+    //     //
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -35,19 +35,19 @@ class BookingsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'cell_phone' => 'required',
-            'email' => 'required',
-            'xfer_date' => 'required',
-            'xfer_time' => 'required',
-            'origin' => 'required',
-            'destination' => 'required',
-            'num_adults' => 'required',
-            'vehicle_type' => 'required',
-            'xfer_cost' => 'required'
-        ]);
+        // $this->validate($request, [
+        //     'first_name' => 'required',
+        //     'last_name' => 'required',
+        //     'cell_phone' => 'required',
+        //     'email' => 'required',
+        //     'xfer_date' => 'required',
+        //     'xfer_time' => 'required',
+        //     'origin' => 'required',
+        //     'destination' => 'required',
+        //     'num_adults' => 'required'
+            // 'vehicle_type' => 'required',
+            // 'xfer_cost' => 'required'
+        // ]);
 
         // Create Booking Record
         $booking = new Booking;
@@ -68,7 +68,8 @@ class BookingsController extends Controller
         
         $booking->save();
 
-        return redirect('/booking/$id');
+        return $booking->id;
+        
     }
 
     /**
@@ -77,10 +78,10 @@ class BookingsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+    // public function show($id)
+    // {
+    //     //
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -88,10 +89,10 @@ class BookingsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
+    // public function edit($id)
+    // {
+    //     //
+    // }
 
     /**
      * Update the specified resource in storage.
@@ -100,10 +101,10 @@ class BookingsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    // public function update(Request $request, $id)
+    // {
+    //     //
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -111,8 +112,8 @@ class BookingsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+    // public function destroy($id)
+    // {
+    //     //
+    // }
 }

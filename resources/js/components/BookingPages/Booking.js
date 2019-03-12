@@ -71,7 +71,10 @@ class Booking extends Component {
             </Col>
 
             <Col>
-              <Map origin={this.props.directions.origin} destination={this.props.directions.destination} />
+              <Map 
+                origin={this.props.directions.origin} 
+                destination={this.props.directions.destination} 
+              />
             </Col>
           </Row>
         </Jumbotron>
