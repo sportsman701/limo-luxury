@@ -19,11 +19,7 @@ class Recap extends Component {
                         <Col>
                             <h1> Reservation Details: </h1>
                             <hr />
-                            <h4>
-                                {" "}
-                                Name: {this.props.firstName}{" "}
-                                {this.props.lastName}{" "}
-                            </h4>
+                            <h4> Name: {this.props.firstName}{" "}{this.props.lastName} </h4>
                             <h4> Email: {this.props.email} </h4>
                             <h4> Cell Phone: {this.props.cellPhone} </h4>
                             <h4> Notes: {this.props.xfrNotes} </h4>
@@ -31,7 +27,7 @@ class Recap extends Component {
                             <h4> Vehicle: </h4>
                             <h4> Adults: {this.props.numAdults} </h4>
                             <h4> Kids: {this.props.numChildren} </h4>
-                            <h4> Luggage: </h4>
+                            {/* <h4> Luggage: </h4> */}
 
                             <hr />
 

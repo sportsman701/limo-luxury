@@ -33,6 +33,7 @@ class Client extends Component {
 
                                         {this.state.Vehicles.map(Vehicles => (
                                             <VehicleCard
+                                                key={Vehicles.id}
                                                 id={Vehicles.id}
                                                 name={Vehicles.name}
                                                 image={Vehicles.image}
@@ -46,7 +47,7 @@ class Client extends Component {
                                     </Row>
                                 )}
 
-                                <button onClick={Toggle}>Show/Hide Vehicles</button>
+                                <button onClick={toggle}>Show/Hide Vehicles</button>
                             </div>
                         )}
                     />
