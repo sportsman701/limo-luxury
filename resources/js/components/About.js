@@ -15,7 +15,7 @@ export default class About extends Component {
                         <Col>
                             <h1> Luxury Limo</h1>
                             <h3>
-                                The business way to book your resort's
+                                The better way to book your resort's
                                 transportation
                             </h3>
                             <Image
