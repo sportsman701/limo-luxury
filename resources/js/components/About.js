@@ -1,26 +1,99 @@
-import React, { Component } from 'react'
-import { Jumbotron, Container } from "react-bootstrap";
-import ReactDOM from 'react-dom';
-
-import './About';
+import React, { Component } from "react";
+import { Jumbotron, Container, Card, Row, Col, Image } from "react-bootstrap";
+import ReactDOM from "react-dom";
+import "./About.css";
+import Toggle from "./Toggle";
 
 export default class About extends Component {
-  render() {
-    return (
-      <Container>
+    render() {
+        return (
+            <Container>
+                <br />
+                <br />
+                <Jumbotron>
+                    <Row>
+                        <Col>
+                            <h1> Luxury Limo</h1>
+                            <h3>
+                                The business way to book your resort's
+                                transportation
+                            </h3>
+                            <Image
+                                src="http://www.allwhitebackground.com/images/1/1183.png"
+                                fluid
+                            />
+                        </Col>
+                    </Row>
 
-<br />
-        <br />
-        <Jumbotron>
-        <h2>Luxury Limo is the final project created by Jeffrey McIntosh and Preston Mack</h2>
-        
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar neque laoreet suspendisse interdum consectetur libero. In hendrerit gravida rutrum quisque. Aliquet enim tortor at auctor urna nunc. </p>
-        </Jumbotron>
-      </Container>
-    )
-  }
+                    <Toggle>
+                        <Row>
+                          
+                            <Card>
+                                <Card.Img
+                                    variant="top"
+                                    src="https://irp-cdn.multiscreensite.com/b9968a14/dms3rep/multi/tablet/Lincoln%20Town%20Car%20Limousine%20White-631x307.dm.edit_BWyuFx.png"
+                                />
+                                <Card.Body>
+                                    <Card.Title>Technologies Used</Card.Title>
+                                    <Card.Text>
+                                        This project was created by Jeff
+                                        McINtosh and Preston Mack - Thisutilizes
+                                        Laravel and MySQL on the backend, and
+                                        React on the front end. React Google
+                                        Maps, React Bootstrap, React Date
+                                        Picker, React Time Picker and React
+                                        Places Autocomplete
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+     
+                          
+                            <Card>
+                                <Card.Img
+                                    variant="top"
+                                    src="https://irp-cdn.multiscreensite.com/b9968a14/dms3rep/multi/tablet/Lincoln%20Town%20Car%20Limousine%20White-631x307.dm.edit_BWyuFx.png" />
+                                <Card.Body>
+                                    <Card.Title>Jeffrey McIntosh</Card.Title>
+                                    <Card.Text>
+                                        I am a Full Stack Web Developer with a
+                                        strong background in Hospitality. As a
+                                        Full Stack Web Developer, my skills
+                                        include utilizing technologies such as
+                                        HTML5, CSS3, JavaScript, jQuery, AJAX,
+                                        Bootstrap, Materialize, Firebase, MySQL
+                                        relational databases, Mongo
+                                        non-relational databases, and
+                                        Git/GitHub. As a Hospitality
+                                        Professional, my skills include Customer
+                                        Service, Front Office Operations, Event
+                                        Management, Food and Beverage Operations,
+                                        and Revenue Management.
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+
+
+                            <Card>
+                                <Card.Img
+                                    variant="top"
+                                    src="https://irp-cdn.multiscreensite.com/b9968a14/dms3rep/multi/tablet/Lincoln%20Town%20Car%20Limousine%20White-631x307.dm.edit_BWyuFx.png"
+                                />
+                                <Card.Body>
+                                    <Card.Title>Preston Mack</Card.Title>
+                                    <Card.Text>
+                                        A Full Stack Developer with a career in advertising. I have worked with HTML, CSS, Javascipt, JQuery, Bootstrap, Firebase, MySQL, Mongo and React. I spent the last 25 years as a professional photographer. 
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                            
+                        </Row>
+                    </Toggle>
+                </Jumbotron>
+            </Container>
+        );
+    }
 }
 
-if (document.getElementById('about')) {
-  ReactDOM.render(<About />, document.getElementById('about'));
+if (document.getElementById("about")) {
+    ReactDOM.render(<About />, document.getElementById("about"));
 }

@@ -16,7 +16,7 @@ export default class Toggle extends Component {
       <div>
           {this.state.on &&  
               (this.props.children) }
-        <button onClick={this.toggle}>Hide/Show Vehicle</button>
+        <button onClick={this.toggle}>Hide/Show About us</button>
       </div>
     )
   }
