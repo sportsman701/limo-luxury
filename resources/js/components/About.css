@@ -1,21 +1,8 @@
 .jumbotron  {
     text-align: center;
     background: transparent;
-    width: 120%;
-    border: 20px red solid;
+    border-radius: 20px;
+    border: 2px lightgrey solid;
+    
 }
 
-
-.card-body {
-    min-width: 350px;
-    text-overflow: ellipsis;
-    overflow: auto;
-    padding-top:40px;
-
-}
-
-
-
-.card-text{
-    padding-bottom: 5px;
-}
