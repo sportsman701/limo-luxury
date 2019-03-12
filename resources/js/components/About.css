@@ -11,7 +11,14 @@
     text-overflow: ellipsis;
     overflow: auto;
     padding-top:40px;
+    
+}
 
+.card-img-top{
+  max-width: 200px;
+  height: 200px;
+  padding: 10px;
+  display: block;
 }
 
 
