@@ -9101,7 +9101,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".jumbotron  {\n    text-align: center;\n    background: transparent;\n    width: 120%;\n    border: 20px red solid;\n}\n\n\n.card-body {\n    min-width: 350px;\n    text-overflow: ellipsis;\n    overflow: auto;\n    padding-top:40px;\n    \n}\n\n.card-img-top{\n  max-width: 200px;\n  height: 200px;\n  padding: 10px;\n  display: block;\n}\n\n\n\n.card-text{\n    padding-bottom: 5px;\n}\n\n.container{\n    position:relative;\n    text-align: center;\n\n}\n\n\n", ""]);
+exports.push([module.i, ".jumbotron  {\n    text-align: center;\n    background: transparent;\n    width: 120%;\n    border-radius: 0%;\n    border: none;\n}\n\n\n.card-body {\n    min-width: 350px;\n    text-overflow: ellipsis;\n    overflow: auto;\n    padding-top:40px;\n    \n}\n\n.card-img-top{\n  max-width: 200px;\n  height: 200px;\n  padding: 10px;\n  display: block;\n}\n\n\n\n.card-text{\n    padding-bottom: 5px;\n}\n\n.container{\n    position:relative;\n    text-align: center;\n\n}\n\n\n", ""]);
 
 // exports
 

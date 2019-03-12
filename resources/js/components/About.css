@@ -2,7 +2,8 @@
     text-align: center;
     background: transparent;
     width: 120%;
-    border: 20px red solid;
+    border-radius: 0%;
+    border: none;
 }
 
 
