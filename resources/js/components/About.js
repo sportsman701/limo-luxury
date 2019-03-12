@@ -1,8 +1,6 @@
-import React, { Component } from "react";
-import { Jumbotron, Container, Card, Row, Col, Image } from "react-bootstrap";
-import ReactDOM from "react-dom";
-import "./About.css";
-import Toggle from "./Toggle";
+import React, { Component } from 'react'
+import { Jumbotron, Container } from "react-bootstrap";
+import ReactDOM from 'react-dom';
 
 export default class About extends Component {
     render() {
@@ -98,6 +96,6 @@ export default class About extends Component {
     }
 }
 
-if (document.getElementById("about")) {
-    ReactDOM.render(<About />, document.getElementById("about"));
+if (document.getElementById('about')) {
+  ReactDOM.render(<About />, document.getElementById('about'));
 }
