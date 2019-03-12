@@ -1,8 +1,6 @@
-import React, { Component } from "react";
-import { Jumbotron, Container, Card, Row, Col, Image } from "react-bootstrap";
-import ReactDOM from "react-dom";
-import "./About.css";
-import Toggle from "./Toggle";
+import React, { Component } from 'react'
+import { Jumbotron, Container } from "react-bootstrap";
+import ReactDOM from 'react-dom';
 
 export default class About extends Component {
     render() {
@@ -13,47 +11,32 @@ export default class About extends Component {
                 <Jumbotron>
                     <Row>
                         <Col>
-                            <h1> Luxury Limo</h1>
-                            <h3>
-                                The business way to book your resort's
-                                transportation
-                            </h3>
+                        <div class="container">
+
+
+                            <div class="centered"  > <h1>Luxury Limo</h1> </div>
+                            <div class="centered"> <h3>The better way to book your resort's
+                                transportation </h3> </div>
                             <Image
-                                src="http://www.allwhitebackground.com/images/1/1183.png"
+                                src="https://static1.squarespace.com/static/56561946e4b04cd6ce7c9bb6/574f80a82fe1315ed9457c78/574f80e2746fb9ccc23054c5/1464828141795/suburban-png.png"
                                 fluid
                             />
+                          
+                            </div>
                         </Col>
                     </Row>
 
                     <Toggle>
                         <Row>
-                          
-                            <Card>
+                        <Card bg="light">
                                 <Card.Img
                                     variant="top"
-                                    src="https://irp-cdn.multiscreensite.com/b9968a14/dms3rep/multi/tablet/Lincoln%20Town%20Car%20Limousine%20White-631x307.dm.edit_BWyuFx.png"
+                                    src="https://media.licdn.com/dms/image/C4E03AQG-eKFq9Ynx0w/profile-displayphoto-shrink_800_800/0?e=1557964800&v=beta&t=Mou5-0JV-XRz8oWEwOmC40gj7Sm2MGcgBJ-HK6FX-l4"
                                 />
+                                <Card.Header as="h2">
+                                    Jeffrey McIntosh
+                                </Card.Header>
                                 <Card.Body>
-                                    <Card.Title>Technologies Used</Card.Title>
-                                    <Card.Text>
-                                        This project was created by Jeff
-                                        McINtosh and Preston Mack - Thisutilizes
-                                        Laravel and MySQL on the backend, and
-                                        React on the front end. React Google
-                                        Maps, React Bootstrap, React Date
-                                        Picker, React Time Picker and React
-                                        Places Autocomplete
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-     
-                          
-                            <Card>
-                                <Card.Img
-                                    variant="top"
-                                    src="https://irp-cdn.multiscreensite.com/b9968a14/dms3rep/multi/tablet/Lincoln%20Town%20Car%20Limousine%20White-631x307.dm.edit_BWyuFx.png" />
-                                <Card.Body>
-                                    <Card.Title>Jeffrey McIntosh</Card.Title>
                                     <Card.Text>
                                         I am a Full Stack Web Developer with a
                                         strong background in Hospitality. As a
@@ -66,26 +49,45 @@ export default class About extends Component {
                                         Git/GitHub. As a Hospitality
                                         Professional, my skills include Customer
                                         Service, Front Office Operations, Event
-                                        Management, Food and Beverage Operations,
-                                        and Revenue Management.
+                                        Management, Food and Beverage
+                                        Operations, and Revenue Management.
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
 
+                            <Card bg="light">
+                                <Card.Body>
+                                    <Card.Title>Technologies Used</Card.Title>
+                                    <Card.Text>
+                                        This project was created by Jeff
+                                        McIntosh and Preston Mack - This project
+                                        utilizes Laravel and MySQL on the
+                                        backend and ReactJS on the front end.
+                                        React Google Maps, React Bootstrap,
+                                        React Date Picker, React Time Picker and
+                                        React Places Autocomplete are all implimented. 
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
 
-                            <Card>
+                            <Card bg="light">
                                 <Card.Img
                                     variant="top"
-                                    src="https://irp-cdn.multiscreensite.com/b9968a14/dms3rep/multi/tablet/Lincoln%20Town%20Car%20Limousine%20White-631x307.dm.edit_BWyuFx.png"
+                                    src="https://media.licdn.com/dms/image/C4E03AQE2e6vgkeUpTg/profile-displayphoto-shrink_200_200/0?e=1557964800&v=beta&t=wdkCm9n6AII6UFuUHJkBHWeg8cdbH1zq2pmgo72Dz7M"
                                 />
+                                <Card.Header as="h2">Preston Mack</Card.Header>
+
                                 <Card.Body>
-                                    <Card.Title>Preston Mack</Card.Title>
                                     <Card.Text>
-                                        A Full Stack Developer with a career in advertising. I have worked with HTML, CSS, Javascipt, JQuery, Bootstrap, Firebase, MySQL, Mongo and React. I spent the last 25 years as a professional photographer. 
+                                        A Front End Developer with a previous
+                                        career in advertising. I have experience 
+                                        with HTML, CSS, Javascipt, JQuery,
+                                        Bootstrap, Firebase, MySQL, Mongo and
+                                        React. I spent the last 25 years as a
+                                        professional photographer, proficient with Adobe Photoshop. 
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
-                            
                         </Row>
                     </Toggle>
                 </Jumbotron>
@@ -94,6 +96,6 @@ export default class About extends Component {
     }
 }
 
-if (document.getElementById("about")) {
-    ReactDOM.render(<About />, document.getElementById("about"));
+if (document.getElementById('about')) {
+  ReactDOM.render(<About />, document.getElementById('about'));
 }

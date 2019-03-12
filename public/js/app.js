@@ -8855,25 +8855,6 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/About.css":
-/*!***************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/About.css ***!
-  \***************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".jumbotron  {\n    text-align: center;\n    background: transparent;\n    width: 120%;\n    border: 20px red solid;\n}\n\n\n.card-body {\n    min-width: 350px;\n    text-overflow: ellipsis;\n    overflow: auto;\n    padding-top:40px;\n\n}\n\n\n\n.card-text{\n    padding-bottom: 5px;\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/BookingPages/Booking.css":
 /*!******************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/BookingPages/Booking.css ***!
@@ -8886,7 +8867,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".Row  {\n    text-align: center;\n    background: transparent;\n    \n    }\n\n .jumbotron{\n\n        border-radius: 20px;\n        border: 2px lightgrey solid;\n}\n\n\n.Card{\n    height:1000px;\n}\n\n#confirmNum{\n    color: blue;\n}\n", ""]);
+exports.push([module.i, ".Row  {\n    text-align: center;\n    background: transparent;\n    \n    }\n\n .jumbotron{\n\n        border-radius: 20px;\n        border: 2px lightgrey solid;\n}\n\n\n.Card{\n    height:1000px;\n}\n\n", ""]);
 
 // exports
 
@@ -93942,36 +93923,6 @@ if (token) {
 
 /***/ }),
 
-/***/ "./resources/js/components/About.css":
-/*!*******************************************!*\
-  !*** ./resources/js/components/About.css ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/postcss-loader/src??ref--6-2!./About.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/About.css");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./resources/js/components/About.js":
 /*!******************************************!*\
   !*** ./resources/js/components/About.js ***!
@@ -93987,9 +93938,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _About_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./About.css */ "./resources/js/components/About.css");
-/* harmony import */ var _About_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_About_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Toggle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Toggle */ "./resources/js/components/Toggle.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -94012,8 +93960,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
-
 var About =
 /*#__PURE__*/
 function (_Component) {
@@ -94028,19 +93974,32 @@ function (_Component) {
   _createClass(About, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, " Luxury Limo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "The business way to book your resort's transportation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Image"], {
-        src: "http://www.allwhitebackground.com/images/1/1183.png",
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Row, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Col, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        class: "container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        class: "centered"
+      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Luxury Limo"), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        class: "centered"
+      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "The better way to book your resort's transportation "), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, {
+        src: "https://static1.squarespace.com/static/56561946e4b04cd6ce7c9bb6/574f80a82fe1315ed9457c78/574f80e2746fb9ccc23054c5/1464828141795/suburban-png.png",
         fluid: true
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Toggle__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Img, {
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Toggle, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Row, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card, {
+        bg: "light"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card.Img, {
         variant: "top",
-        src: "https://irp-cdn.multiscreensite.com/b9968a14/dms3rep/multi/tablet/Lincoln%20Town%20Car%20Limousine%20White-631x307.dm.edit_BWyuFx.png"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, null, "Technologies Used"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, null, "This project was created by Jeff McINtosh and Preston Mack - Thisutilizes Laravel and MySQL on the backend, and React on the front end. React Google Maps, React Bootstrap, React Date Picker, React Time Picker and React Places Autocomplete"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Img, {
+        src: "https://media.licdn.com/dms/image/C4E03AQG-eKFq9Ynx0w/profile-displayphoto-shrink_800_800/0?e=1557964800&v=beta&t=Mou5-0JV-XRz8oWEwOmC40gj7Sm2MGcgBJ-HK6FX-l4"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card.Header, {
+        as: "h2"
+      }, "Jeffrey McIntosh"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card.Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card.Text, null, "I am a Full Stack Web Developer with a strong background in Hospitality. As a Full Stack Web Developer, my skills include utilizing technologies such as HTML5, CSS3, JavaScript, jQuery, AJAX, Bootstrap, Materialize, Firebase, MySQL relational databases, Mongo non-relational databases, and Git/GitHub. As a Hospitality Professional, my skills include Customer Service, Front Office Operations, Event Management, Food and Beverage Operations, and Revenue Management."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card, {
+        bg: "light"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card.Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card.Title, null, "Technologies Used"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card.Text, null, "This project was created by Jeff McIntosh and Preston Mack - This project utilizes Laravel and MySQL on the backend and ReactJS on the front end. React Google Maps, React Bootstrap, React Date Picker, React Time Picker and React Places Autocomplete are all implimented."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card, {
+        bg: "light"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card.Img, {
         variant: "top",
-        src: "https://irp-cdn.multiscreensite.com/b9968a14/dms3rep/multi/tablet/Lincoln%20Town%20Car%20Limousine%20White-631x307.dm.edit_BWyuFx.png"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, null, "Jeffrey McIntosh"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, null, "I am a Full Stack Web Developer with a strong background in Hospitality. As a Full Stack Web Developer, my skills include utilizing technologies such as HTML5, CSS3, JavaScript, jQuery, AJAX, Bootstrap, Materialize, Firebase, MySQL relational databases, Mongo non-relational databases, and Git/GitHub. As a Hospitality Professional, my skills include Customer Service, Front Office Operations, Event Management, Food and Beverage Operations, and Revenue Management."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Img, {
-        variant: "top",
-        src: "https://irp-cdn.multiscreensite.com/b9968a14/dms3rep/multi/tablet/Lincoln%20Town%20Car%20Limousine%20White-631x307.dm.edit_BWyuFx.png"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, null, "Preston Mack"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, null, "A Full Stack Developer with a career in advertising. I have worked with HTML, CSS, Javascipt, JQuery, Bootstrap, Firebase, MySQL, Mongo and React. I spent the last 25 years as a professional photographer.")))))));
+        src: "https://media.licdn.com/dms/image/C4E03AQE2e6vgkeUpTg/profile-displayphoto-shrink_200_200/0?e=1557964800&v=beta&t=wdkCm9n6AII6UFuUHJkBHWeg8cdbH1zq2pmgo72Dz7M"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card.Header, {
+        as: "h2"
+      }, "Preston Mack"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card.Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card.Text, null, "A Front End Developer with a previous career in advertising. I have experience with HTML, CSS, Javascipt, JQuery, Bootstrap, Firebase, MySQL, Mongo and React. I spent the last 25 years as a professional photographer, proficient with Adobe Photoshop.")))))));
     }
   }]);
 
@@ -94049,8 +94008,8 @@ function (_Component) {
 
 
 
-if (document.getElementById("about")) {
-  react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(About, null), document.getElementById("about"));
+if (document.getElementById('about')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(About, null), document.getElementById('about'));
 }
 
 /***/ }),
@@ -94144,14 +94103,17 @@ function (_Component) {
       // Controls what component to render
       currentPage: 0
     }, _this.handleInputChange = function (event) {
-      // console.log(event);
+      console.log(event);
       var _event$target = event.target,
           name = _event$target.name,
           value = _event$target.value;
 
       _this.setState(_defineProperty({}, name, value));
     }, _this.handleAutocompleteSelect = function (data) {
-      // console.log({ data });
+      console.log({
+        data: data
+      });
+
       _this.handleInputChange({
         target: {
           name: data.name,
@@ -94203,7 +94165,8 @@ function (_Component) {
   _createClass(BookingPages, [{
     key: "handleSubmit",
     value: function handleSubmit(event) {
-      event.preventDefault(); // console.log(`Form Value: ${this.state.inputvalue}`)
+      event.preventDefault();
+      console.log("Form Value: ".concat(this.state.inputvalue));
     }
   }, {
     key: "updateBookingID",
@@ -94894,8 +94857,6 @@ function (_Component) {
   _createClass(Directions, [{
     key: "render",
     value: function render() {
-      var _this = this;
-
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MapPoints, {
         origin: this.state.origin,
         destination: this.state.destination
@@ -94904,13 +94865,7 @@ function (_Component) {
         origin: this.props.origin,
         destination: this.props.destination,
         travelMode: google.maps.TravelMode.DRIVING
-      }, function (result, status) {
-        if (status === google.maps.DirectionsStatus.OK) {
-          _this.setState({
-            directions: result
-          });
-        }
-      });
+      }, function (result, status) {});
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
     }
   }]);
@@ -94975,7 +94930,7 @@ function (_Component) {
   _createClass(Home, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Luxury Limo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar neque laoreet suspendisse interdum consectetur libero. In hendrerit gravida rutrum quisque. Aliquet enim tortor at auctor urna nunc. ")));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Luxury Limo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "To book the transportation, click on the \"Book\" link in the nav bar and enter the Origin, destination pickup time and date.")));
     }
   }]);
 
@@ -95170,7 +95125,6 @@ function (_Component) {
               originLng = _this$props$origin.lng;
           markers.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_1__["Marker"], {
             key: "origin",
-            name: "origin",
             position: {
               lat: originLat,
               lng: originLng
@@ -95184,7 +95138,6 @@ function (_Component) {
               destinationLng = _this$props$destinati.lng;
           markers.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_1__["Marker"], {
             key: "destination",
-            name: "destination",
             position: {
               lat: destinationLat,
               lng: destinationLng
@@ -95434,79 +95387,6 @@ if (document.getElementById('search')) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Toggle.js":
-/*!*******************************************!*\
-  !*** ./resources/js/components/Toggle.js ***!
-  \*******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Toggle; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-var Toggle =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Toggle, _Component);
-
-  function Toggle() {
-    var _getPrototypeOf2;
-
-    var _temp, _this;
-
-    _classCallCheck(this, Toggle);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Toggle)).call.apply(_getPrototypeOf2, [this].concat(args))), _this.state = {
-      on: false
-    }, _this.toggle = function () {
-      _this.setState({
-        on: !_this.state.on
-      });
-    }, _temp));
-  }
-
-  _createClass(Toggle, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.on && this.props.children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.toggle
-      }, "Hide/Show About us"));
-    }
-  }]);
-
-  return Toggle;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-
-
-/***/ }),
-
 /***/ "./resources/js/components/ToggleRenderProps.js":
 /*!******************************************************!*\
   !*** ./resources/js/components/ToggleRenderProps.js ***!
@@ -95641,15 +95521,15 @@ function VehicleCard(props) {
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "content"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Name:"), " ", props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Description:"), " ", props.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "text-center"
+    class: "text-center"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     variant: "primary",
     name: "VehicleSelect",
     type: "submit",
-    value: "submit"
+    value: "submit",
+    onClick: "test"
   }, "SELECT"))));
-} // onClick= "test"
-// import React from "react";
+} // import React from "react";
 // import "./style.css";
 // function FriendCard(props) {
 //   return (

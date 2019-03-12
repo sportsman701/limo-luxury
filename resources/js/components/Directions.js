@@ -11,16 +11,8 @@ export default class Directions extends Component {
     DirectionService.route({
         origin: this.props.origin,
         destination: this.props.destination,
-        travelMode: google.maps.TravelMode.DRIVING,  
-
+        travelMode: google.maps.TravelMode.DRIVING,
     }, (result, status) => {
-
-      if (status === google.maps.DirectionsStatus.OK){
-        this.setState({
-          directions: result,
-        });
-      } 
-      
     
     }); 
 

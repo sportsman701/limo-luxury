@@ -36,3 +36,7 @@ Route::prefix('api')->middleware(['auth'])->group(function() {
     Route::resource('/booking', 'BookingsController');
     Route::resource('/vehicles', 'VehiclesController');
 });
+
+// Route::get('/api/booking/vehicle', 'BookingsController@vehicleCard');
+// Route::get('/api/vehicle/vehicleInfo', 'VehiclesController@vehicleInfo');
+// Route::post('/api/vehicle/vehicleInfo', 'VehiclesController@store');

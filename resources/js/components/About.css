@@ -2,7 +2,8 @@
     text-align: center;
     background: transparent;
     width: 120%;
-    border: 20px red solid;
+    border-radius: 0%;
+    border: none;
 }
 
 
@@ -11,7 +12,14 @@
     text-overflow: ellipsis;
     overflow: auto;
     padding-top:40px;
+    
+}
 
+.card-img-top{
+  max-width: 200px;
+  height: 200px;
+  padding: 10px;
+  display: block;
 }
 
 
@@ -19,3 +27,11 @@
 .card-text{
     padding-bottom: 5px;
 }
+
+.container{
+    position:relative;
+    text-align: center;
+
+}
+
+

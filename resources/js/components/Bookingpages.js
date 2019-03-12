@@ -35,13 +35,13 @@ export default class BookingPages extends Component {
     }
 
     handleInputChange = event => {
-        // console.log(event);
+        console.log(event);
         const { name, value } = event.target;
         this.setState({ [name]: value });
     }
 
     handleAutocompleteSelect = (data) => {
-        // console.log({ data });
+        console.log({ data });
 
         this.handleInputChange({ target: { name: data.name, value: data.address }});
 
@@ -64,7 +64,7 @@ export default class BookingPages extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        // console.log(`Form Value: ${this.state.inputvalue}`)
+        console.log(`Form Value: ${this.state.inputvalue}`)
     }
 
     updateBookingID(data) {
