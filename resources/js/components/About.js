@@ -27,7 +27,7 @@ export default class About extends Component {
 
                     <Toggle>
                         <Row>
-                          <Col>
+                          
                             <Card>
                                 <Card.Img
                                     variant="top"
@@ -46,15 +46,12 @@ export default class About extends Component {
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
-                            </Col>
-
-                            <Col>
+     
                           
                             <Card>
                                 <Card.Img
                                     variant="top"
-                                    src="https://media.licdn.com/dms/image/C4E03AQG-eKFq9Ynx0w/profile-displayphoto-shrink_800_800/0?e=1557964800&v=beta&t=Mou5-0JV-XRz8oWEwOmC40gj7Sm2MGcgBJ-HK6FX-l4"
-                                />
+                                    src="https://irp-cdn.multiscreensite.com/b9968a14/dms3rep/multi/tablet/Lincoln%20Town%20Car%20Limousine%20White-631x307.dm.edit_BWyuFx.png" />
                                 <Card.Body>
                                     <Card.Title>Jeffrey McIntosh</Card.Title>
                                     <Card.Text>
@@ -74,14 +71,12 @@ export default class About extends Component {
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
-                            </Col>
 
-                            <Col>
 
                             <Card>
                                 <Card.Img
                                     variant="top"
-                                    src="https://media.licdn.com/dms/image/C4E03AQE2e6vgkeUpTg/profile-displayphoto-shrink_200_200/0?e=1557964800&v=beta&t=wdkCm9n6AII6UFuUHJkBHWeg8cdbH1zq2pmgo72Dz7M"
+                                    src="https://irp-cdn.multiscreensite.com/b9968a14/dms3rep/multi/tablet/Lincoln%20Town%20Car%20Limousine%20White-631x307.dm.edit_BWyuFx.png"
                                 />
                                 <Card.Body>
                                     <Card.Title>Preston Mack</Card.Title>
@@ -90,7 +85,7 @@ export default class About extends Component {
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
-                            </Col>
+                            
                         </Row>
                     </Toggle>
                 </Jumbotron>
