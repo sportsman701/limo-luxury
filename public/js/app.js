@@ -9101,7 +9101,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".jumbotron  {\n    text-align: center;\n    background: transparent;\n    width: 120%;\n    border: 20px red solid;\n}\n\n\n.card-body {\n    min-width: 350px;\n    text-overflow: ellipsis;\n    overflow: auto;\n    padding-top:40px;\n    \n}\n\n.card-img-top{\n  max-width: 200px;\n  height: 200px;\n  padding: 10px;\n  display: block;\n}\n\n\n\n.card-text{\n    padding-bottom: 5px;\n}", ""]);
+exports.push([module.i, ".jumbotron  {\n    text-align: center;\n    background: transparent;\n    width: 120%;\n    border: 20px red solid;\n}\n\n\n.card-body {\n    min-width: 350px;\n    text-overflow: ellipsis;\n    overflow: auto;\n    padding-top:40px;\n    \n}\n\n.card-img-top{\n  max-width: 200px;\n  height: 200px;\n  padding: 10px;\n  display: block;\n}\n\n\n\n.card-text{\n    padding-bottom: 5px;\n}\n\n.container{\n    position:relative;\n    text-align: center;\n\n}\n\n\n", ""]);
 
 // exports
 
@@ -94028,10 +94028,16 @@ function (_Component) {
   _createClass(About, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, " Luxury Limo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "The better way to book your resort's transportation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Image"], {
-        src: "http://www.allwhitebackground.com/images/1/1183.png",
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Jumbotron"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        class: "container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        class: "centered"
+      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Luxury Limo"), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        class: "centered"
+      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "The better way to book your resort's transportation "), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Image"], {
+        src: "https://static1.squarespace.com/static/56561946e4b04cd6ce7c9bb6/574f80a82fe1315ed9457c78/574f80e2746fb9ccc23054c5/1464828141795/suburban-png.png",
         fluid: true
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Toggle__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Toggle__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
         bg: "light"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Img, {
         variant: "top",

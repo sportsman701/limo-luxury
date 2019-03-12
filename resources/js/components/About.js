@@ -13,15 +13,18 @@ export default class About extends Component {
                 <Jumbotron>
                     <Row>
                         <Col>
-                            <h1> Luxury Limo</h1>
-                            <h3>
-                                The better way to book your resort's
-                                transportation
-                            </h3>
+                        <div class="container">
+
+
+                            <div class="centered"  > <h1>Luxury Limo</h1> </div>
+                            <div class="centered"> <h3>The better way to book your resort's
+                                transportation </h3> </div>
                             <Image
-                                src="http://www.allwhitebackground.com/images/1/1183.png"
+                                src="https://static1.squarespace.com/static/56561946e4b04cd6ce7c9bb6/574f80a82fe1315ed9457c78/574f80e2746fb9ccc23054c5/1464828141795/suburban-png.png"
                                 fluid
                             />
+                          
+                            </div>
                         </Col>
                     </Row>
 

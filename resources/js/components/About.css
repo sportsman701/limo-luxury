@@ -26,3 +26,11 @@
 .card-text{
     padding-bottom: 5px;
 }
+
+.container{
+    position:relative;
+    text-align: center;
+
+}
+
+
