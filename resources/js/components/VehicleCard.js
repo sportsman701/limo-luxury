@@ -22,13 +22,13 @@ function VehicleCard(props){
             </li>
           </ul>
 
-        <div className="text-center">
+        <div class="text-center">
           <Button
                   variant="primary"
                   name="VehicleSelect"
                   type="submit"
                   value="submit"
-                  >
+                  onClick= "test">
                   SELECT
           </Button>
           </div>
@@ -37,8 +37,6 @@ function VehicleCard(props){
       </div>
     )
   }
-
-  // onClick= "test"
 
 
 

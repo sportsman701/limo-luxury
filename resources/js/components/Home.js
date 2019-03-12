@@ -12,9 +12,9 @@ export default class Home extends Component {
         <br />
         <br />
         <Jumbotron>
-          <h2>Luxury Limo</h2>
+          <h1>Luxury Limo</h1>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar neque laoreet suspendisse interdum consectetur libero. In hendrerit gravida rutrum quisque. Aliquet enim tortor at auctor urna nunc. </p>
+          <h4>To book the transportation, click on the "Book" link in the nav bar and enter the Origin, destination pickup time and date.</h4>
         </Jumbotron>
       </Container>
     )

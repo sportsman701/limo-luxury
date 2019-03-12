@@ -48,21 +48,7 @@ class Client extends Component {
    
                   
           
-          {/* Vehice Images */}
-          <Row>
-            {this.state.Vehicles.map(Vehicles => (
-              <VehicleCard
-                key={Vehicles.id}
-                id={Vehicles.id}
-                name={Vehicles.name}
-                image={Vehicles.image}
-                description={Vehicles.description}
-                capacity={Vehicles.capacity}
-                quantity={Vehicles.quantity}
-              />
 
-            ))}
-          </Row>
 
           <br />
           <hr />
