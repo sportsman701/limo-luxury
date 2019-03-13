@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Jumbotron, Container, Row, Col, Card, Image } from "react-bootstrap";
 import ReactDOM from 'react-dom';
 import Toggle from './Toggle';
+import './About.css';
 
 export default class About extends Component {
     render() {
